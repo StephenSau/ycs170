@@ -1,0 +1,524 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+$guaranteeSpriteUrl: url('../img/guarantee/sprite.png');
+@mixin guaranteeSprite($width, $height, $positionX, $positionY){
+	width: $width;
+  height: $height;
+  background-repeat: no-repeat;
+  background-image: $guaranteeSpriteUrl;
+  background-position: $positionX $positionY;
+  margin: 0 auto;
+}
+
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+$light-yellow: #e1dcce;
+$light-gold: #c1b597;
+$light-blue: #4fa2dd;
+$light-green: #7abb55;
+$light-purple: #986ab1;
+$line-gold: #f5f4ed;
+
+.guarantee-container{
+	.service-guarantee{
+		width:100%;
+	  height:660px;
+	  background:url("../img/guarantee/service-guarantee-bg.jpg") center no-repeat transparent;
+	  background-size:cover;
+	  box-shadow: $box-shadow;
+
+	  .inner{
+	  	padding: 100px 0 173px 0;
+	  	text-align: center;
+	  	width:  $w1;
+	  	margin: 0 auto;
+
+	  	.title{
+	  		padding-bottom: 97px;
+		  	h2{
+		  		color: white;
+		  		font-size: 48px;
+		  	}
+	  	}
+
+	  	.content{
+	  		.grid{
+	  			display: inline-block;
+	  			padding-right: 60px;
+	  			font-size: 0;
+
+	  			&:last-of-type{
+	  				padding-right: 0;
+	  			}
+	  			.first{
+	  				padding-bottom: 24px;
+	  			}
+	  			.second{
+	  				padding-bottom: 10px;
+	  				font-size: 26px;
+	  				color: white;
+	  			}
+	  			.third{
+	  				font-size: 18px;
+	  				color: $light-yellow;
+	  			}
+
+	  			&.grid-1{
+  					.image{
+  						@include guaranteeSprite(130px, 150px, 0, 0);
+  					}
+	  			}
+
+	  			&.grid-2{
+  					.image{
+  						@include guaranteeSprite(130px, 150px, -140px, 0);
+  					}
+	  			}
+
+	  			&.grid-3{
+  					.image{
+  						@include guaranteeSprite(130px, 150px, -280px, 0);
+  					}
+	  			}
+
+	  			&.grid-4{
+  					.image{
+  						@include guaranteeSprite(130px, 150px, -420px, 0);
+  					}
+	  			}
+
+	  			&.grid-5{
+  					.image{
+  						@include guaranteeSprite(130px, 150px, -560px, 0);
+  					}
+	  			}
+	  		}
+	  	}
+	  }
+	} // service-guarantee
+
+	.certification{
+		width:100%;
+	  box-shadow: $box-shadow;
+
+	  .inner{
+	  	padding: 100px 0 200px 0;
+	  	text-align: center;
+	  	width:  $w1;
+	  	margin: 0 auto;
+
+	  	.title{
+	  		padding-bottom: 97px;
+		  	h2{
+		  		color: $lwgy;
+		  		font-size: 48px;
+		  	}
+	  	}
+
+	  	.content{
+	  		.grid{
+	  			display: inline-block;
+	  			padding-right: 150px;
+	  			font-size: 0;
+
+	  			&:last-of-type{
+	  				padding-right: 0;
+	  			}
+
+	  			.first{
+	  				padding-bottom: 24px;
+	  			}
+	  			.second{
+	  				padding-bottom: 10px;
+	  				font-size: 24px;
+	  			}
+
+	  			&.grid-1{
+  					.image{
+  						@include guaranteeSprite(160px, 160px, 0, -160px);
+  					}
+	  				.second{
+		  				color: $light-blue;
+		  			}
+		  		}
+
+		  		&.grid-2{
+  					.image{
+  						@include guaranteeSprite(160px, 160px, -170px, -160px);
+  					}
+		  			.second{
+		  				color: $light-green;
+		  			}
+		  		}
+
+		  		&.grid-3{
+  					.image{
+  						@include guaranteeSprite(160px, 160px, -340px, -160px);
+  					}
+		  			.second{
+		  				color: $light-purple;
+		  			}
+		  		}
+	  		}
+	  	}
+	  }
+	} // certification
+
+	.hand-docking{
+		width:100%;
+	  height:660px;
+	  background:url("../img/guarantee/hand-docking-bg.jpg") center no-repeat transparent;
+	  background-size:cover;
+	  box-shadow: $box-shadow;
+
+	  .inner{
+	  	padding: 100px 0 200px 0;
+	  	text-align: center;
+	  	width:  $w1;
+	  	margin: 0 auto;
+
+	  	.title{
+	  		padding-bottom: 97px;
+		  	h2{
+		  		color: white;
+		  		font-size: 48px;
+		  	}
+	  	}
+
+	  	.content{
+	  		.row-1{
+		  		.grid,
+		  		.dashed{
+		  			display: inline-block;
+		  			font-size: 0;
+		  			vertical-align: top;
+		  		}
+
+		  		.dashed{
+		  			text-align: center;
+		  			padding-top: 36px;
+		  			font-size: 48px;
+		  			color: $light-blue;
+		  		}
+
+		  		.dashed-1{
+		  			padding-left: 13px;
+		  		}
+
+		  		.dashed-2{
+		  			padding-right: 13px;
+		  		}
+
+		  		.grid{
+		  			.first{
+		  				padding-bottom: 25px;
+		  			}
+		  			.second{
+		  				font-size: 24px;
+		  				color: white;
+		  			}
+
+		  			&.grid-1{
+		  				.image{
+		  					@include guaranteeSprite(140px, 140px, 0, -330px);
+		  				}
+		  			}
+
+		  			&.grid-2{
+		  				.image{
+		  					@include guaranteeSprite(140px, 140px, -150px, -330px);
+		  				}
+		  			}
+
+		  			&.grid-3{
+		  				.image{
+		  					@include guaranteeSprite(140px, 140px, -300px, -330px);
+		  				}
+		  			}
+		  		}
+	  		}
+
+	  		.row-2{
+	  			width: 900px;
+	  			padding: 12px 40px;
+	  			margin: 0 auto;
+	  			margin-top: 79px;
+	  			background: rgba(0,0,0, 0.2);
+	  			border-radius: 30px;
+	  			.grid{
+	  				display: inline-block;
+		  			margin-right: -3px;
+		  			vertical-align: middle;
+		  			color: white;
+	  				padding-right: 60px;
+
+	  				&:last-of-type{
+	  					padding-right: 0;
+	  				}
+
+	  				.correct{
+	  					@include guaranteeSprite(34px, 25px, -450px, -330px);
+	  				}
+
+		  			.correct,
+		  			p{
+		  				display: inline-block;
+		  				vertical-align: middle;
+		  			}
+
+		  			p{
+		  				padding-left: 13px;
+		  				font-size: 24px;
+		  				color: white;
+		  			}
+	  			}
+	  		}
+	  	}
+	  }
+	} // hand-docking
+
+	.full-tracking{
+		width:100%;
+	  box-shadow: $box-shadow;
+
+	  .inner{
+	  	padding: 100px 0 167px 0;
+	  	text-align: center;
+	  	width:  $w1;
+	  	margin: 0 auto;
+
+	  	.title{
+	  		padding-bottom: 97px;
+		  	h2{
+		  		color: $lwgy;
+		  		font-size: 48px;
+		  	}
+	  	}
+
+	  	.content{
+	  		.grid{
+	  		}
+
+	  		.grid{
+	  			display: inline-block;
+	  			position: relative;
+	  			width: 295px;
+	  			font-size: 0;
+	  			text-align: center;
+	  			color: $light-gold;
+	  			margin: 0;
+
+	  			&:last-of-type{
+	  				padding-right: 0;
+	  			}
+
+	  			.first{
+	  				@include guaranteeSprite(150px, 173px, 0, -480px);
+	  				margin-bottom: 27px;
+
+	  				.intro{
+	  					font-size: 48px;
+	  					padding-top: 57px;
+	  					text-align: center;
+	  				}
+	  			}
+	  			.second{
+	  				font-size: 18px;
+	  				padding-bottom: 5px;
+	  			}
+	  			.third{
+	  				font-size: 18px;
+	  			}
+
+		  		.dashed{
+		  			position: absolute;
+		  			font-size: 48px;
+		  			top: 56px;
+		  			right: -75px;
+		  			z-index: 99;
+		  			color: $line-gold;
+		  		}
+	  		}
+
+	  	}
+	  }
+	} // full-tracking
+
+	.payment-safety{
+		width:100%;
+	  height:660px;
+	  background:url("../img/guarantee/payment-safety-bg.jpg") center no-repeat transparent;
+	  background-size:cover;
+	  box-shadow: $box-shadow;
+
+	  .inner{
+	  	padding: 100px 0 190px 0;
+	  	text-align: center;
+	  	width:  $w1;
+	  	margin: 0 auto;
+
+	  	.title{
+	  		padding-bottom: 97px;
+		  	h2{
+		  		color: white;
+		  		font-size: 48px;
+		  	}
+	  	}
+
+	  	.content{
+	  		.grid{
+	  			display: inline-block;
+	  			font-size: 0;
+	  			padding-right: 100px;
+	  			vertical-align: top;
+
+	  			&:last-of-type{
+	  				padding-right: 0;
+	  			}
+	  		}
+
+	  		.grid{
+	  			.first{
+	  				padding-bottom: 25px;
+	  			}
+	  			.second,
+	  			.third{
+	  				font-size: 20px;
+	  				color: white;
+	  			}
+	  			.second{
+	  				padding-bottom: 1px;
+	  			}
+
+	  			&.grid-1{
+	  				.image{
+	  					@include guaranteeSprite(140px, 140px, 0, -663px);
+	  				}
+	  			}
+
+	  			&.grid-2{
+	  				.image{
+	  					@include guaranteeSprite(140px, 140px, -150px, -663px);
+	  				}
+	  			}
+
+	  			&.grid-3{
+	  				.image{
+	  					@include guaranteeSprite(140px, 140px, -300px, -663px);
+	  				}
+	  			}
+
+	  			&.grid-4{
+	  				.image{
+	  					@include guaranteeSprite(140px, 140px, -450px, -663px);
+	  				}
+	  			}
+
+	  			&.grid-5{
+	  				.image{
+	  					@include guaranteeSprite(140px, 140px, -600px, -663px);
+	  				}
+	  			}
+	  		}
+  		}
+	  }
+	} // payment-safety
+
+	.advance-payment{
+		width:100%;
+	  box-shadow: $box-shadow;
+	  background-color: $lbgy;
+
+	  .inner{
+	  	padding: 100px 0 181px 0;
+	  	text-align: center;
+	  	width:  $w1;
+	  	margin: 0 auto;
+
+	  	.title{
+	  		padding-bottom: 97px;
+		  	h2{
+		  		color: $lwgy;
+		  		font-size: 48px;
+		  	}
+	  	}
+
+	  	.content{
+	  		.row-1{
+	  			padding-bottom: 95px;
+	  			border-bottom: 1px solid $mbgy;
+		  		.grid{
+		  			display: inline-block;
+		  			padding-right: 155px;
+		  			font-size: 0;
+		  			text-align: center;
+		  			color: $light-gold;
+
+		  			&:last-of-type{
+		  				padding-right: 0;
+		  			}
+
+		  			.first{
+		  				margin: 0 auto;
+		  				background-repeat: no-repeat;
+		  				padding-bottom: 27px;
+
+		  				.intro{
+		  					font-size: 48px;
+		  					padding-top: 57px;
+		  					text-align: center;
+		  				}
+		  			}
+		  			.second{
+		  				font-size: 24px;
+		  				padding-bottom: 5px;
+		  			}
+		  			.third{
+		  				font-size: 24px;
+		  			}
+
+		  			&.grid-1{
+		  				.image{
+		  					@include guaranteeSprite(169px, 169px, 0px, -813px);
+		  				}
+		  			}
+
+		  			&.grid-2{
+		  				.image{
+		  					@include guaranteeSprite(169px, 169px, -179px, -813px);
+		  				}
+		  			}
+
+		  			&.grid-3{
+		  				.image{
+		  					@include guaranteeSprite(169px, 169px, -358px, -813px);
+		  				}
+		  			}
+
+		  			&.grid-4{
+		  				.image{
+		  					@include guaranteeSprite(169px, 169px, -537px, -813px);
+		  				}
+		  			}
+		  		}
+		  	}
+
+		  	.row-2{
+		  		padding-top: 95px;
+		  		position: relative;
+		  		.title{
+		  			position: absolute;
+		  			top: 90px;
+		  			left: 65px;
+		  			font-size: 36px;
+		  			color: $lwgy;
+		  		}
+		  	}
+	  	}
+	  }
+	} // advance-payment
+}
+
+body>.links{
+	background-color: $bw;
+}

@@ -1,0 +1,308 @@
+/*
+*cashier here
+*/
+
+
+/*cashier-wrap here start*/
+
+.cashier-wrap {
+    background-color: $lbgy;
+    .cashier {
+        padding: 30px 0 101px;
+        @include box-center($w1);
+    }
+    .cashisr-box {
+        background-color: $bw;
+        border: 1px solid $line;
+        box-shadow: 0px 1px 2px 0px rgba(7, 0, 2, 0.05);
+        >div {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+        h2{
+            color: $dbgy;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+        .cashier-tab {
+            background-color: #e5f0f8;
+            li {
+                float: left;
+                border-right: 2px solid #fff;
+                width: 177px;
+                height: 50px;
+                line-height: 50px;
+                color: $dwgy;
+                font-size: 18px;
+                text-align: center;
+                cursor: pointer;
+                &.last {
+                    border: none;
+                }
+                &.active {
+                    background-color: $bw;
+                }
+                i {
+                    display: inline-block;
+                    margin-right: 10px;
+                    margin-top: -5px;
+                    width: 30px;
+                    height: 25px;
+                    background: url("../img/pay-icon.png") no-repeat;
+                    vertical-align: middle;
+                }
+                .ali-icon {
+                    background-position: 0 0;
+                }
+                .wechat-icon {
+                    background-position: -30px 0;
+                }
+                .uni-icon {
+                    width: 31px;
+                    background-position: 0 -25px;
+                }
+                .online-icon {
+                    width: 37px;
+                    background-position: -31px -25px;
+                }
+            }
+        }
+
+        .online-pay {
+            padding: 100px 0 79px 300px;
+            color: $mwgy;
+            ol {
+                padding-bottom: 130px;
+            }
+            li {
+                padding-bottom: 15px;
+                font-size: 16px;
+            }
+            a {
+                display: block;
+                margin-left: 255px;
+                width: 178px;
+                height: 45px;
+                padding: 0;
+                line-height: 45px;
+                color: $bw;
+                background-color: $pomelo;
+                border-color: $pomelo;
+                font-size: 18px;
+                font-weight: 700;
+                &:hover {
+                    background-color: $dpomelo;
+                    border-color: $dpomelo;
+                }
+            }
+        }
+        .ali-pay {
+            padding: 100px 0 79px 300px;
+            color: $mwgy;
+            ol {
+                padding-bottom: 102px;
+            }
+            li {
+                padding-bottom: 15px;
+                font-size: 16px;
+            }
+            a {
+                display: block;
+                margin-left: 255px;
+                width: 178px;
+                height: 45px;
+                padding: 0;
+                line-height: 45px;
+                color: $bw;
+                background-color: $pomelo;
+                border-color: $pomelo;
+                font-size: 18px;
+                font-weight: 700;
+                &:hover {
+                    background-color: $dpomelo;
+                    border-color: $dpomelo;
+                }
+            }
+        }
+        .wechat-pay {
+            padding: 100px 0 105px 300px;
+            color: $mwgy;
+            ol {
+                padding-bottom: 71px;
+            }
+            li {
+                padding-bottom: 15px;
+                font-size: 16px;
+            }
+            img {
+                display: block;
+            }
+            p {
+                padding-left: 172px;
+            }
+            .cashiser-codeImg {
+                background: transparent url('../img/loading.gif') 50% 50% no-repeat;
+                margin: 0 0 20px 0;
+            }
+        }
+        .uni-pay {
+            padding: 59px 52px 99px 56px;
+            dl {
+                padding-bottom: 24px;
+            }
+            dt {
+                padding-bottom: 26px;
+                font-size: 18px;
+                color: $dwgy;
+                em {
+                    color: $pomelo;
+                }
+            }
+            dd {
+                padding-bottom: 14px;
+                font-size: 16px;
+                color: $mwgy;
+            }
+            table,
+            th,
+            td {
+                border: 1px solid $line;
+                border-collapse: collapse;
+                vertical-align: middle;
+            }
+            table {
+                width: 100%;
+            }
+            th {
+                height: 59px;
+                color: $mwgy;
+                font-size: 18px;
+                font-weight: 700;
+                background-color: $lbgy;
+            }
+            td {
+                height: 58px;
+                padding-left: 30px;
+                color: $dwgy;
+                &:first-child{
+                    padding-left: 20px;
+                }
+            }
+            img {
+                padding-right: 8px;
+                vertical-align: middle;
+            }
+
+        }
+    }
+}
+
+.cashier-head {
+    background-color: $bw;
+    border: 1px solid $line;
+    table {
+        @include box-center($w1);
+    }
+    td {
+        height: 58px;
+        vertical-align: middle;
+        font-size: 16px;
+        color: $mwgy;
+    }
+    em {
+        color: $pomelo;
+    }
+    .col1 {
+        width: 67px;
+    }
+    .col2 {
+        width: 187px;
+    }
+    .col3 {
+        width: 80px;
+    }
+    .col4 {
+        width: 127px;
+    }
+    .col5 {
+        width: 84px;
+    }
+    .col6 {}
+}
+
+.ui-info-close {
+    top: 0;
+}
+
+.ui-info {
+    .cashiser-alibox {
+        display: block;
+    }
+}
+
+.cashiser-alibox {
+    display: none;
+    width: 540px;
+    height: 255px;
+    background-color: $bw;
+    border: 1px solid $line;
+    .cab-title {
+        background-color: $lbgy;
+        padding: 12px 18px;
+        color: $mwgy;
+        font-weight: bold;
+        margin-bottom: 46px;
+    }
+    .cab-content {
+        text-align: center;
+        color: $mwgy;
+        margin-bottom: 50px;
+    }
+    .cab-btnGroup {
+        text-align: center;
+        .btn {
+            margin: 0 10px;
+        }
+    }
+}
+
+.cashiser-success {
+    display: none;
+    background-color: $bw;
+    border: 1px solid $line;
+    box-shadow: 0px 1px 2px 0px rgba(7, 0, 2, 0.05);
+    width: 1208px;
+    padding: 100px 0 60px;
+    margin: 0 auto;
+    color: $mwgy;
+    p {
+        text-align: center;
+    }
+    .cs-line1 {
+        margin-bottom: 40px;
+    }
+    .cs-line2 {
+        margin-bottom: 30px;
+        font-size: 18px;
+    }
+    .cs-line3 {
+        padding: 36px 40px 36px 60px;
+        font-size: 16px;
+        width: 330px;
+        background-color: $lbgy;
+        margin: 0 auto 30px;
+        span {
+            margin-right: 20px;
+        }
+    }
+    .cs-line5 {
+        margin-bottom: 20px;
+    }
+    .cs-line6 {
+        .btn {
+            margin: 0 10px;
+        }
+    }
+}

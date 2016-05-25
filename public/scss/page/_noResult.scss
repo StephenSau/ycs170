@@ -1,0 +1,203 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+body{
+	background-color: $lbgy;
+}
+.noResult-box{
+	width: $w1;
+	margin: 0 auto 100px;
+}
+
+.noResult-content{
+	width: 788px;
+	float: left;
+	padding: 80px 60px;
+	background-color: $bw;
+	border: 1px solid $line;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	.nr-line1{
+		font-size: 20px;
+		color: $mwgy;
+		margin-bottom: 25px;
+		line-height: 1.5em;
+		em{
+			color: $pomelo;
+		}
+	}
+
+	.nr-line2,
+	.nr-line3{
+		line-height: 1.5em;
+		color: $lwgy;
+		a{
+			@include links($blue);
+		}
+	}
+
+	.nr-line3{
+		padding-bottom: 60px;
+		border-bottom: 1px solid $line;
+		margin-bottom: 60px;
+	}
+
+	.nr-line4{
+		color: $lwgy;
+		margin-bottom: 25px;
+		padding-left: 12em;
+		line-height: 1.5em;
+		text-indent: -12em;
+		a{
+			@include links($blue, $pomelo);
+		}
+	}
+
+	.nr-line5{
+		color: $lwgy;
+		padding-left: 12em;
+		a{
+			@include links($lwgy);
+			margin-right: 20px;
+		}
+	}	
+}
+
+.noResult-aside{
+	width: 280px;
+	float: right;
+
+	.ng-item{
+		float: left;
+		overflow: hidden;
+		position: relative;
+		>a{
+			display: block;
+			.ng-item-title{
+				position: absolute;
+				display: block;
+				font-size: 20px;
+				color: $bw;
+				text-shadow: 0 1px 0px rgba(0, 0, 0, .5);
+				width: 100%;
+				bottom: 0px;
+				padding-top: 65px;
+				height: 35px;
+				text-align: center;
+				left: 0;
+				background: url('../img/black-opacity-line.png') 0 100% repeat-x;
+			}
+			.ng-item-btn{
+				background: url('../img/black-opacity60-bg.png') 0 0 repeat;
+    			-webkit-transition: top 0.5s ease-out;
+			    -o-transition: top 0.5s ease-out;
+			    transition: top 0.5s ease-out;
+				position: absolute;
+				text-align: center;
+				top: 100%;
+				width: 100%;
+				height: 100%;
+				em{
+					position: relative;
+					background-color: $pomelo;
+					padding: .5em 1em;
+					top: 46%;
+					color: $bw;
+				}
+			}
+			&:hover{
+				.ng-item-btn{
+					top: 0;
+				}
+			}
+		}
+	}
+
+	.ng-move{
+		img{
+			width: 100%;
+			transition: all 0.5s ease 0s;
+		}
+		>a{
+			&:hover{
+				img{
+					transform: translateY(-10px);
+				}
+			}
+		}
+	}
+
+	.ng-item-03{
+		width: 280px;
+		height: 210px;
+		margin-bottom: 20px;
+	}
+
+	.ng-item-06{
+		width: 280px;
+		height: 140px;
+		background-color: $bw;
+		li{
+			
+			width: 280px;
+			height: 140px;
+			a{
+				display: block;
+				padding: 20px 0 0 20px;
+				height: 120px;
+				background-color: $bw;
+				&:hover{
+					.promo-bulge{
+						background-color: $pomelo;
+						color: $bw;
+					}
+				}
+				h4{
+					color: $dwgy;
+					font-size: 16px;
+					margin-bottom: 10px;
+				}
+				.promo-bulge{
+					width: auto;
+					background-color: $bw;
+					color: $pomelo;
+					border: 1px solid $pomelo;
+					padding: 0 3px;
+				}
+				p{
+					margin-bottom: 8px;
+					font-size: 12px;
+					color: #969696;
+				}
+			}
+		}
+
+		.promo-1{
+			a{
+				background: url('../img/promo-1-bg.png') 130px 100% no-repeat;
+			}
+		}
+
+		.promo-2{
+			a{
+				background: url('../img/promo-2-bg.png') 170px 100% no-repeat;
+			}
+		}
+
+		.promo-3{
+			a{
+				background: url('../img/promo-3-bg.png') 100% 100% no-repeat;
+			}
+		}
+
+		.promo-4{
+			a{
+				background: url('../img/promo-4-bg.png') 130px 100% no-repeat;
+			}
+		}
+	}
+}
+
+
+
+
+

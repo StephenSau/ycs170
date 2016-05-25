@@ -1,0 +1,66 @@
+@import 'variable';
+@import 'maxin';
+
+.ng-item-06{
+	width: 280px;
+	height: 140px;
+	background-color: $bw;
+	li{
+		
+		width: 280px;
+		height: 140px;
+		a{
+			display: block;
+			padding: 20px 0 0 20px;
+			height: 120px;
+			background-color: $bw;
+			&:hover{
+				.promo-bulge{
+					background-color: $pomelo;
+					color: $bw;
+				}
+			}
+			h4{
+				color: $dwgy;
+				font-size: 16px;
+				margin-bottom: 10px;
+			}
+			.promo-bulge{
+				width: auto;
+				background-color: $bw;
+				color: $pomelo;
+				border: 1px solid $pomelo;
+				padding: 0 3px;
+			}
+			p{
+				margin-bottom: 8px;
+				font-size: 12px;
+				color: #969696;
+			}
+		}
+	}
+
+	.promo-1{
+		a{
+			background: url('../img/promo-1-bg.png') 130px 100% no-repeat;
+		}
+	}
+
+	.promo-2{
+		a{
+			background: url('../img/promo-2-bg.png') 170px 100% no-repeat;
+		}
+	}
+
+	.promo-3{
+		a{
+			background: url('../img/promo-3-bg.png') 100% 100% no-repeat;
+		}
+	}
+
+	.promo-4{
+		a{
+			background: url('../img/promo-4-bg.png') 130px 100% no-repeat;
+		}
+	}
+}

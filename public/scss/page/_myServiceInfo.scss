@@ -1,0 +1,323 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+$pcSpriteUrl: url('../img/pc-sprite.png');
+$pcSpritePos:
+	(0 0) (-40px 0) (-80px 0) (0 -40px) (-10px -40px)
+	(-30px -40px) (-50px -40px) (-70px -40px) (-90px -40px) (-100px -40px)
+	(-110px -40px) (0 -70px) (0 -130px) (-50px -130px) (-100px -130px)
+	(0 -180px) (-50px -180px) (-100px -180px) (0 -230px) (-20px -230px)
+	(-40px -230px) (-50px -230px) (-60px -230px) (-70px -230px) (-120px 0); 
+@mixin pcSprite($position: 1, $width: 20px, $height: 20px, $display: inline-block){
+	display: $display;
+	width: $width;
+    height: $height;
+    background-image: $pcSpriteUrl;
+    background-position: nth($pcSpritePos, $position);
+}
+
+.container{
+	background-color: $lbgy;
+	padding-bottom: 100px;
+}
+
+.content{
+	width: $w1;
+	margin: 0 auto;
+}
+
+.myServiceInfo-box{
+	width: $w10;
+	float: right;
+}
+
+.msi-header{
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	background-color: #e5f0f8;
+	border: 1px solid $line;
+	border-bottom: none;
+	color: $mwgy;
+	overflow: hidden;
+	padding: 20px;
+	h1{
+		float: left;
+		font-size: 16px;
+		max-width: 455px;
+		margin-right: 20px;
+		line-height: 30px;
+		font-weight: bold;
+	}
+	.msi-summary{
+		float: right;
+		line-height: 30px;
+		>span{
+			margin-right: 30px;
+			em{
+				color: $pomelo;
+			}
+		}
+	}
+	.ms-btnGroup{
+		.btn{
+			min-width: 4em;
+		}
+	}
+}
+
+.msi-steps-box{
+	border: 1px solid $line;
+	border-top: none;
+	background-color: $bw;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	color: $lwgy;
+	padding: 20px 19px;
+	margin-bottom: 20px;
+	table{
+		width: 100%;
+		border: 1px solid $line;
+	}
+	
+	th{
+		background-color: $lbgy;
+		padding: 5px 5px;
+		text-align: center; 
+		color: $mwgy;
+		&:first-child{
+			text-align: left;
+			padding-left: 65px;
+		}
+	}
+
+	td{
+		text-align: center;
+		padding: 15px 0;
+		color: $lwgy;
+		&:first-child{
+			text-align: left;
+			padding-left: 20px;
+		}
+	}
+
+	tr{
+		&.first-child{
+			td{
+				padding-top:30px;
+			}
+		}
+		&.last-child{
+			td{
+				padding-bottom:30px;
+			}
+		}
+		&.msi-step-past{
+			td{
+				color: $dwgy;
+			}
+			i{
+				background-position: 0 0;
+			}
+			&.active{
+				td{
+					color: $dwgy;
+				}
+				i{
+					background-position: -40px 0;
+					color: $blue;
+				}
+			}
+		}
+	}
+
+	i{
+		line-height: 35px;
+		text-align: center;
+		margin-right: 10px;
+		color: $bw;
+		@include pcSprite(3, 35px, 35px);
+	}
+}
+
+.myServiceInfo{
+	border: 1px solid $line;
+	background-color: $bw;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	color: $lwgy;
+	padding: 30px 19px 15px;
+	h2{
+		font-size: 24px;
+		color: $lwgy;
+		margin-bottom: 25px;
+	}
+	h3{
+		color: $dwgy;
+		padding-top: 28px;
+		margin-top: 30px;
+		font-weight: bold;
+		margin-bottom: 13px;
+		border-top: 1px dotted $line;
+	}
+	h2+h3{
+		padding-top: 0;
+		margin-top: 0;
+		border-top: none;
+	}
+
+	li{
+		color: $mwgy;
+		margin-bottom: 15px;
+	}
+
+	.msi-srname{
+		a{
+			margin-right: 10px;
+			@include links($mwgy);
+		}
+	}
+}
+
+
+.orderList-blockBox{
+	padding: 50px 30px;
+	width: 555px;
+
+	.olbb-step{
+		overflow: hidden;
+		width: 100%;
+		background-color: $blue;
+		border-radius: 10px;
+		padding: 2px 0;
+		margin-bottom: 24px;
+		li{
+			color: $bw;
+			position: relative;
+			width: 25%;
+			float: left;
+			text-align: center;
+			&:first-child{
+				&:before{
+					content: "";
+				}
+			}
+			&:before{
+				content: ">";
+				position: absolute;
+				left: -3px;
+				top: 0;
+			}
+		}
+	}
+
+	.olbb-info{
+		line-height: 30px;
+		color: $mwgy;
+		li{
+			margin-bottom: 30px;
+			padding-left: 16px;
+			text-indent: -16px;
+		}
+	}
+
+	.olbb-btnLine{
+		text-align: center;
+		.btn{
+			margin: 0 30px;
+			width: 94px;
+			&:hover{
+				color: $blue;
+				border-color: $blue;
+				background-color: $bw;
+			}
+		}
+
+		.btn-primary{
+			color: $bw;
+			border-color: $blue;
+			background-color: $blue;
+		}
+
+		.btn-default{
+			color: $lwgy;
+		}
+	}
+}
+
+.ui-info-close{
+	top: 0;
+}
+
+.message-box{
+	padding-bottom: 50px;
+	h3{
+		background-color: $lbgy;
+		color: $dwgy;
+		padding: 10px 20px;
+		font-size: 14px;
+		margin-bottom: 40px;
+	}
+}
+
+.confirm-box{
+	h3{
+		color: $mwgy;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	.mb-textLine{
+		color: $dwgy;
+		width: 658px;
+		text-align: center;
+		margin-bottom: 12px;
+		
+	}
+	.mb-btnline{
+		text-align: center;
+		margin-top: 40px;
+		.btn{
+			margin: 0 10px;
+		}
+	}
+}
+
+.finish-box{
+	.mb-iconLine{
+		color: $mwgy;
+		padding: 0 60px;
+		width: 260px;
+		font-size: 16px;
+		text-align: center;
+		margin-bottom: 20px;
+		&:before{
+			content: " ";
+			@include pcSprite(25, 40px, 40px, inline-block);
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+	}
+	.mb-btnline{
+		text-align: center;
+		margin-top: 40px;
+		.btn{
+			min-width: 4em;
+			margin: 0 10px;
+		}
+	}
+}
+
+.cancel-box{
+	select{
+		width: 265px;
+		height: 34px;
+	}
+	.mb_optline{
+		padding-left: 20px;
+		margin-bottom: 30px;
+		.btn-default{
+			min-width: 4em;
+		}
+	}
+
+	.consult_line{
+		color: $mwgy;
+		padding: 0 20px;
+	}
+}

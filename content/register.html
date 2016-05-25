@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>用户注册_壹财税</title>
+    <meta name="keywords" content="..." />
+    <meta name="description" content="..." />
+    <link type="text/css" rel="stylesheet" href="/public/css/register.css" />
+</head>
+<body>
+	<!--=include ../tpl/_topBar.html -->
+	
+	<!-- head wrap start -->
+	<div class="head-wrap">
+		<div class="head-wrap-inner clearfix">
+			<h2 class="hw-logo">
+				<a href="/">
+					<img src="../public/img/logo-3.png" width="108" height="30" />
+				</a>
+			</h2>
+			<h3 class="hw-title">欢迎注册</h3>
+			<div class="hw-searchBox">
+				<form id="headWrapSearchForm" action="/article/tag.htm" method="get">
+					<label class="icon hwsb-title" for="hwsb-text">搜索</label>
+					<input name="querycondition" type="text" class="hwsb-text" id="hwsb-text" data-role="search" data-menu-id="hwsb-serviceList" data-words-id="hwsb-hotSearch" /><button class="hwsb-button">搜索</button>
+				</form>
+				<ul class="hwsb-serviceList" id="hwsb-serviceList">
+					<li>
+						<a href="#">
+							<em>工商服务</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<em>财会服务</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<em>税务服务</em>
+							<span>约有 5 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<em>行政许可</em>
+							<span>约有 10 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<em>商标专利</em>
+							<span>约有 6 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<em>人事服务</em>
+							<span>约有 5 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<em>社保公积金</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+				</ul>
+				<!-- <p class="hwsb-hotSearch" id="hwsb-hotSearch">
+					<a href="#">0元开公司</a>
+				</p> -->
+			</div>
+		</div>
+	</div>
+	<!-- head wrap end-->
+
+	<div class="crumbs-box">
+		<div class="crumbs-box-inner">
+			<p class="crumbs">
+				<a href="/">首页</a> &gt;
+				<span>新用户注册</span>
+			</p>
+		</div>
+	</div>
+	<div class="container">
+		<div id="register-form" class="content clearfix">
+			<p class="login-line">已经注册了，我要<a href="/app/login.html">登录</a></p>
+			<form action="/user/registuser" id="register_form" name="registerForm">
+				<ol>
+					<li><label class="form-title" for=""><em>*</em>用户名</label><input class="form-text" type="text" maxlength="20" name="username" id="" data-rule="checkAccount"></li>
+					<li><label class="form-title" for=""><em>*</em>密码</label><input data-rule="checkPassword" class="form-text" type="password" name="password" maxlength="20" id=""></li>
+					<li><label class="form-title" for=""><em>*</em>确认密码</label><input class="form-text" type="password" name="confirmpassword" id="" maxlength="20" data-rule="checkConfirm"></li>
+					<li><label class="form-title" for=""><em>*</em>手机号码</label><input class="form-text" type="text" name="mobile" maxlength="11" id="rb_phone" data-rule="checkTelphone"></li>
+					<li class="rf-col2"><label class="form-title" for=""><em>*</em>验证码</label><input class="form-text" type="text" name="validateCodeImg" data-rule="checkPhoneCode" id=""><img id="rb-imgCode" src="../public/img/code-sample.png" alt="" width="114" height="36" /><a href="javascript:;" id="rb-changeImgCode">换一换</a></li>
+					<li class="rf-col2"><label class="form-title" for=""><em>*</em>短信验证码</label><input class="form-text" type="text" name="validatecode" data-rule="checkPhoneCode" maxlength="4" id="rb_code"><a id="rb_getPhoneCodeBtn" href="javascript:;" class="btn btn-default">获取验证码</a></li>
+					<li class="rf-noTitle"><span class="form-choice-group"><input type="checkbox" data-rule="checkEmpty" name="agree" id="rAgree"><label for="rAgree">我已阅读并同意<a href="/app/agreement.html" target="_blank">《用户注册协议》</a>和<a href="/app/privacy.html" target="_blank">《隐私保护协议》</a></label></span></li>
+					<li class="rf-noTitle"><button class="btn btn-primary" type="submit">注册</button></li>
+				</ol>
+			</form>
+		</div>
+		<div id="register-success" class="content register-success clearfix">
+			<p class="rs-line1"><img src="../public/img/order-ok.png" /></p>
+			<p class="rs-line2">恭喜您注册成功！</p>
+			<p class="rs-line3"><span id="rs-number">5</span>秒后自动跳转到登录前页面</p>
+			<p class="rs-line4">
+				<a href="/app/settings.html" class="btn btn-default">完善用户信息</a>
+				<a href="/" class="btn btn-default">返回首页</a>
+			</p>
+		</div>
+	</div>
+	
+	<!--=include ../tpl/_advantage.html -->
+	
+	<!--=include ../tpl/_footer.html -->
+	<!--=include ../tpl/_footerFloat.html -->
+	<script type="text/x-handlebars-template" id="findcoupon_template">
+		<div class="register-coupon" id="register-coupon">
+			<p class="rc-title">注册成功！恭喜您获得<span>{{this.length}}</span>张优惠券！</p>
+			<div class="rc-box">
+			<ul class="rc-list clearfix" id="rc-list">
+		        {{#each this}}
+		        <li>
+		            <div class="coupon {{couponClass}}">
+		                <p class="coupon-title">
+		                    <em>{{couponType}}</em>
+							{{#compare couponType "===" "折扣"}}
+								<strong>{{key}}</strong>%
+							{{/compare}}
+							{{#compare couponType "===" "直减"}}
+								<strong>{{key}}</strong>元
+							{{/compare}}
+							{{#compare couponType "===" "一口价"}}
+								<strong>{{key}}</strong>元
+							{{/compare}}
+		                </p>
+		                <p class="coupon-intro">{{tips}}</p>
+		                <p class="coupon-opt">
+		                	<span class="coupon-range">
+		                    {{couponName}}
+								{{#compare type "===" 20}}
+								{{#compare servicerSize ">" 1}}
+								<span class="coupon-shopList">
+									<span class="csl-title">仅限以下合作商户：</span>
+									{{#each servicerList}}
+									{{#compare @index "<" 6}}
+									<span class="csl-shop"><em>{{nickname}}</em><a href="#" target="_blank">进入店铺</a></span>
+									{{/compare}}
+									{{/each}}
+									{{#compare servicerList.length ">" 6}}
+									<span class="csl-moreLine clearfix">及其他<em>{{servicerSize}}</em>家店铺 <a href="#" target="_blank">查看全部</a></span>
+									{{/compare}}
+								</span>
+								{{/compare}}
+							{{/compare}}
+							</span>
+		                </p>
+		            </div>
+		        </li>
+		        {{/each}}
+			</ul>
+			</div>
+			<p class="rc-tips">您可在用户中心”我的卡券“查看优惠券，关闭继续购物</p>
+		</div>
+	</script>
+    <!--=include ../tpl/_thirdpartyFooter.html -->
+<!--=include ../tpl/_commonjs.html -->
+    <script type="text/javascript" src="/public/js/register.js"></script>
+</body>
+</html>

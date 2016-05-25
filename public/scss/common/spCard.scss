@@ -1,0 +1,441 @@
+/*
+	Service Provider (vendor) Card
+*/
+
+@import 'variable';
+@import 'maxin';
+
+// Global: The tiny triangle with shadow
+@mixin spCardTriangle {
+  @include sprite(81, 14px, 22px, inline-block);
+}
+
+// Global: Stars --------
+
+@mixin halfStar {
+	background-position: -220px -80px;
+}
+
+@mixin fullStar {
+	background-position: -200px -80px;
+}
+
+@mixin calcStars($value){
+	@if $value <= 0 {
+		// Do nothing here
+
+	}	@else if $value <= 5 {
+		.star-1 { @include halfStar; }
+	
+	} @else if $value <= 10 {
+		.star-1 { @include fullStar; }
+	
+	} @else if $value <= 15 {
+		.star-1 { @include fullStar;	}
+		.star-2 { @include halfStar;	}
+
+	} @else if $value <= 20 {
+		.star-1, 
+		.star-2 { @include fullStar;	}
+
+	} @else if $value <= 25 {
+		.star-1, 
+		.star-2 { @include fullStar;	}
+		.star-3 { @include halfStar;	}
+
+	} @else if $value <= 30 {
+		.star-1, 
+		.star-2,
+		.star-3 { @include fullStar;	}
+
+	} @else if $value <= 35 {
+		.star-1, 
+		.star-2,
+		.star-3 { @include fullStar;	}
+		.star-4 { @include halfStar;	}
+
+	} @else if $value <= 40 {
+		.star-1, 
+		.star-2,
+		.star-3,
+		.star-4 { @include fullStar;	}
+
+	} @else if $value <= 45 {
+		.star-1, 
+		.star-2,
+		.star-3,
+		.star-4 { @include fullStar;	}
+		.star-5 { @include halfStar;	}
+	} @else if $value <= 50 {
+		.star-1, 
+		.star-2,
+		.star-3,
+		.star-4,
+		.star-5 { @include fullStar;	}
+
+	} @else {
+		// Do nothing here
+	}
+}
+
+// -------- / Global: Stars
+
+@mixin spCard {
+  float:left;
+  position:relative;
+  width:240px;
+  margin:0 20px 20px 0;
+  padding:12px 19px 19px;
+  border:1px solid $line;
+  background-color:$bw;
+  transition:all .8s;
+  box-shadow: $gbboxShadow;
+
+  &:hover{
+    background-color: #fafafa;
+
+    .detail{
+      display:block;
+    }
+
+    .info {
+    	.name {
+        color:$blue;
+    	}
+    }
+
+  }
+
+	.trangle{
+		@include spCardTriangle;
+	}
+
+  .brand{
+    width:240px;
+    height: 155px;
+    display:table-cell;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #fff;
+
+    img {
+      
+    }
+  } //.brand
+
+  .info{
+    position:relative;
+    padding: 20px 0;
+    border-bottom:1px solid $line;
+
+    .name{
+      @include ellipsis;
+      max-width: 150px;
+      font-size:16px;
+      padding-bottom:7px;
+      a{
+        color:$dwgy;
+      }
+    }
+
+    .point{
+      color:$pomelo;
+    }
+
+    // ----- Stars
+    .star{
+      vertical-align: top;
+      margin-right: 5px;
+      @include sprite(27, 14px, 14px);
+    }
+
+		@each $starLevel in 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 {
+		  .star-v-#{$starLevel}{
+		    @include calcStars($starLevel);
+		  }
+		}
+		// ----- end of Stars
+
+    .unit{
+      position:absolute;
+      right: 0;
+      bottom: 22px;
+
+      p{
+        color:$lwgy;
+        &:first-child{
+          padding-bottom:6px;
+        }
+        em{
+          color:$pomelo;
+        }
+      }
+    }
+  } //.info
+
+  .special{
+    padding:20px 0;
+    height:22px;
+    
+    span{
+      display:inline-block;
+      margin-right:7px;
+      width:20px;
+      height:20px;
+      text-align:center;
+      line-height:20px;
+      border-width:1px;
+      border-style:solid;
+      border-radius:2px;
+      cursor:pointer;
+    }
+    .xin{
+      color:$pomelo;
+      border-color:$pomelo;
+      &:hover{
+        background-color:$pomelo;
+        color:$bw;
+      }
+    }
+    .hui{
+      color:$dpomelo;
+      border-color:$dpomelo;
+      &:hover{
+        background-color:$dpomelo;
+        color:$bw;
+      }
+    }
+    .zan{
+      color:#ddba2e;
+      border-color:#ddba2e;
+      &:hover{
+        background-color:#ddba2e;
+        color:$bw;
+      }
+    }
+    .ying{
+      color:#3d83c5;
+      border-color:#3d83c5;
+      &:hover{
+        background-color:#3d83c5;
+        color:$bw;
+      }
+    }
+    .shi{
+      color:#82b442;
+      border-color:#82b442;
+      &:hover{
+        background-color:#82b442;
+        color:$bw;
+      }
+    }
+    .zhuan{
+      color:#986ab1;
+      border-color:#986ab1;
+      &:hover{
+        background-color:#986ab1;
+        color:$bw;
+      }
+    }
+  } //.special
+
+  .business{
+    height:60px;
+    width:240px;
+    overflow: hidden;
+
+    span{
+      float:left;
+      margin:0 10px 10px 0;
+      padding:0 7px;
+      font-size: 12px;
+      height:20px;
+      line-height:20px;
+      color:#3873aa;
+      background-color:#e5f0f8;
+    }
+  } //.business
+
+  .sp-btn{
+    margin-top:10px;
+    padding-top:19px;
+    border-top:1px solid $line;
+
+    a{
+      padding:3px 20px;
+      text-align: center;
+      &.btn-primary{
+        padding:3px 7px;
+        color:$mwgy;
+        border-color:transparent;
+        margin-right:37px;
+        background-color:transparent;
+        &:hover{
+          color:$bw;
+          background-color:#1471c8;
+          border-color:#1471c8;
+        }
+      }
+      &.btn-shop{
+        color:$bw;
+        background-color:$pomelo;
+        border-color:$pomelo;
+        font-family: $ffa;
+        &:hover{
+          color:$bw;
+          background-color:$dpomelo;
+          border-color:$dpomelo;
+        }
+      }
+    }
+  } //.sp-btn
+
+  .badge{
+    position:absolute;
+    top: -1px;
+    left: -1px;
+    &.hot{
+      @include sprite(71,50px,50px);
+    }
+    &.recommend{
+      @include sprite(72,50px,50px);
+    }
+  } //.badge
+
+  &:hover{
+    .cancelBtn{
+      display: block;
+    }
+  }
+
+  .cancelBtn{
+    display: none;
+    position:absolute;
+    top:5px;
+    right:5px;
+    font-size: 12px;
+    padding: 3px 10px;
+    background-color: #e6e6e6;
+    color: $mwgy;
+    &:hover{
+      color: $blue;
+    }
+  }
+
+  .detail{
+    display:none;
+    position:absolute;
+    left:278px;
+    top:-1px;
+    z-index:1000001;
+    border:1px solid $line;
+    padding:19px 20px 22px;
+    width:260px;
+    background-color:$bw;
+    box-shadow: 0.5px 0.866px 4px 0px rgba( 7, 0, 2,.1 );
+    > h3{
+      padding-bottom:18px;
+      border-bottom:1px solid $line;
+      color:$dwgy;
+      font-size:16px;
+    }
+    ul{
+      padding:21px 0 0 11px;
+      height:auto;
+    }
+    li{
+      line-height:22px;
+      color:$lwgy;
+      padding-bottom:10px;
+
+    }
+    span{
+      margin-right:4px;
+      float:left;
+      
+      &+em{
+        float:left;
+        width:223px;
+      }
+    }
+    .address,
+    .connect{
+      border-color: $mbgy;
+      width:12px;
+      height:12px;
+      padding:3px;
+      vertical-align: middle;
+      i{
+        text-indent:-9999px;
+      }
+    }
+    .address{
+      width:10px;
+      height:14px;
+      padding:2px 4px;
+      i{
+        @include sprite(65,10px,14px);
+      }
+    }
+    .connect{
+      i{
+        @include sprite(66,12px,12px);
+      }
+    }
+    .figure{
+      position:relative;
+      margin-top: 15px;
+      padding-top:16px;
+      padding-left:83px ;
+      border-top:1px solid $line;
+      .figcaption{
+        position:relative;
+        margin-right:9px;
+        min-height: 60px; // fallback when expert description is too short (< 2 lines)
+      }
+      img{
+        position:absolute;
+        height: 65px;
+        width: 65px;
+        top:14px;
+        left:0;
+        border:1px solid $line;
+        border-radius:50%;
+      }
+      h3{
+        max-width:90px;
+        padding-bottom:7px;
+        font-size: 16px;
+        color:$mwgy;
+      }
+      em{
+        position:absolute;
+        top:5px;
+        right:0;
+        color:$blue;
+        font-size:12px;
+      }
+      p{
+        font-size:12px;
+        color:$lwgy;
+        line-height:18px;
+        max-height: 36px;
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        
+        /* number of lines to show */
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+    }
+
+    .trangle{
+      position:absolute;
+      top:88px;
+      left:-14px;
+    }
+  } //.detail
+
+}

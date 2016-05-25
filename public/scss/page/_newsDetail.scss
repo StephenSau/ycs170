@@ -1,0 +1,200 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+$newsSpriteUrl: url('../img/news-sprite.png');
+$newsSpritePos:
+	(0 0) (-20px 0) (-40px 0) (-60px 0) (-80px 0)
+	(-100px 0) (100% -40px) (100% -60px) (100% -80px) (100% -100px)
+	(100% -120px); 
+@mixin newsSprite($position: 1, $width: 20px, $height: 20px, $display: inline-block){
+	display: $display;
+	width: $width;
+    height: $height;
+    background-image: $newsSpriteUrl;
+    background-position: nth($newsSpritePos, $position);
+}
+
+body{
+	background-color: $lbgy;
+}
+
+.news-section{
+	width: $w1;
+	margin: 0 auto 100px;
+}
+
+.news-content{
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	width: 665px;
+	padding: 100px 121px;
+	float: left;
+	border: 1px solid $line;
+	background-color: $bw;
+	h1{
+		font-size: 30px;
+		text-align: left;
+		color: $dwgy;
+		line-height: 42px;
+		padding-bottom: 34px;
+		margin-bottom: 10px;
+		border-bottom: 1px solid $line;
+	}
+	.nc-summary{
+		overflow: hidden;
+		color: $dbgy;
+		margin-bottom: 60px;
+		.nc-info{
+			font-size: 12px;
+			float: left;
+			span{
+				margin-right: 20px;
+			}
+		}
+		.nc-count{
+			float: right;
+			font-size: 12px;
+		}
+		.icon{
+			&:before{
+				content: " ";
+				@include newsSprite(3, 17px, 11px);
+				margin: 0 5px 0 7px;
+			}	
+		}
+		.icon-good{
+			&:before {
+				@include newsSprite(4, 15px, 12px);
+			}
+		}
+	}
+	.nc-photo{
+		text-align: center;
+		margin-bottom: 60px;
+		img{
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.nc-aritle{
+		font-family: 'Hiragino Sans GB', 'Lantinghei SC', 'Microsoft Yahei', STXihei, 华文细黑, SimSun, 宋体, Heiti, sans-serif;
+		font-size: 16px;
+		letter-spacing: 0.5px;
+		line-height: 30px;
+		color: $mwgy;
+		padding-bottom: 18px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid $line;
+		p{
+			margin-bottom: 30px;
+		}
+		h2,h3,h4,h5{
+			font-weight: bold;
+			color: $dwgy;
+			margin-bottom: 42px;
+			text-indent: 2em;
+			line-height: 30px;
+		}
+		a{
+			color: $blue;
+			&:hover{
+				color: $blue;
+			}
+		}
+		i,em{
+			font-style: italic;
+		}
+		b,strong{
+			font-weight: bold;
+		}
+		img{
+			max-width: 100%;
+			height: auto;
+		}
+
+	}
+
+	.nc-footer{
+		margin-bottom: 45px;
+		.nc-share{
+			float: left;
+			margin-top: 3px;
+			a{
+				margin-left: 0;
+				margin-right: 15px;
+			}
+		}
+
+		.nc-like{
+			border: 1px solid $line;
+			color: $dbgy;
+			background-color: $bw;
+			padding:6px 12px 3px 12px;
+			font-size: 12px;
+			@include detrans;
+			&.nc-disabled{
+				border-color: $bw;
+				color: $dbgy;
+				&:hover{
+					border-color: $bw;
+					color: $dbgy;
+					&:before{
+						background-position: nth($newsSpritePos, 4);
+					}
+				}
+			}
+			&:hover{
+				border-color: $blue;
+				color: $blue;
+				&:before{
+					background-position: nth($newsSpritePos, 5);
+				}
+				
+			}
+			&:before{
+				content: " ";
+				@include newsSprite(4, 15px, 12px);
+				margin-right: 5px;
+			}
+		}
+
+		.nc-links{
+			float: right;
+			a{
+				padding: 5px 10px;
+				background-color: $lbgy;
+				display: inline-block;
+				color: $lwgy;
+				&:hover{
+					color: $blue;
+				}
+			}
+		}
+	}
+
+	.nc-relate{
+		h3{
+			color: $dbgy;
+			font-size: 18px;
+			margin-bottom: 20px;
+		}
+		li{
+			margin-bottom: 18px;
+
+			&:before{
+				content: " ";
+				@include newsSprite(6, 4px, 4px);
+				position: relative;
+				top: -4px;
+			}
+		}
+		a{
+			@include links;
+		}
+	}
+}
+
+body .news-aside{
+	height: auto;
+}

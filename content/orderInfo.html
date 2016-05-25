@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>订单详情_壹财税</title>
+    <meta name="keywords" content="..." />
+    <meta name="description" content="..." />
+    <link type="text/css" rel="stylesheet" href="/public/css/orderInfo.css" />
+<!--=include ../tpl/_thirdpartyHeader.html -->
+</head>
+<body>
+	<!--=include ../tpl/_topBar.html -->
+	<!-- head wrap start -->
+	<div class="head-wrap">
+		<div class="head-wrap-inner clearfix">
+			<h2 class="hw-logo">
+				<a href="/">
+					<img src="../public/img/logo-3.png" width="108" height="30" />
+				</a>
+			</h2>
+			<h3 class="hw-title">订单详情</h3>
+			<div class="hw-searchBox">
+				<form id="headWrapSearchForm" action="/article/tag.htm" method="get">
+					<label class="icon hwsb-title" for="hwsb-text">搜索</label>
+					<input name="querycondition" type="text" class="hwsb-text" id="hwsb-text" data-role="search" data-menu-id="hwsb-serviceList" data-words-id="hwsb-hotSearch" /><button class="hwsb-button">搜索</button>
+				</form>
+				<ul class="hwsb-serviceList" id="hwsb-serviceList">
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>工商服务</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>财会服务</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>税务服务</em>
+							<span>约有 5 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>行政许可</em>
+							<span>约有 10 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>商标专利</em>
+							<span>约有 6 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>人事服务</em>
+							<span>约有 5 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>社保公积金</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+				</ul>
+				<!-- <p class="hwsb-hotSearch" id="hwsb-hotSearch">
+					<a href="#">0元开公司</a>
+				</p> -->
+			</div>
+		</div>
+	</div>
+	<!-- head wrap end-->
+
+	<div class="crumbs-box">
+		<div class="crumbs-box-inner">
+			<p class="crumbs">
+				<a href="/">首页</a> &gt;
+				<a href="/app/orderList.html">我的订单</a> &gt;
+				<span>订单详情</span>
+			</p>
+		</div>
+	</div>
+	<!--=include ../tpl/_pcBanner.html -->
+	<div class="container">
+		<div class="content clearfix">
+			<!--=include ../tpl/_pcNav.html -->
+			<!-- order info start -->
+			<div class="orderInfo-box">
+				<div class="ri-header">
+					<p class="ri-noLine">
+						<span class="oi-no">订单号：<em id="oi-no">--</em></span>
+						<span class="oi-status">订单状态：<em id="oi-status">--</em></span>
+						<span class="oi-btngroup" id="oi-btngroup"></span>
+					</p>
+					<p class="ri-contactLine"><span id="ri-contactText">您的订单已确认，请尽快付款！如有疑问，请点此</span>  <a href="javascript:;" id="ri-dial" data-spy="dial" data-phone="">联系服务商</a></p>
+				</div>
+
+				<div class="ri-steps">
+					<ol id="ri-steps" class="clearfix">
+						<li class="ri-step-01"><em>提交订单</em><span id="ris-created-time"></span></li>
+						<li class="ri-step-02"><em>订单进行中</em><span id="ris-started-time"></span></li>
+						<li class="ri-step-03"><em>订单完成</em><span id="ris-finished-time"></span></li>
+						
+					</ol>
+					<h3>订单跟踪</h3>
+					<ul id="ri-steps-detail">
+					</ul>
+				</div>
+
+				<div class="orderInfo">
+					<h2>订单详情</h2>
+					<h3>服务商信息</h3>
+					<ul>
+						<li>服务商：<a href="#" id="oi-srname">--</a></li>
+						<li>公司电话：<span id="oi-srtel">--</span></li>
+						<li>联系人：<span id="oi-srcontacts">--</span></li>
+						<li>联系手机：<span id="oi-srcontactstel">--</span></li>
+						<li>公司地址：<span id="oi-address">--</span></li>
+					</ul>
+					<h3>联系人信息</h3>
+					<ul>
+						<li>联系人：<span id="oi-contactsname">--</span></li>
+						<li>手机号码：<span id="oi-contactsmobile">--</span></li>
+					</ul>
+					<h3>服务清单</h3>
+					<table>
+						<colgroup>
+							<col width="32%">
+							<col width="18%">
+							<col width="10%">
+							<col width="10%">
+							<col width="14%">
+							<col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th>服务内容</th>
+								<th>服务区域</th>
+								<th>数量</th>
+								<th>单价</th>
+								<th>价格调整或优惠</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="oi-serviceList">
+						</tbody>
+					</table>
+				</div>
+				
+				<div class="ri-amount clearfix">
+					<ul id="ri-amount">
+						<li><span>原价：</span><em>￥0</em></li>
+						<li class="ri-reduce"><span>节省：</span><em>-￥0</em></li>
+						<li><span>应付金额：</span><em>￥0</em></li>
+						<li class="ri-change"><span><i class="icon"></i>下单后价格调整：</span><em>￥0</em></li>
+						<li class="ri-change"><span>实际应付金额：</span><em>￥0</em></li>
+						<li class="ri-play"><span>已付金额：</span><em>￥0</em></li>
+						<li><span>待付金额：</span><em>￥0</em></li>
+						<li><span>待退款：</span><em>￥0</em></li>
+						<li><span><i class="icon"></i>已退款：</span><em>￥0</em></li>
+					</ul>
+				</div>
+				
+			</div>
+			<!-- order info end -->
+		</div>
+	</div>
+
+	<div class="orderInfo-detailBox" id="orderInfo-detailBox">
+		<h4>退款</h4>
+		<ul>
+			<li>
+				<i class="icon"></i>
+				<em>已向您退款100元，款项到账可能需要1-3天，请注意查收</em>
+				<span>2015-00-00  00:00:00</span>
+			</li>
+			<li  class="last-child">
+				<i class="icon"></i>
+				<em>因服务内容发生变化的原因，将向您退回已付款项，待退款金额为100元</em>
+				<span>2015-00-00  00:00:00</span>
+			</li>
+		</ul>
+	</div>
+	
+	<!--=include ../tpl/_advantage.html -->
+	
+	<!--=include ../tpl/_footer.html -->
+	<!--=include ../tpl/_footerFloat.html -->
+	<script type="text/x-handlebars-template" id="list_template">
+		{{#each serviceItemsList}}
+		{{#each this}}
+		<tr>
+			<td class="ol-summary">
+				<a href="/service/qryServiceDetailByCodeJsp.htm?id={{sdid}}" class="ol-photo" target="_blank"><img src="{{serviceImg}}" width="80" height="65" /></a>
+				<span>
+					<a href="/service/qryServiceDetailByCodeJsp.htm?id={{sdid}}" target="_blank">{{sdname}}</a><br/>
+					{{siname}}
+				</span>
+			</td>
+			<td>
+				<em>【{{area}}】</em>
+			</td>
+			<td>X {{quantity}}</td>
+			<td class="ol-money">
+				<em>￥{{price}}</em>
+			</td>
+			<td class="ol-change">
+				<em>{{savecomment}}</em>
+			</td>
+			<td>
+				<a href="/service/qryServiceDetailByCodeJsp.htm?id={{sdid}}&code=&province={{province}}&city={{city}}&area={{district}}" class="btn btn-default">还要买</a>
+				{{#if linkShow}}
+				<a href="/app/myServiceInfo.html?orderno={{orderno}}&oossid={{oossid}}" class="btn btn-link">服务详情</a>
+				{{/if}}
+			</td>
+		</tr>
+		{{/each}}
+		{{/each}}
+	</script>
+	<script type="text/x-handlebars-template" id="amount_template">
+		<li><span>原价：</span><em>￥{{init}}</em></li>
+		<li class="ri-reduce"><span>节省：</span><em>-￥{{saveamountall}}</em></li>
+		<li><span>应付金额：</span><em>￥{{afterSave}}</em></li>
+		{{#if showChangeFlag}}
+		<li class="ri-change ri-reduce"><span>下单后价格调整：</span><em>{{changeFlag}}￥{{change}}</em></li>
+		<li class="ri-change"><span>实际应付金额：</span><em>￥{{due}}</em></li>
+		{{/if}}
+		<li class="ri-play"><span>已付金额：</span><em>￥{{paidAmountSum}}</em></li>
+		<li><span>待付金额：</span><em>￥{{remainamount}}</em></li>
+		<li><span>待退款：</span><em>￥{{refund}}</em></li>
+		<li><span>已退款：</span><em>￥{{refunded}}</em></li>
+	</script>
+	<script type="text/x-handlebars-template" id="confirm_over_template">
+        <div class="message-box confirm-box" id="message-box">
+            <h3>订单确认完成</h3>
+            <p>壹财税提醒您</p>
+            <p>1. 请确认服务商已完成所有订单服务？</p>
+            <p>2. 一旦确认服务，服务商与客户之间的服务交易即为完成，有任何售后问题，请与壹财税客服联系。</p>
+            <p class="mb-btnline"><a id="mb_confirmBtn" data-value="{{orderno}}" href="javascript:;" class="btn btn btn-warning">确认完成</a><a id="mb_cancelBtn" href="javascript:;" class="btn btn-default">取消</a></p>
+        </div>
+    </script>
+       
+    <script type="text/x-handlebars-template" id="break_off_template">
+	    <div class="orderList-blockBox" id="message-box">
+			<ol class="olbb-step">
+				<li>申请中止订单</li>
+				<li>壹财税客服确认</li>
+				<li>中止订单处理</li>
+				<li>完成</li>
+			</ol>
+			<ol class="olbb-info">
+				<li>1. 如果因服务内容、服务质量问题，或服务商损害到您与贵公司利益，请与客服联系，壹财税会为您管理及调整（或更换）服务商与服务内容，确保您能享受高质量财税服务。</li>
+				<li>2. 因服务商的原因造成服务不到位而申请中止订单，在核实情况后，壹财税会根据具体情况向客户进行合理赔付。</li>
+			</ol>
+			<p class="olbb-btnLine">
+				<a href="javascript:;" id="mb_breakOffBtn" data-value="{{orderno}}" href="javascript:;" class="btn btn-default">申请中止</a>
+				<a href="javascript:;" id="mb_cancelBtn" class="btn btn-primary">取消</a>
+			</p>
+		</div>
+    </script>
+    <script type="text/x-handlebars-template" id="cancel_template">
+        <div class="message-box cancel-box" id="message-box">
+           <h3>取消订单</h3>
+           <p class="mb_optline">
+               <select id="cancel_reason" class="cancel_reason">
+                    <option value="">取消原因</option>
+                    <option value="现在不想购买">现在不想购买</option>
+                    <option value="重复下单">重复下单</option>
+                    <option value="下单信息有误">下单信息有误</option>
+                    <option value="商品价格较贵">商品价格较贵</option>
+                    <option value="无法支付">无法支付</option>
+                    <option value="客服态度差">客服态度差</option>
+                    <option value="其他">其他</option>
+               </select>
+               <a href="javascript:;" id="mb_submitBtn" data-value="{{orderno}}" class="btn btn-default btn-smalll">提交</a>
+           </p>
+           <p class="consult_line">找不到满意的服务？看看客服能不能帮您！<a href="javascript:;" onclick="document.getElementById('top-qqTalk').click()" class="btn btn-warning  btn-smalll"><i class="icon"></i>在线咨询</a></p>
+       </div>
+    </script>
+    <!--=include ../tpl/_thirdpartyFooter.html -->
+<!--=include ../tpl/_commonjs.html -->
+    <script type="text/javascript" src="/public/js/orderInfo.js"></script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+.nav{
+	margin-bottom: 0;
+}
+
+@mixin button {
+	display:block;
+    width:230px;
+    height:50px;
+    line-height:50px;
+    color:#ffffff;
+    font-size:24px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#db421e), to(#b9311b));
+    background: -webkit-linear-gradient(top,#db421e,#b9311b);
+    background: -moz-linear-gradient(top,#db421e,#b9311b);
+    background: -ms-linear-gradient(top,#db421e,#b9311b);
+    background: linear-gradient(top,#db421e,#b9311b);
+    border-radius: 3px;
+    text-align: center;
+    box-shadow:0 5px 3px rgba(205,204,204,0.7),1px 0 1px rgba(205,204,204,0.7),-1px 0 1px rgba(205,204,204,0.7);
+}
+
+.lbanner{
+	position: relative;
+  	width:100%;
+  	height:420px;
+  	background: url("../../public/img/landingPage/landingPage002001.jpg") center no-repeat transparent;
+  	background-size:cover;
+  	&:before {
+  		content: " ";
+  		display: block;
+  		position: absolute;
+  		left: 15%;
+  		top: 94px;
+  		background: url("../../public/img/landingPage/landingPage002006.png") center no-repeat transparent;
+  		width: 320px;
+  		height: 170px;
+  	}
+  	a{
+  		@include button;
+  		position: absolute;
+  		top: 276px;
+  		left: 15%;
+  	}
+}
+
+.box1, .box2, .box3, .box4, .box5, .box6, .box7 {
+	h2{
+		text-align: center;
+		font-size: 36px;
+		color: $mgray;
+		font-weight: normal;
+		margin-bottom: 20px;
+	}
+}
+
+
+.box1{
+	padding: 99px 0 77px;
+	text-align: center;
+	p{
+		font-size: 24px;
+		color: #8d8d8d;
+		margin-bottom: 39px;
+	}
+	ol{
+		background: url('../img/landingPage/landingPage002002.png') 0 0 no-repeat;
+		width: 949px;
+		height: 60px;
+		margin: 0 auto;
+		li{
+			display: none;
+		}
+	}
+
+	span {
+		display:block;
+		padding-top:40px;
+		color : #8d8d8d;
+		font-size:22px;
+		font-family : $ffa;
+	}	
+}
+
+.box2{
+	background-color: #f0f0f0;
+	padding: 94px 0 90px;
+	.outer{
+		background-color: #ffffff;
+		padding: 10px;
+		width: 870px;
+		margin: 0 auto;
+		box-shadow: 0px 5px 2px #d8d8d8;
+	}
+
+	table{
+		width: 100%;
+		th{
+			text-align: center;
+			font-size: 18px;
+			vertical-align: middle;
+		}
+		td{
+			text-align: left;
+			vertical-align: middle;
+			padding: 18px 0;
+			font-size: 16px;
+		}
+
+		.icon{
+			display: inline-block;
+		    width: 26px;
+		    height: 26px;
+		    background: url('../img/landingPage/landingPageIcon.png');
+		    vertical-align: middle;
+		    margin-right: 10px;
+		}
+	}
+	thead{
+		th{
+			height: 40px;
+			&.col1{
+				background-color: #e5e5e5;
+				color: $mgray;
+			}
+			&.col2{
+				background-color: $lblue;
+				color: #ffffff;
+			}
+			&.col3{
+				background-color: #7d7d7d;
+				color: #ffffff;
+			}
+		}
+	}
+	tbody{
+		.col1{
+			color: #ffffff;
+		}
+		.col2{
+			padding-left: 23px;
+			color: $mgreen;
+		}
+		.col3{
+			color: $mgray;
+			padding-left: 15px;
+			text-align:center;
+		}
+	}
+
+	.odd{
+		th{
+			background-color: #ddad92;
+		}
+
+		.col3{
+			background-color: #f2f2f2;
+		}
+	}
+	.even{
+		th{
+			background-color: #d1906c;
+		}
+		
+		.col2{
+			background-color: #f1ece4;
+		}
+
+		.col3{
+			background-color: #e5e1da;
+		}
+		
+	}
+}
+
+.box3{
+	padding: 80px 0 0;
+
+	h2{
+		margin-bottom: 48px;
+	}
+	ul{
+		font-family: $ffa;
+		width: 1028px;
+		overflow: hidden;
+		margin: 0 auto;
+		padding-bottom:75px;
+		li{
+			float: left;
+			width: 454px;
+			color: $mgray;
+			padding: 0 30px 20px;
+			font-size: 16px;
+		}
+		h3{
+			margin-bottom: 8px;
+			font-size: 24px;
+			color: #396bae;
+			font-weight: bold;
+		}
+	}
+
+	p{
+		margin:0 auto;
+		border-bottom : 1px solid #ddd;
+		width:960px;
+	}
+}
+
+.box4{
+	padding: 80px 0 0;
+	h2{
+		margin-bottom: 50px;
+	}
+	p{
+		overflow: hidden;
+		width: 840px;
+		border-bottom: 1px solid $linegray;
+		padding: 0 60px 30px;
+		margin: 0 auto;
+		a{
+			background-color: #f3f3f3;
+			margin-bottom: 30px;
+			font-size: 20px;
+			color: $lblue;
+			float:left;
+			width: 170px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			&.middle{
+				margin: 0 135px 30px;
+				width:200px;
+			}
+		}
+	}
+}
+
+
+
+.box6{
+	padding: 80px 0 60px;
+	h2{ 
+		margin-bottom: 50px;
+	}
+	ol{
+		background: url('../img/landingPage/landingPage001004.png') 0 0 no-repeat;
+		width: 927px;
+		height: 90px;
+		margin: 0 auto;
+		li{
+			display: none;
+		}
+	}
+}
+
+.box7{
+	background-color: #f2ede7;
+	padding: 35px 0 30px;
+	font-family:$ffa;
+	text-align: center;
+	a{
+  		@include button;
+  		display: inline-block;
+  	}
+}
+
+
+.box_contactus {
+	position : fixed;
+	right:24px;
+	bottom : 100px;
+	z-index : 99;
+	cursor:pointer;
+}

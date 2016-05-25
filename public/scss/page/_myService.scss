@@ -1,0 +1,354 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+$pcSpriteUrl: url('../img/pc-sprite.png');
+$pcSpritePos:
+	(0 0) (-40px 0) (-80px 0) (0 -40px) (-10px -40px)
+	(-30px -40px) (-50px -40px) (-70px -40px) (-90px -40px) (-100px -40px)
+	(-110px -40px) (0 -70px) (0 -130px) (-50px -130px) (-100px -130px)
+	(0 -180px) (-50px -180px) (-100px -180px) (0 -230px) (-20px -230px)
+	(-40px -230px) (-50px -230px) (-60px -230px) (-70px -230px) (-120px 0); 
+@mixin pcSprite($position: 1, $width: 20px, $height: 20px, $display: inline-block){
+	display: $display;
+	width: $width;
+    height: $height;
+    background-image: $pcSpriteUrl;
+    background-position: nth($pcSpritePos, $position);
+}
+
+.container{
+	background-color: $lbgy;
+	padding-bottom: 100px;
+}
+
+.content{
+	width: $w1;
+	margin: 0 auto;
+}
+
+.myService-box{
+	width: $w10;
+	float: right;
+}
+
+.myService-tab{
+	border-bottom: 2px solid $line;
+	margin-bottom: 20px;
+	li{
+		float: left;
+		margin-bottom: -2px;
+		border-bottom: 2px solid $line;
+		&.active{
+			border-bottom: 2px solid $blue;
+			a{
+				font-weight: bold;
+				color: $blue;
+			}
+		}
+	}
+
+	a{
+		display: block;
+		font-size: 16px;
+		height: 35px;
+		line-height: 35px;
+		text-align: center;
+		padding: 0 20px;
+		@include links;
+	}
+}
+
+.myService{
+	border: 1px solid $line;
+	background-color: $bw;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	color: $lwgy;
+	padding: 20px 19px;
+	>ul{
+		>li{
+			background-color: $lbgy;
+			margin-bottom: 20px;
+			padding: 30px;
+		}
+	}
+
+	.ms-content{
+		float: left;
+		margin-bottom: 20px;
+	}
+
+	.ms-header{
+		margin-bottom: 20px;
+	}
+	.ms-title{
+		padding-top:3px;
+		width: 498px;
+		margin-right: 10px;
+		float: left;
+		color: $dwgy;
+		font-weight: bold;
+	}
+
+	.ms-summary{
+		padding-top:3px;
+		width: 300px;
+		float: left;
+		color: $mwgy;
+		span{
+			margin-right: 20px;
+		}
+		em{
+			color: $pomelo;
+		}
+	}
+
+	.ms-links{
+		float: right;
+		.btn{
+			padding: 3px 15px;
+			display: block;
+			margin-bottom: 10px;
+		}
+	}
+
+	.ms-steps{
+		overflow: hidden;
+		margin-bottom: 20px;
+		>li{
+			float: left;
+			line-height: 35px;
+			text-align: center;
+			position: relative;
+			color: $bw;
+			margin-left: 50px;
+			cursor: default;
+			@include pcSprite(3, 35px, 35px, inline);
+			&:before{
+				content: " ";
+				position: absolute;
+				left: -30px;
+				top: 10px;
+				@include pcSprite(4, 10px, 18px, block);
+			}
+			&:first-child{
+				margin-left: 0;
+				&:before{
+					display: none;
+				}
+			}
+			&.ms-step-past{
+				cursor: pointer;
+				background-position: 0 0;
+				&.active{
+					background-position: -40px 0;
+					color: $blue;
+				}
+			}
+		}
+	}
+
+	.ms-steps-content{
+		li{
+			display: none;
+			&.active{
+				display: block;
+			}
+		}
+	}
+
+	.ms-stepDetail{
+		color: $dwgy;
+		margin-bottom: 5px;
+	}
+
+	.ms-executor{
+		color: $lwgy;
+		span{
+			margin-right: 20px;
+		}
+	}
+
+	
+	.ms-company{
+		margin-left: 35px;
+		@include detrans;
+		@include links($lwgy);
+		.icon{
+			margin-left: 5px;
+			@include pcSprite(7, 14px, 14px);
+		}
+		&:hover{
+			.icon{
+				background-position: nth($pcSpritePos, 8);
+			}
+		}
+	}
+}
+
+
+.orderList-contactorBox{
+	position: absolute;
+	display: none;
+	top: 465px;
+	left: 928px;
+	border: 1px solid $line;
+	background-color: $bw;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+	color: $mwgy;
+	padding: 20px 18px 10px;
+	h4{
+		border-bottom: 1px solid $line;
+		padding-bottom: 18px;
+		margin-bottom: 18px;
+	}
+	p{
+		margin-bottom: 10px;
+	}
+}
+
+
+.orderList-blockBox{
+	padding: 50px 30px;
+	width: 555px;
+
+	.olbb-step{
+		overflow: hidden;
+		width: 100%;
+		background-color: $blue;
+		border-radius: 10px;
+		padding: 2px 0;
+		margin-bottom: 24px;
+		li{
+			color: $bw;
+			position: relative;
+			width: 25%;
+			float: left;
+			text-align: center;
+			&:first-child{
+				&:before{
+					content: "";
+				}
+			}
+			&:before{
+				content: ">";
+				position: absolute;
+				left: -3px;
+				top: 0;
+			}
+		}
+	}
+
+	.olbb-info{
+		line-height: 30px;
+		color: $mwgy;
+		li{
+			margin-bottom: 30px;
+			padding-left: 16px;
+			text-indent: -16px;
+		}
+	}
+
+	.olbb-btnLine{
+		text-align: center;
+		.btn{
+			margin: 0 30px;
+			width: 94px;
+			&:hover{
+				color: $blue;
+				border-color: $blue;
+				background-color: $bw;
+			}
+		}
+
+		.btn-primary{
+			color: $bw;
+			border-color: $blue;
+			background-color: $blue;
+		}
+
+		.btn-default{
+			color: $lwgy;
+		}
+	}
+}
+
+.ui-info-close{
+	top: 0;
+}
+
+.message-box{
+	padding-bottom: 50px;
+	h3{
+		background-color: $lbgy;
+		color: $dwgy;
+		padding: 10px 20px;
+		font-size: 14px;
+		margin-bottom: 40px;
+	}
+}
+
+.confirm-box{
+	h3{
+		color: $mwgy;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	.mb-textLine{
+		color: $dwgy;
+		width: 658px;
+		text-align: center;
+		margin-bottom: 12px;
+		
+	}
+	.mb-btnline{
+		text-align: center;
+		margin-top: 40px;
+		.btn{
+			margin: 0 10px;
+		}
+	}
+}
+
+.finish-box{
+	.mb-iconLine{
+		color: $mwgy;
+		padding: 0 60px;
+		width: 260px;
+		font-size: 16px;
+		text-align: center;
+		margin-bottom: 20px;
+		&:before{
+			content: " ";
+			@include pcSprite(25, 40px, 40px, inline-block);
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+	}
+	.mb-btnline{
+		text-align: center;
+		margin-top: 40px;
+		.btn{
+			min-width: 4em;
+			margin: 0 10px;
+		}
+	}
+}
+
+.cancel-box{
+	select{
+		width: 265px;
+		height: 34px;
+	}
+	.mb_optline{
+		padding-left: 20px;
+		margin-bottom: 30px;
+		.btn-default{
+			min-width: 4em;
+		}
+	}
+
+	.consult_line{
+		color: $mwgy;
+		padding: 0 20px;
+	}
+}

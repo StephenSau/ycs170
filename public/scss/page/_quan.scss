@@ -1,0 +1,201 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+.container{
+	background-color: $lbgy;
+	padding-bottom: 100px;
+}
+
+.content{
+	width: $w1;
+	margin: 0 auto;
+}
+
+.quan-box{
+	width: $w10;
+	float: right;
+}
+
+.quan-tab{
+	border-bottom: 2px solid $line;
+	margin-bottom: 20px;
+	li{
+		float: left;
+		margin-bottom: -2px;
+		border-bottom: 2px solid $line;
+		&.active{
+			border-bottom: 2px solid $blue;
+			a{
+				font-weight: bold;
+				color: $blue;
+			}
+		}
+	}
+
+	a{
+		display: block;
+		font-size: 16px;
+		height: 35px;
+		line-height: 35px;
+		text-align: center;
+		padding: 0 20px;
+		@include links;
+	}
+}
+
+.quan-myCouponBox{
+	display: none;
+	padding: 10px 0 0 80px;
+	background-color: $bw;
+	border: 1px solid $line;
+	&.active{
+		display: block;
+	}
+
+	h3{
+		width: 840px;
+		font-size: 18px;
+		color: $lwgy;
+		padding-top: 45px;
+		border-top: 1px solid $line;
+		margin-bottom: 18px;
+		&:first-child{
+			border-top: none;
+		}
+	}
+
+	li{
+		margin: 0 60px 50px 0;
+		float: left;
+	}
+}
+
+.quan-exchangeBox{
+	min-height: 600px;
+	padding: 60px 60px 100px 60px;
+	background-color: $bw;
+	border: 1px solid $line;
+	display: none;
+	&.active{
+		display: block;
+	}
+
+	.quan-exchangeForm{
+		padding: 90px 0 110px;
+		margin-bottom: 90px;
+		text-align: center;
+		background-color: $lbgy;
+	}
+
+	.ef-title{
+		color: $blue;
+		font-size: 18px;
+		text-align: center;
+		margin-bottom: 26px;
+	}
+	.ef-input{
+		text-align: center;
+		input{
+			font-size: 16px;
+			height: 40px;
+			line-height: 40px;
+			width: 260px;
+			vertical-align: top;
+			border-radius: 4px 0 0 4px;
+			color: $dwgy;
+			padding: 0 20px;
+			border: 1px solid $blue;
+			background-color: $bw;
+		}
+		button{
+			height: 42px;
+			font-size: 18px;
+			color: $bw;
+			line-height: 40px;
+			padding: 0 10px;
+			border-radius: 0 4px 4px 0 ;
+			border: 1px solid $blue;
+			background-color: $blue;
+		}
+	}
+
+	.quan-exchangeSuccess{
+		display: none;
+		text-align: center;
+		.coupon{
+			margin: 0 auto 20px;
+		}
+		.qe-btnLine{
+			a{
+				@include links($blue);
+			}
+		}
+	}
+
+	.qe-tips{
+		color: $mwgy;
+		font-size: 24px;
+		margin-bottom: 40px;
+	}
+}
+
+.quan-findBox{
+	display: none;
+	min-height: 680px;
+	padding: 50px 0 50px 60px;
+	background-color: $bw;
+	border: 1px solid $line;
+	.qf-hasCoupon{
+		width: 880px;
+	}
+	.qf-tips{
+		height: 100px;
+		line-height: 100px;
+		background-color: $lbgy;
+		margin-bottom: 60px;
+		text-align: center;
+		font-size: 18px;
+		color: $mwgy;
+		em{
+			color: $pomelo;
+		}
+	}
+	&.active{
+		display: block;
+	}
+
+	.qf-btnline{
+		.btn{
+			padding-left: 36px;
+			padding-right: 36px;
+		}
+		
+		text-align: center;
+	}
+
+	li{
+		margin: 0 0 50px 40px;
+		display: inline;
+		float: left;
+	}
+
+	.qf-noCoupon{
+		display: none;
+		width: 880px;
+		padding-top: 150px;
+		height: 300px;
+		background-color: $lbgy;
+		text-align: center;
+		p{
+			&:first-child{
+				color: $mwgy;
+				font-size: 24px;
+				margin-bottom: 18px;
+			}
+			&:first-child+p{
+				color: $lwgy;
+				margin-bottom: 128px;
+			}
+		}
+	}
+}

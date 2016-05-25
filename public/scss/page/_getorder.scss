@@ -1,0 +1,155 @@
+/*
+*getorder here
+*/
+
+/* getorder-wrap here start*/
+.getorder-wrap{
+  padding-bottom:101px;
+  background-color:$lbgy;
+}
+.getorder{
+  @include box-center($w1);
+  padding:99px 0 122px;
+  background-color:$bw;
+  border:1px solid $line;
+  box-shadow: 0px 1px 2px 0px rgba(7, 0, 2, 0.05);
+  text-align:center;
+  img{
+    margin-bottom:45px;
+  }
+  .ok{
+    margin-bottom:30px;
+    font-size:18px;
+    color:$pomelo;
+    em{
+      color:$dwgy;
+    }
+  }
+  .jump{
+    margin-bottom:34px;
+    font-size:14px;
+    color:$lwgy;
+  }
+  a{
+    padding:0 25px;
+    height:34px;
+    line-height:34px;
+    font-size:16px;
+  }
+}
+#upadate-opt{
+  display:none;
+}
+.update-pwd{
+  box-shadow: 0px 1px 4px 0px rgba(7, 0, 2, 0.1);
+  border:1px solid $line;
+  background-color:$bw;
+  form{
+     display:none;
+    margin-top:39px;
+    padding-top:40px;
+    border-top:1px solid $line;
+    input{
+      display:block;
+      margin:0 auto;
+      border:1px solid $mbgy;
+      padding:10px;
+      height:16px;
+      line-height:16px;
+      width:238px;
+      font-family: $ffa;
+      color:$lwgy;
+      font-size:14px;
+    }
+    p{
+      margin-bottom:20px;
+      span{
+        margin-left:150px;
+      }
+    }
+    .submit{
+      background-color:$blue;
+      border-color:$blue;
+      font-size:16px;
+      color:$bw;
+    }
+  }
+}
+.pwd-head{
+  color:$mwgy;
+  font-size:16px;
+  line-height:46px;
+  background-color:$lbgy;
+  text-indent:19px;
+  font-weight:700;
+}
+.pwd-body{
+  padding:32px 29px 39px 29px;
+  width:560px;
+
+  .success{
+    padding : 0 10px;
+    p{
+      padding-bottom:14px;
+      color:$mwgy;
+      em{
+        color:$pomelo;
+      }
+    }
+
+  }
+  .info{
+    padding-top:43px;
+    color:$dwgy;
+    font-size:16px;
+    line-height:36px;
+    span:first-child{
+      padding-right:40px;
+    }
+    a{
+      float:right;
+      background-color:$blue;
+      border-color:$blue;
+      color:$bw;
+      padding:0;
+      width:118px;
+      height:34px;
+      line-height:34px;
+      &.cancel{
+        display:none;
+        border-color:$mbgy;
+        background-color:$lbgy;
+        color:$mwgy;
+      }
+    }
+
+  }
+}
+
+.update-ok{
+  padding:82px 0 72px;
+  border:1px solid $line;
+  box-shadow: 0px 1px 4px 0px rgba(7, 0, 2, 0.1);
+  background-color:$bw;
+  width:448px;
+  .update-inner{
+    margin:0 auto;
+    width:235px;
+  }
+  i{
+    float:left;
+    @include sprite(77,40px,40px)
+  }
+  .update-detail{
+    margin-left:15px;
+    float:left;
+  }
+  p{
+    color:$lwgy;
+    &:first-child{
+      padding-bottom:7px;
+      color:$mwgy;
+      font-size:18px;
+    }
+  }
+}

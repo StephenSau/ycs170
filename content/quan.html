@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>我的卡券_壹财税</title>
+    <meta name="keywords" content="..." />
+    <meta name="description" content="..." />
+    <link type="text/css" rel="stylesheet" href="/public/css/quan.css" />
+<!--=include ../tpl/_thirdpartyHeader.html -->
+</head>
+<body>
+	<!--=include ../tpl/_topBar.html -->
+	<!-- head wrap start -->
+	<div class="head-wrap">
+		<div class="head-wrap-inner clearfix">
+			<h2 class="hw-logo">
+				<a href="/">
+					<img src="../public/img/logo-3.png" width="108" height="30" />
+				</a>
+			</h2>
+			<h3 class="hw-title">我的卡券</h3>
+			<div class="hw-searchBox">
+				<form id="headWrapSearchForm" action="/article/tag.htm" method="get">
+					<label class="icon hwsb-title" for="hwsb-text">搜索</label>
+					<input name="querycondition" type="text" class="hwsb-text" id="hwsb-text" data-role="search" data-menu-id="hwsb-serviceList" data-words-id="hwsb-hotSearch" /><button class="hwsb-button">搜索</button>
+				</form>
+				<ul class="hwsb-serviceList" id="hwsb-serviceList">
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>工商服务</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>财会服务</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>税务服务</em>
+							<span>约有 5 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>行政许可</em>
+							<span>约有 10 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>商标专利</em>
+							<span>约有 6 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>人事服务</em>
+							<span>约有 5 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>社保公积金</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+				</ul>
+				<!-- <p class="hwsb-hotSearch" id="hwsb-hotSearch">
+					<a href="#">0元开公司</a>
+				</p> -->
+			</div>
+		</div>
+	</div>
+	<!-- head wrap end-->
+
+	<div class="crumbs-box">
+		<div class="crumbs-box-inner">
+			<p class="crumbs">
+				<a href="/">首页</a> &gt;
+				<span>我的卡券</span>
+			</p>
+		</div>
+	</div>
+	<!--=include ../tpl/_pcBanner.html -->
+	<div class="container">
+		<div class="content clearfix">
+			<!--=include ../tpl/_pcNav.html -->
+			<!-- quan box start -->
+			<div class="quan-box">
+				<ul id="quan-tab" class="quan-tab clearfix">
+					<li data-role="item" data-target="quan-myCouponBox" class="active"><a href="javascript:;">我的卡券</a></li>
+					<li data-role="item" data-target="quan-exchangeBox"><a href="javascript:;">兑换卡券</a></li>
+					<li data-role="item" data-target="quan-findBox"><a href="javascript:;">发现卡券</a></li>
+				</ul>
+				<!-- my coupon box start -->
+			<div class="quan-myCouponBox active" id="quan-myCouponBox"></div>
+			<!-- my coupon box end -->
+			<!-- exchange box start -->
+			<div class="quan-exchangeBox" id="quan-exchangeBox">
+				<div class="quan-exchangeForm">
+					<p class="ef-title">请输入卡券的兑换密码</p>
+					<form action="/user/activeMyCouponCard" name="exchangeForm">
+					<p class="ef-input">
+						<input maxlength="15" id="quan-exchangeInput" type="text" name="activateCode" data-rule="checkLength:15"><button type="submit">确定</button>
+					</p>
+				</form>
+				</div>
+				<div class="quan-exchangeSuccess" id="quan-exchangeSuccess"></div>
+			</div>
+			<!-- exchange box end -->
+
+			<!-- find coupon box start -->
+			<div class="quan-findBox" id="quan-findBox">
+				<div id="qf-hasCoupon" class="qf-hasCoupon">
+					<p class="qf-tips">好幸运！有 <em id="qf-couponNum">3</em> 张可以领取的卡券</p>
+					<ul id="qf-couponList" class="clearfix">
+	                </ul>
+	                <p class="qf-btnline"><a href="javascript:;" data-role="getCoupon" id="qf-getAll" class="btn btn-warning">全部领取</a></p>
+                </div>
+                <div id="qf-noCoupon" class="qf-noCoupon">
+                	<p>领取成功！</p>
+                	<p>暂时没有其他可以领取的卡券</p>
+                	<p class="qf-btnline"><a href="javascript:;" class="btn btn-default">全部领取</a></p>
+                </div>
+			</div>
+			<!-- find coupon box end -->
+			</div>
+			
+			<!-- quan box end -->
+		</div>
+	</div>
+	
+	
+	<!--=include ../tpl/_advantage.html -->
+	
+	<!--=include ../tpl/_footer.html -->
+	<!--=include ../tpl/_footerFloat.html -->
+	<script type="text/x-handlebars-template" id="mycoupon_template">
+		{{#if area.length}}
+		<h3>通用卡券</h3>
+		<ul class="clearfix">
+			{{#each area}}
+            <li>
+                <div class="coupon {{couponClass}}">
+                    <p class="coupon-title">
+                        <em>{{couponType}}</em>
+						{{#compare couponType "===" "折扣"}}
+							<strong>{{key}}</strong>%
+						{{/compare}}
+						{{#compare couponType "===" "直减"}}
+							<strong>{{key}}</strong>元
+						{{/compare}}
+						{{#compare couponType "===" "一口价"}}
+							<strong>{{key}}</strong>元
+						{{/compare}}
+                    </p>
+                    <p class="coupon-intro">{{tips}}</p>
+                    <p class="coupon-opt">
+                    	<span class="coupon-range">
+                        {{couponName}}
+						</span>
+						<span>可使用</span>
+                    </p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+        {{#if servicer.length}}
+        <h3>店铺卡券</h3>
+		<ul class="clearfix">
+			{{#each servicer}}
+            <li>
+                <div class="coupon {{couponClass}}">
+                    <p class="coupon-title">
+                        <em>{{couponType}}</em>
+						{{#compare couponType "===" "折扣"}}
+							<strong>{{key}}</strong>%
+						{{/compare}}
+						{{#compare couponType "===" "直减"}}
+							<strong>{{key}}</strong>元
+						{{/compare}}
+						{{#compare couponType "===" "一口价"}}
+							<strong>{{key}}</strong>元
+						{{/compare}}
+                    </p>
+                    <p class="coupon-intro">{{tips}}</p>
+                    <p class="coupon-opt">
+                    	<span class="coupon-range">
+                        {{couponName}}
+							{{#compare type "===" 20}}
+						
+						<span class="coupon-shopList{{#compare servicerSize '===' 1}} coupon-one{{/compare}}">
+							<span class="csl-title">仅限以下合作商户：</span>
+							{{#each servicerList}}
+							{{#compare @index "<" 6}}
+							<span class="csl-shop"><em>{{nickname}}</em><a href="/servicer/getServicerDetail4V3Jsp.htm?servicerid={{srid}}" target="_blank">进入店铺</a></span>
+							{{/compare}}
+							{{/each}}
+							{{#compare servicerSize ">" 6}}
+							<span class="csl-moreLine clearfix">及其他 <em>{{moreSize}}</em> 家店铺 <a href="javascript:;" data-tips="{{tips}}" data-cptype="{{couponType}}" data-list="{{toJSON servicerList}}" data-role="showAllSp">查看全部</a></span>
+							{{/compare}}
+						</span>
+						
+					{{/compare}}
+						</span>
+						{{#compare servicerSize ">" 1}}
+						<span>可使用</span>
+						{{/compare}}
+						{{#compare servicerSize "===" 1}}
+						<a href="javascript:;">马上使用</a>
+						{{/compare}}
+                    </p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+        {{#if used.length}}
+        <h3>已使用</h3>
+		<ul class="clearfix">
+			{{#each used}}
+            <li>
+                <div class="coupon {{couponClass}}">
+                    <p class="coupon-title">
+                        <em>{{couponType}}</em>
+						{{#compare couponType "===" "折扣"}}
+							<strong>{{key}}</strong>%
+						{{/compare}}
+						{{#compare couponType "===" "直减"}}
+							<strong>{{key}}</strong>元
+						{{/compare}}
+						{{#compare couponType "===" "一口价"}}
+							<strong>{{key}}</strong>元
+						{{/compare}}
+                    </p>
+                    <p class="coupon-intro">{{tips}}</p>
+                    <p class="coupon-opt">
+                    	<span class="coupon-range">
+                        {{couponName}}
+						</span>	
+						<span>已使用</span>
+                    </p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+        {{#if invali.length}}
+        <h3>已失效</h3>
+		<ul class="clearfix">
+			{{#each invali}}
+            <li>
+                <div class="coupon {{couponClass}}">
+                    <p class="coupon-title">
+                        <em>{{couponType}}</em>
+						{{#compare couponType "===" "折扣"}}
+							<strong>{{key}}</strong>%
+						{{/compare}}
+						{{#compare couponType "===" "直减"}}
+							<strong>{{key}}</strong>元
+						{{/compare}}
+						{{#compare couponType "===" "一口价"}}
+							<strong>{{key}}</strong>元
+						{{/compare}}
+                    </p>
+                    <p class="coupon-intro">{{tips}}</p>
+                    <p class="coupon-opt">
+                    	<span class="coupon-range">
+                        {{couponName}}
+						</span>
+						{{#compare status '===' 2}}
+						<span>已过期</span>
+						{{/compare}}
+						{{#compare status '===' 3}}
+						<span>已过期</span>
+						{{/compare}}
+						{{#compare status '>' 40}}
+						<span>已失效</span>
+						{{/compare}}
+						{{#compare status '===' 1}}
+						{{#compare couponstatus '===' 0}}
+						<span>活动暂停</span>
+						{{/compare}}
+						{{/compare}}
+                    </p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+	</script>
+	<script type="text/x-handlebars-template" id="getcoupon_template">
+		<p class="qe-tips">恭喜！您已成功兑换以下卡券！</p>
+		<div class="coupon {{couponClass}}">
+            <p class="coupon-title">
+                <em>{{couponType}}</em>
+				{{#compare couponType "===" "折扣"}}
+					<strong>{{discount}}</strong>%
+				{{/compare}}
+				{{#compare couponType "===" "直减"}}
+					<strong>{{discount}}</strong>元
+				{{/compare}}
+				{{#compare couponType "===" "一口价"}}
+					<strong>{{discount}}</strong>元
+				{{/compare}}
+            </p>
+            <p class="coupon-intro">{{tips}}</p>
+            <p class="coupon-opt">
+            	<span class="coupon-range">
+                {{couponName}}
+					{{#compare type "===" 20}}
+						<span  class="coupon-shopList{{#compare servicers.length '===' 1}} coupon-one{{/compare}}">
+							<span class="csl-title">仅限以下合作商户：</span>
+							{{#each servicers}}
+							{{#compare @index "<" 6}}
+							<span class="csl-shop"><em>{{nickname}}</em><a href="/servicer/getServicerDetail4V3Jsp.htm?servicerid={{srid}}" target="_blank">进入店铺</a></span>
+							{{/compare}}
+							{{/each}}
+							{{#compare servicers.length ">" 6}}
+							<span class="csl-moreLine clearfix">及其他 <em>{{moreSize}}</em> 家店铺 <a href="javascript:;" data-tips="{{tips}}" data-cptype="{{couponType}}" data-list="{{toJSON servicers}}" data-role="showAllSp">查看全部</a></span>
+							{{/compare}}
+						</span>
+					{{/compare}}
+				</span>
+				{{#compare type "===" 10}}
+				<span>可使用</span>
+				{{/compare}}
+				{{#compare type "===" 20}}
+					{{#compare servicers.length ">" 1}}
+					<span>可使用</span>
+					{{/compare}}
+					{{#compare servicers.length "===" 1}}
+					<a href="javascript:;">马上使用</a>
+					{{/compare}}
+				{{/compare}}
+            </p>
+        </div>
+		<p class="qe-btnLine"><a id="qe-continue" href="javascript:;">继续兑换</a></p>
+	</script>
+
+	<script type="text/x-handlebars-template" id="findcoupon_template">
+		{{#each list}}
+        <li>
+            <div class="coupon {{couponClass}}">
+                <p class="coupon-title">
+                    <em>{{couponType}}</em>
+					{{#compare couponType "===" "折扣"}}
+						<strong>{{key}}</strong>%
+					{{/compare}}
+					{{#compare couponType "===" "直减"}}
+						<strong>{{key}}</strong>元
+					{{/compare}}
+					{{#compare couponType "===" "一口价"}}
+						<strong>{{key}}</strong>元
+					{{/compare}}
+                </p>
+                <p class="coupon-intro">{{tips}}</p>
+                <p class="coupon-opt">
+                	<span style="z-index:{{zIndex}}" class="coupon-range">
+                    {{couponName}}
+						{{#compare type "===" 20}}
+						
+						<span  class="coupon-shopList{{#compare servicerSize '===' 1}} coupon-one{{/compare}}">
+							<span class="csl-title">仅限以下合作商户：</span>
+							{{#each servicerList}}
+							{{#compare @index "<" 6}}
+							<span class="csl-shop"><em>{{nickname}}</em><a href="/servicer/getServicerDetail4V3Jsp.htm?servicerid={{srid}}" target="_blank">进入店铺</a></span>
+							{{/compare}}
+							{{/each}}
+							{{#compare servicerSize ">" 6}}
+							<span class="csl-moreLine clearfix">及其他 <em>{{moreSize}}</em> 家店铺 <a href="javascript:;" data-tips="{{tips}}" data-cptype="{{couponType}}" data-list="{{toJSON servicerList}}" data-role="showAllSp">查看全部</a></span>
+							{{/compare}}
+						</span>
+						
+					{{/compare}}
+					</span>
+					<a href="javascript:;" data-role="getCoupon" data-value="{{couponid}}">立即领取</a>
+                </p>
+            </div>
+        </li>
+        {{/each}}
+	</script>
+	<script type="text/x-handlebars-template" id="coupon_sp_list">
+		<div class="coupon-popover">
+        	<div class="title">优惠信息</div>
+        	<div id="spListWrapper" class="content">
+			    <p class="coupon-info"><em>{{couponType}}</em>{{tips}}</p>
+			    <p class="intro">仅限以下合作商户：</p>
+			    <ul id="currentCouponSp" class="clearfix">
+			        {{#each spList}}
+			        <li><span>{{nickname}}</span><a href="/servicer/getServicerDetail4V3Jsp.htm?servicerid={{srid}}" target="_blank">进入店铺</a></li>
+			        {{/each}}
+			    </ul>
+			    <p class="close">
+			        <button id="coupon-close" class="close-dialog btn btn-warning">我了解了！</button>
+			    </p>
+		    </div>
+	    </div>
+	</script>
+
+    
+    <!--=include ../tpl/_thirdpartyFooter.html -->
+<!--=include ../tpl/_commonjs.html -->
+    <script type="text/javascript" src="/public/js/quan.js"></script>
+</body>
+</html>

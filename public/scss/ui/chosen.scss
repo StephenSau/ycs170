@@ -1,0 +1,78 @@
+.chosen {
+    display: inline-block;
+    background-color: #ffffff;
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+    vertical-align: middle;
+}
+
+.chosen_facade {
+    border: 1px solid #EBEBEB;
+    display: block;   
+    color: #666666;
+    padding: 8px 25px 8px 10px;
+    position: relative;
+    line-height: 1.125em;
+    z-index: 4;
+}
+
+.chosen_on_foucs{
+    border: 1px solid #f19d01;
+    box-shadow: 0 0 2px #f19d01;
+}
+
+.chosen_facade .chosen_selected_text {
+    color: #666666;
+    display: block;
+    line-height: 1.25em;
+    overflow: hidden;
+    width: 100%;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+
+.chosen_facade .chosen_arrow_icon{
+    background: url('../img/arrow.png') no-repeat 0 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 5px;
+    top: 7px;  
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0){ //chrome
+    
+}
+
+@media all and (min-width: 0px){    //modern brower
+    /*.chosen_facade .chosen_arrow_icon{
+        transition: top 0.2s;
+    }
+    
+    .chosen:hover .chosen_arrow_icon{
+        top: 5px;
+    }*/
+}
+
+
+
+.chosn_options{
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    height: 24px;
+    left: 0;
+    z-index: 8;
+    opacity: 0.01;
+    filter: alpha(opacity=1);
+}
+
+*+html .chosn_options{
+    top: 2px;
+}
+
+

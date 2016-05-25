@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>服务评价_壹财税</title>
+    <meta name="keywords" content="..." />
+    <meta name="description" content="..." />
+    <link type="text/css" rel="stylesheet" href="/public/css/comments.css" />
+<!--=include ../tpl/_thirdpartyHeader.html -->
+</head>
+<body>
+	<!--=include ../tpl/_topBar.html -->
+	<!-- head wrap start -->
+	<div class="head-wrap">
+		<div class="head-wrap-inner clearfix">
+			<h2 class="hw-logo">
+				<a href="/">
+					<img src="../public/img/logo-3.png" width="108" height="30" />
+				</a>
+			</h2>
+			<h3 class="hw-title">服务评价</h3>
+			<div class="hw-searchBox">
+				<form id="headWrapSearchForm" action="/article/tag.htm" method="get">
+					<label class="icon hwsb-title" for="hwsb-text">搜索</label>
+					<input name="querycondition" type="text" class="hwsb-text" id="hwsb-text" data-role="search" data-menu-id="hwsb-serviceList" data-words-id="hwsb-hotSearch" /><button class="hwsb-button">搜索</button>
+				</form>
+				<ul class="hwsb-serviceList" id="hwsb-serviceList">
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>工商服务</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>财会服务</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>税务服务</em>
+							<span>约有 5 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>行政许可</em>
+							<span>约有 10 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>商标专利</em>
+							<span>约有 6 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>人事服务</em>
+							<span>约有 5 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>社保公积金</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+				</ul>
+				<!-- <p class="hwsb-hotSearch" id="hwsb-hotSearch">
+					<a href="#">0元开公司</a>
+				</p> -->
+			</div>
+		</div>
+	</div>
+	<!-- head wrap end-->
+
+	<div class="crumbs-box">
+		<div class="crumbs-box-inner">
+			<p class="crumbs">
+				<a href="/">首页</a> &gt;
+				<span>服务评价</span>
+			</p>
+		</div>
+	</div>
+	<!--=include ../tpl/_pcBanner.html -->
+	<div class="container">
+		<div class="content clearfix">
+			<!--=include ../tpl/_pcNav.html -->
+			<!-- order list start -->
+			<div class="comments-box">
+				<ul id="comments-tab" class="comments-tab clearfix">
+					<li data-value="0" class="active"><a href="javascript:;">待评价</a></li>
+					<li data-value="1"><a href="javascript:;">已评价</a></li>
+				</ul>
+				
+				<ul class="comments-header clearfix">
+					<li class="olh-col01">服务信息</li>
+					<li class="olh-col05">评价状态</li>
+				</ul>
+				<div class="comments-list">
+					<ul id="comments-list"></ul>
+					<div id="ol_pager"></div>
+				</div>
+			</div>
+			<!-- order list end -->
+		</div>
+	</div>
+	
+	
+	<!--=include ../tpl/_advantage.html -->
+	
+	<!--=include ../tpl/_footer.html -->
+	<!--=include ../tpl/_footerFloat.html -->
+	<script  type="text/x-handlebars-template" id="service-list-template">
+		{{#each orderServiceList}}
+			<li>
+				<p class="cl-photo">
+					<a href="#" target="_blank">
+						<img width="80" height="65" src="{{serviceImgs}}"/>
+					</a>
+				</p>
+				<p class="cl-intro">
+					<a href="#" target="_blank">{{siname}}</a>
+					<span>{{servicename}}</span>
+					<span>购买时间：{{created}}</span>
+				</p>
+				<p class="cl-opt">
+					<a href="javascript:;" data-role="commitBtn" data-value="{{id}}" class="btn btn-default">点击评价</a>
+				</p>
+			</li>
+		{{/each}}
+	</script>
+       
+    
+    
+    
+    <script  type="text/x-handlebars-template" id="appraise-template">
+    	<div class="appraise-box">
+			<div class="appraise-items glide-box" id="appraise-items">
+				<a href="javascript:;" class="glide-prev" data-role="prev"></a>
+				<div class="glide-cabinet" data-role="cabinet">
+					<ul id="appraise-list" class="glide-content" data-role="list">
+					{{#each list}}
+			    	<li data-role="item" data-osid="{{osid}}" data-oossid="{{oossid}}">
+						<p class="ac-photoline">
+							<img src="{{serviceImg}}" width="80" height="65" />
+						</p>
+						<p class="ac-textLine"><strong>{{siname}}</strong></p>
+						<p class="ac-textLine">{{sdname}}</p>
+						<p class="ac-textLine"><span>购买时间：{{created}}</span></p>
+					</li>
+			    	{{/each}}
+					</ul>
+				</div>
+				<a href="javascript:;" class="glide-next" data-role="next"></a>
+			</div>
+			<div class="appraise-content" id="appraise-content">
+				<form action="/user/addOSReviewByOOSSID" name="appraiseForm">
+					<ul class="appraise-counter">
+						<li class="ac-line" id="ac-total-line">
+							<span class="ac-title"><em>*</em>总体评价</span>
+							<span id="ac-total-star" data-role="starBox" class="ac-stars">
+								<i class="ac-star-1" data-target="total"></i><i class="ac-star-2" data-target="total"></i><i class="ac-star-3" data-target="total"></i><i class="ac-star-4" data-target="total"></i><i class="ac-star-5" data-target="total"></i>
+							</span>
+							<span id="ac-total-show" class="ac-point">0分</span>
+							<input type="hidden" data-rule="checkEmpty:请选择分数" name="total" value="">
+						</li>
+						<li class="ac-line" id="ac-respond-line">
+							<span class="ac-title"><em>*</em>响应速度</span>
+							<span data-role="starBox" id="ac-respond-star" class="ac-stars">
+								<i class="ac-star-1" data-target="respond"></i><i class="ac-star-2" data-target="respond"></i><i class="ac-star-3" data-target="respond"></i><i class="ac-star-4" data-target="respond"></i><i class="ac-star-5" data-target="respond"></i>
+							</span>
+							<span id="ac-respond-show" class="ac-point">0分</span>
+							<input type="hidden" data-rule="checkEmpty:请选择分数" name="respond" value="">
+						</li>
+						<li class="ac-line" id="ac-service-line">
+							<span class="ac-title"><em>*</em>服务态度</span>
+							<span data-role="starBox" id="ac-service-star" class="ac-stars">
+								<i class="ac-star-1" data-target="service"></i><i class="ac-star-2" data-target="service"></i><i class="ac-star-3" data-target="service"></i><i class="ac-star-4" data-target="service"></i><i class="ac-star-5" data-target="service"></i>
+							</span>
+							<span id="ac-service-show" class="ac-point">0分</span>
+							<input type="hidden" data-rule="checkEmpty:请选择分数" name="service" value="">
+						</li>
+						<li class="ac-line" id="ac-professional-line">
+							<span class="ac-title"><em>*</em>专业程度</span>
+							<span data-role="starBox" id="ac-professional-star" class="ac-stars">
+								<i class="ac-star-1" data-target="professional"></i><i class="ac-star-2" data-target="professional"></i><i class="ac-star-3" data-target="professional"></i><i class="ac-star-4" data-target="professional"></i><i class="ac-star-5" data-target="professional"></i>
+							</span>
+							<span id="ac-professional-show" class="ac-point">0分</span>
+							<input type="hidden" data-rule="checkEmpty:请选择分数" name="professional" value="">
+						</li>
+					</ul>
+					<p class="ac-title-line"><span class="ac-title"><em>*</em>服务评价</span><span class="ac-tips">1-500字</span></p>
+					<p class="ac-texarea"><textarea data-rule="checkWords:0,500" name="content" maxlength="500"></textarea>
+					<span class="ac-tips"></span></p>
+					<input type="hidden" value="0" name="oossid" />
+					<input type ="hidden" value="0" name="osid" />
+					<p class="ac-button-line"><button type="submit" class="btn btn-primary">发表评价</button></p>
+				</form>
+			</div>
+		</div>
+    </script>
+    <!--=include ../tpl/_thirdpartyFooter.html -->
+<!--=include ../tpl/_commonjs.html -->
+    <script type="text/javascript" src="/public/js/comments.js"></script>
+</body>
+</html>

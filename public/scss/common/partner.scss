@@ -1,0 +1,27 @@
+@import 'variable';
+@import 'maxin';
+
+
+.partner{
+    overflow: hidden;
+    width: $w1;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    h3{
+        @include title;
+    }
+    
+    ul{
+        width: 1250px;
+        overflow: hidden;
+    }
+    
+    li{
+        float: left;
+        margin-right: 35px;
+        margin-bottom: 20px;
+        img{
+            border: 1px solid $line;
+        }
+    }
+}

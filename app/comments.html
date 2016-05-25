@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>服务评价_壹财税</title>
+    <meta name="keywords" content="..." />
+    <meta name="description" content="..." />
+    <link type="text/css" rel="stylesheet" href="/public/css/comments.css" />
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+</head>
+<body>
+	<!-- top bar start -->
+	<div class="top-bar" id="top-bar">
+		<div class="tb-inner clearfix">
+			<ul class="tb-left">
+				<li class="tb-place">
+					<span class="tb-item">
+						<i class="icon"></i>
+						<em id="top-city">当前地区</em>
+						<a href="javascript:;" id="top-showAddress" data-spy="addressBox" data-format="c" data-target="top-city" data-value="440000,440100" data-type="city" data-library="address">[切换]</a>
+					</span>
+				</li>
+				<li>
+					<span class="tb-item">咨询热线：4008-310-866</span>
+				</li>
+				<li data-spy="menu">
+					<a class="tb-item" href="javascript:;">关注壹财税<i class="icon"></i></a>
+					<ul data-spy="submenu" class="tb-td">
+						<li>
+							<p class="tb-td-img">
+								<img src="../public/img/tdc_02.png" />
+							</p>
+							<div class="tb-td-content">
+								<h4>壹财税服务号</h4>
+								<p>• 微信轻松下单</p>
+								<p>• 随时跟踪服务</p>
+							</div>
+						</li>
+						<li>
+							<p class="tb-td-img">
+								<img src="../public/img/tdc_01.png" />
+							</p>
+							<div class="tb-td-content">
+								<h4>财税资讯订阅号</h4>
+								<p>• 分享财税干货</p>
+								<p>• 每天新政热议</p>
+							</div>
+						</li>
+					</ul>
+				</li>
+				<li data-spy="menu">
+					<a class="tb-item" href="javascript:;">客户服务<i class="icon"></i></a>
+					<ul data-spy="submenu" class="tb-help">
+						<!-- <li><a href="#">帮助中心</a></li> -->
+						<li><a id="top-qqTalk" href="javascript:;">在线客服</a></li>
+						<li><a href="/app/servicemail.html">客服邮箱</a></li>
+					</ul>
+				</li>
+				<!-- <li data-spy="menu">
+					<a class="tb-item" href="javascript:;">网站导航<i class="icon"></i></a>
+					<div data-spy="submenu" class="tb-map clearfix">
+						<div class="tb-map-01">
+							<h5>特惠套餐</h5>
+							<p>
+								<a href="#">大众创业优惠套餐</a>
+								<a href="#">互联网+创业套餐</a>
+								<a href="#">餐饮服务创业套餐</a>
+								<a href="#">全年财税无忧套餐</a>
+								<a href="#">财税法律顾问套餐</a>
+							</p>
+						</div>
+						<div class="tb-map-02">
+							<h5>全部服务</h5>
+							<p>
+								<a href="#">工商服务</a>
+								<a href="#">财会服务</a>
+								<a href="#">税务服务</a>
+								<a href="#">行政许可</a>
+								<a href="#">商标专利</a>
+								<a href="#">人事服务</a>
+								<a href="#">社保公积金</a>
+							</p>
+						</div>
+						<div class="tb-map-03">
+							<h5>财税资讯</h5>
+							<p>
+								<a href="#">壹财税头条</a>
+								<a href="#">专家回答</a>
+								<a href="#">案例解读</a>
+								<a href="#">财税天地</a>
+								<a href="#">商标专利</a>
+								<a href="#">创业学堂</a>
+								<a href="#">壹财税动向</a>
+							</p>
+						</div>
+						<div class="tb-map-04">
+							<h5>服务平台</h5>
+							<p>
+								<a href="#">财税服务商</a>
+								<a href="#">财税专家</a>
+								<a href="#">服务商进驻</a>
+							</p>
+						</div>
+						<div class="tb-map-05">
+							<h5>消费者权益</h5>
+							<p>
+								<a href="#">5S服务保障</a>
+								<a href="#">会员卡券</a>
+								<a href="#">帮助中心</a>
+							</p>
+						</div>
+					</div>
+					
+				</li> -->
+			</ul>
+			<ul class="tb-right">
+				<li class="tb-status" id="tb-status">
+					<a class="tb-item" href="/app/personalCenter.html" id="tb-user">--</a>
+					<a class="tb-item" href="/app/settings.html">账户设置</a>
+				</li>
+				<li class="tb-login" id="tb-login" data-spy="menu">
+					<a class="tb-item" href="/app/login.html">登录<i class="icon"></i></a>
+					<ul data-spy="submenu" class="tb-login-menu">
+						<li><a href="/app/login.html">壹财税帐号登录</a></li>
+						<li><a href="/app/login.html">手机登录</a></li>
+					</ul>
+				</li>
+				<li class="tb-reg-out">
+					<a class="tb-item" id="tb-reg-out-btn" href="/app/register.html">免费注册</a>
+				</li>
+				<li class="tb-shopcar">
+					<a class="tb-item" href="/app/cart.html">我的购物车
+					<em class="badge" id="tb-goods"></em>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- top bar end -->
+	<!-- head wrap start -->
+	<div class="head-wrap">
+		<div class="head-wrap-inner clearfix">
+			<h2 class="hw-logo">
+				<a href="/">
+					<img src="../public/img/logo-3.png" width="108" height="30" />
+				</a>
+			</h2>
+			<h3 class="hw-title">服务评价</h3>
+			<div class="hw-searchBox">
+				<form id="headWrapSearchForm" action="/article/tag.htm" method="get">
+					<label class="icon hwsb-title" for="hwsb-text">搜索</label>
+					<input name="querycondition" type="text" class="hwsb-text" id="hwsb-text" data-role="search" data-menu-id="hwsb-serviceList" data-words-id="hwsb-hotSearch" /><button class="hwsb-button">搜索</button>
+				</form>
+				<ul class="hwsb-serviceList" id="hwsb-serviceList">
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>工商服务</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>财会服务</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>税务服务</em>
+							<span>约有 5 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>行政许可</em>
+							<span>约有 10 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>商标专利</em>
+							<span>约有 6 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>人事服务</em>
+							<span>约有 5 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>社保公积金</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+				</ul>
+				<!-- <p class="hwsb-hotSearch" id="hwsb-hotSearch">
+					<a href="#">0元开公司</a>
+				</p> -->
+			</div>
+		</div>
+	</div>
+	<!-- head wrap end-->
+
+	<div class="crumbs-box">
+		<div class="crumbs-box-inner">
+			<p class="crumbs">
+				<a href="/">首页</a> &gt;
+				<span>服务评价</span>
+			</p>
+		</div>
+	</div>
+	<!-- personal center banner start -->
+	<!-- <div class="pcBanner">
+		<a href="#"><img src="../public/img/pcBanner-image.jpg" width="1210" height="60" alt=""></a>
+	</div> -->
+	<!-- personal center banner end -->
+	<div class="container">
+		<div class="content clearfix">
+			<!-- personal center navigation start -->
+			<div class="pcNav" id="pcNav">
+				<h2>订单中心</h2>
+				<ul>
+					<li data-role="nav"><a href="/app/orderList.html">我的订单</a></li>
+					<li data-role="nav"><a href="/app/myService.html">我的服务</a></li>
+					<li data-role="nav"><a href="/app/cart.html">我的购物车</a></li>
+				</ul>
+				<h2>个人中心</h2>
+				<ul>
+					<li data-role="nav"><a href="/app/quan.html">我的卡券</a></li>
+					<!-- <li data-role="nav"><a href="/app/message.html">消息中心</a></li> -->
+					<li data-role="nav"><a href="/app/favishop.html">收藏的服务商</a></li>
+				</ul>
+				<h2>设置</h2>
+				<ul>
+					<li data-role="nav"><a href="/app/settings.html">账户设置</a></li>
+				</ul>
+				<div class="pcNav-servicer" id="pcNav-servicer">
+					<h2>热门服务商</h2>
+					<p class="pcns-refresh"><a href="javascript:;" id="pcNav-servicer-changeBtn" data-value="1">换一组</a></p>
+					<div class="pcns-list">
+						<ul class="clearfix" id="pcNav-servicer-list">
+							<li><a href="#"><img src="../public/img/servicer-image-small-01.png" alt=""></a></li>
+							<li><a href="#"><img src="../public/img/servicer-image-small-02.png" alt=""></a></li>
+							<li><a href="#"><img src="../public/img/servicer-image-small-03.png" alt=""></a></li>
+							<li><a href="#"><img src="../public/img/servicer-image-small-04.png" alt=""></a></li>
+							<li><a href="#"><img src="../public/img/servicer-image-small-05.png" alt=""></a></li>
+							<li><a href="#"><img src="../public/img/servicer-image-small-06.png" alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- personal center navigation end -->
+			<!-- order list start -->
+			<div class="comments-box">
+				<ul id="comments-tab" class="comments-tab clearfix">
+					<li data-value="0" class="active"><a href="javascript:;">待评价</a></li>
+					<li data-value="1"><a href="javascript:;">已评价</a></li>
+				</ul>
+				
+				<ul class="comments-header clearfix">
+					<li class="olh-col01">服务信息</li>
+					<li class="olh-col05">评价状态</li>
+				</ul>
+				<div class="comments-list">
+					<ul id="comments-list"></ul>
+					<div id="ol_pager"></div>
+				</div>
+			</div>
+			<!-- order list end -->
+		</div>
+	</div>
+	
+	
+	<!-- advantage start -->
+	
+	
+	<div class="advantage clearfix">
+	
+	
+		<ul>
+	
+	
+			<li class="col-1">
+	
+	
+				<a href="/app/guarantee.html"><i class="icon"></i>优选专家</a>
+	
+	
+			</li>
+	
+	
+			<li class="col-2">
+	
+	
+				<a href="/app/guarantee.html"><i class="icon"></i>价格透明</a>
+	
+	
+			</li>
+	
+	
+			<li class="col-3">
+	
+	
+				<a href="/app/guarantee.html"><i class="icon"></i>服务规范</a>
+	
+	
+			</li>
+	
+	
+			<li class="col-4">
+	
+	
+				<a href="/app/guarantee.html"><i class="icon"></i>交易安全</a>
+	
+	
+			</li>
+	
+	
+		</ul>
+	
+	
+	</div>
+	
+	
+	<!-- advantage end -->
+	
+	<!-- footer start -->
+	
+	<div class="footer">
+	
+		<div class="f-inner">
+	
+			<p class="f-logo"><img src="../public/img/logo-2.png" /></p>
+	
+			<div class="f-content">
+	
+				<p class="f-map">
+	
+		            <a href="/app/about.html" title="关于我们" target="_blank">关于我们</a> |
+	
+		            <a href="/app/team.html" title="团队介绍" target="_blank">团队介绍</a> |
+	
+		            <a href="/app/recruit.html" title="人才招聘" target="_blank">人才招聘</a> |
+	
+		            <a href="/app/milestone.html" title="大事记" target="_blank">大事记</a> |
+	
+		            <a href="/app/contact.html" title="联系我们" target="_blank">联系我们</a> |
+	
+		            <a href="/app/aptitude.html" title="资质文件" target="_blank">资质文件</a> |
+	
+		            <a href="/app/disclaim.html" title="免责申明" target="_blank">免责申明</a> |
+	
+		            <a href="/service/qryAllServiceGoods.htm" title="全部服务" target="_blank">全部服务</a> |
+	
+		            <a href="/app/shopstart.html" title="服务商进驻" target="_blank">服务商进驻</a>
+	
+		        </p>
+	
+		        <p class="f-copyright">壹财税 版权所有 Copyright © 2015 www.1caishui.com All Rights Reserved   粤ICP备15017127号-1</p>
+	
+			</div>
+	
+			<p class="f-safe">
+	
+		        <a target="_blank" rel="nofollow" id="_pingansec_bottomimagesmall_shiming" href="http://si.trustutn.org/info?sn=554150906015506542095"><img src="//v.trustutn.org/images/cert/bottom_small_img.png"/></a>
+	
+		    </p>
+	
+	    </div>
+	
+	</div>
+	
+	<!-- footer end -->
+	<!-- footer float start -->
+	<div class="footer-float" id="footer-float">
+		<!-- <a href="/app/cart.html" class="ff-car">
+			<i class="icon"></i>
+			<span class="ff-hoverBox">
+				<i class="icon"></i>
+				<em>购物车</em>
+			</span>
+			<em class="badge" id="ff-goods">99</em>
+		</a> -->
+		<a href="javascript:;" class="ff-phone">
+			<i class="icon"></i>
+			
+			<span class="ff-hoverBox">
+				<i class="icon"></i>
+				<em>4008 310 866<br/>周一至周五 9：00-18：00</em>
+			</span>
+		</a>
+		<a href="javascript:;" class="ff-qq"  id="footer-qqtalk">
+			<i class="icon"></i>
+			
+			<span class="ff-hoverBox">
+				<i class="icon"></i>
+				<em>QQ客服</em>
+			</span>
+		</a>
+		
+		<a href="javascript:;" class="ff-wx">
+			<i class="icon"></i>
+			
+			<span class="ff-hoverBox">
+				<em>关注我们</em>
+			</span>
+			<div class="ff-td">
+				<ul>
+					<li>
+						<p class="ff-td-img">
+							<img src="../public/img/tdc_02.png" />
+						</p>
+						<div class="ff-td-content">
+							<h4>壹财税服务号</h4>
+							<p>• 微信轻松下单</p>
+							<p>• 随时跟踪服务</p>
+						</div>
+					</li>
+					<li>
+						<p class="ff-td-img">
+							<img src="../public/img/tdc_01.png" />
+						</p>
+						<div class="ff-td-content">
+							<h4>财税资讯订阅号</h4>
+							<p>• 分享财税干货</p>
+							<p>• 每天新政热议</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</a>
+		<a href="javascript:;" id="ff-returnTop" class="ff-top">
+			<i class="icon"></i>
+			<span class="ff-hoverBox">
+				<em>回到顶部</em>
+			</span>
+		</a>
+	</div>
+	<!-- footer float end -->
+	
+	<script  type="text/x-handlebars-template" id="service-list-template">
+		{{#each orderServiceList}}
+			<li>
+				<p class="cl-photo">
+					<a href="#" target="_blank">
+						<img width="80" height="65" src="{{serviceImgs}}"/>
+					</a>
+				</p>
+				<p class="cl-intro">
+					<a href="#" target="_blank">{{siname}}</a>
+					<span>{{servicename}}</span>
+					<span>购买时间：{{created}}</span>
+				</p>
+				<p class="cl-opt">
+					<a href="javascript:;" data-role="commitBtn" data-value="{{id}}" class="btn btn-default">点击评价</a>
+				</p>
+			</li>
+		{{/each}}
+	</script>
+       
+    
+    
+    
+    <script  type="text/x-handlebars-template" id="appraise-template">
+    	<div class="appraise-box">
+			<div class="appraise-items glide-box" id="appraise-items">
+				<a href="javascript:;" class="glide-prev" data-role="prev"></a>
+				<div class="glide-cabinet" data-role="cabinet">
+					<ul id="appraise-list" class="glide-content" data-role="list">
+					{{#each list}}
+			    	<li data-role="item" data-osid="{{osid}}" data-oossid="{{oossid}}">
+						<p class="ac-photoline">
+							<img src="{{serviceImg}}" width="80" height="65" />
+						</p>
+						<p class="ac-textLine"><strong>{{siname}}</strong></p>
+						<p class="ac-textLine">{{sdname}}</p>
+						<p class="ac-textLine"><span>购买时间：{{created}}</span></p>
+					</li>
+			    	{{/each}}
+					</ul>
+				</div>
+				<a href="javascript:;" class="glide-next" data-role="next"></a>
+			</div>
+			<div class="appraise-content" id="appraise-content">
+				<form action="/user/addOSReviewByOOSSID" name="appraiseForm">
+					<ul class="appraise-counter">
+						<li class="ac-line" id="ac-total-line">
+							<span class="ac-title"><em>*</em>总体评价</span>
+							<span id="ac-total-star" data-role="starBox" class="ac-stars">
+								<i class="ac-star-1" data-target="total"></i><i class="ac-star-2" data-target="total"></i><i class="ac-star-3" data-target="total"></i><i class="ac-star-4" data-target="total"></i><i class="ac-star-5" data-target="total"></i>
+							</span>
+							<span id="ac-total-show" class="ac-point">0分</span>
+							<input type="hidden" data-rule="checkEmpty:请选择分数" name="total" value="">
+						</li>
+						<li class="ac-line" id="ac-respond-line">
+							<span class="ac-title"><em>*</em>响应速度</span>
+							<span data-role="starBox" id="ac-respond-star" class="ac-stars">
+								<i class="ac-star-1" data-target="respond"></i><i class="ac-star-2" data-target="respond"></i><i class="ac-star-3" data-target="respond"></i><i class="ac-star-4" data-target="respond"></i><i class="ac-star-5" data-target="respond"></i>
+							</span>
+							<span id="ac-respond-show" class="ac-point">0分</span>
+							<input type="hidden" data-rule="checkEmpty:请选择分数" name="respond" value="">
+						</li>
+						<li class="ac-line" id="ac-service-line">
+							<span class="ac-title"><em>*</em>服务态度</span>
+							<span data-role="starBox" id="ac-service-star" class="ac-stars">
+								<i class="ac-star-1" data-target="service"></i><i class="ac-star-2" data-target="service"></i><i class="ac-star-3" data-target="service"></i><i class="ac-star-4" data-target="service"></i><i class="ac-star-5" data-target="service"></i>
+							</span>
+							<span id="ac-service-show" class="ac-point">0分</span>
+							<input type="hidden" data-rule="checkEmpty:请选择分数" name="service" value="">
+						</li>
+						<li class="ac-line" id="ac-professional-line">
+							<span class="ac-title"><em>*</em>专业程度</span>
+							<span data-role="starBox" id="ac-professional-star" class="ac-stars">
+								<i class="ac-star-1" data-target="professional"></i><i class="ac-star-2" data-target="professional"></i><i class="ac-star-3" data-target="professional"></i><i class="ac-star-4" data-target="professional"></i><i class="ac-star-5" data-target="professional"></i>
+							</span>
+							<span id="ac-professional-show" class="ac-point">0分</span>
+							<input type="hidden" data-rule="checkEmpty:请选择分数" name="professional" value="">
+						</li>
+					</ul>
+					<p class="ac-title-line"><span class="ac-title"><em>*</em>服务评价</span><span class="ac-tips">1-500字</span></p>
+					<p class="ac-texarea"><textarea data-rule="checkWords:0,500" name="content" maxlength="500"></textarea>
+					<span class="ac-tips"></span></p>
+					<input type="hidden" value="0" name="oossid" />
+					<input type ="hidden" value="0" name="osid" />
+					<p class="ac-button-line"><button type="submit" class="btn btn-primary">发表评价</button></p>
+				</form>
+			</div>
+		</div>
+    </script>
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?7f22c04f525c4961b0b57297567c105d";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+        ga('create', 'UA-67999660-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!--[if gt IE 8]><!-->
+    <script type='text/javascript'>
+        (function(m, ei, q, i, a, j, s) {
+            m[a] = m[a] || function() {
+                (m[a].a = m[a].a || []).push(arguments)
+            };
+            j = ei.createElement(q),
+                s = ei.getElementsByTagName(q)[0];
+            j.async = true;
+            j.charset = 'UTF-8';
+            j.src = i + '?v=' + new Date().getUTCDate();
+            s.parentNode.insertBefore(j, s);
+        })(window, document, 'script', '//eco-api.meiqia.com/dist/meiqia.js', '_MEIQIA');
+        _MEIQIA('entId', 9517);
+    </script>
+    <!--<![endif]-->
+    <script type="text/javascript" src="//tajs.qq.com/stats?sId=49998824" charset="UTF-8"></script>
+    
+<script type="text/javascript" src="../public/js/vendor/require.js"></script>
+<script type="text/javascript" src="../public/js/config.js"></script>
+    <script type="text/javascript" src="/public/js/comments.js"></script>
+</body>
+</html>

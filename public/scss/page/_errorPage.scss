@@ -1,0 +1,90 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+.error-wrapper{
+	padding: 0 0 100px;
+	background-color: $lbgy;
+	.error-inner{
+		background-color: $bw;
+		width: $w1;
+		margin: 0 auto;
+		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+		.error-content-404{
+			text-align: center;
+			padding: 100px 0;
+			.title{
+				padding-bottom: 53px;
+			}
+			.content{
+				.info{
+					padding-bottom: 51px;
+					color: $mwgy;
+					font-size: 24px;
+				}
+				.return{
+					margin: 0 auto;
+					width: 178px;
+					cursor: pointer;
+					a{
+						padding: 10px 0;
+						display: block;
+						text-align: center;
+						background-color: $lbgy; 
+						font-size: 16px;
+						color: $mwgy;
+						border: 1px solid $line;
+						border-radius: 2px;
+
+						&:hover{
+							background-color: $blue; 
+							color: white;
+							border: 1px solid $blue;
+							border-radius: 2px;
+						}
+					}
+				}
+			}
+		}
+
+		.error-content-500{
+			text-align: center;
+			padding: 100px 0;
+			.title{
+				padding-bottom: 53px;
+			}
+			.content{
+				.info{
+					padding-bottom: 73px;
+					color: $mwgy;
+					font-size: 24px;
+				}
+				.return{
+					margin: 0 auto;
+					width: 178px;
+					cursor: pointer;
+					a{
+						padding: 10px 0;
+						display: block;
+						text-align: center;
+						background-color: $lbgy; 
+						font-size: 16px;
+						color: $mwgy;
+						border: 1px solid $line;
+						border-radius: 2px;
+
+						&:hover{
+							background-color: $blue; 
+							color: white;
+							border: 1px solid $blue;
+							border-radius: 2px;
+						}
+					}
+				}
+			}
+		} //
+	}
+}
+
+body>.links{
+	background-color: $bw;
+}

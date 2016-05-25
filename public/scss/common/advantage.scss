@@ -1,0 +1,78 @@
+@import 'variable';
+@import 'maxin';
+
+.advantage{
+	border-top: 1px solid $line;
+	background-color: $bw;
+	padding: 20px 0;
+	ul{
+		width: $w1;
+		margin: 0 auto;
+		li{
+			width: 301px;
+			float: left;
+			color: $mwgy;
+			font-size: 18px;
+			position: relative;
+			text-indent: 136px;
+			border-right: 1px solid $line;
+			&:first-child{
+				width: 302px;
+				border-left: 1px solid $line;
+			}
+			.icon{
+				position: absolute;
+				top: -5px;
+				left: 100px;
+			}
+		}
+		a{
+			@include detrans;
+			display: block;
+			color: $mwgy;
+			&:hover{
+				color: $blue;
+			}
+		}
+		.col-1{
+			.icon{
+				@include sprite(9, 30px, 30px);
+			}
+			a:hover{
+				.icon{
+					background-position: -120px -20px;
+				}
+			}
+		}
+		.col-2{
+			.icon{
+				@include sprite(10, 30px, 30px);
+			}
+			a:hover{
+				.icon{
+					background-position: -150px -20px;
+				}
+			}
+		}
+		.col-3{
+			.icon{
+				@include sprite(11, 30px, 30px);
+			}
+			a:hover{
+				.icon{
+					background-position: -180px -20px;
+				}
+			}
+		}
+		.col-4{
+			.icon{
+				@include sprite(12, 30px, 30px);
+			}
+			a:hover{
+				.icon{
+					background-position: -210px -20px;
+				}
+			}
+		}
+	}
+}

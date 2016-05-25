@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
+    <title>壹财税</title>
+    <style>
+		body,div,p,span{
+			padding: 0;
+			margin: 0;
+		}
+		div{
+			background: url('../public/img/closeIcon.png') 0 0 no-repeat;
+			width: 100px;
+			height: 56px;
+			padding-left: 76px;
+			margin: 187px auto 0;
+		}
+		div p:first-child{
+			font-size: 24px;
+			color: #666666;
+		}
+
+		div p:first-child+p{
+			font-size: 14px;
+			color: #969696;
+		}
+    </style>
+</head>
+<body>
+	<div>
+		<p>绑定成功</p>
+		<p><span id="count">5</span>秒后自动关闭</p>
+	</div>
+	<script>
+		var i = 5;
+		function count () {
+			setTimeout(function () {
+				if (i <= 0) {
+					self.opener=null;
+					self.close();
+				} else {
+					document.getElementById('count').innerHTML = i;
+					i -= 1;
+					count();
+				}
+			}, 1000);
+		}
+		count();
+	</script>
+</body>
+</html>

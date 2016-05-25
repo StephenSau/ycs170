@@ -1,0 +1,434 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+body{
+	background-color: $lbgy;
+}
+
+.btn-pomelo{
+	background: $pomelo;
+	color: #fff;
+
+	-webkit-transition: background 0.3s;
+	transition: background 0.3s;
+
+	&:hover{
+		background: $dpomelo;
+	}
+}
+
+// In-page navigation
+.allsorts-tabs{
+	border: 1px solid $line;
+	background-color: $bw;
+	box-shadow: $gbboxShadow;
+	margin-bottom: 40px;
+
+  // Sticking
+  &.affix {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: 0;
+    max-width: 880px; // Temp fixes for overwhelming categories
+
+    // Stick below the global float topNav
+    &.second-level{
+      top: 72px;
+    }
+
+    a {
+      &,
+      &:first-of-type{
+        width: 110px;
+      }
+    }
+
+  }
+
+	li{
+		float: left;
+    a{
+      display: inline-block;
+      text-align: center;
+      padding: 11px 0;
+      font-size: 14px;
+      color: $mwgy;
+      width: 109px; // ~~(878 / 8) 
+
+      -webkit-transition: none;
+      transition: none;
+
+      &:hover{
+        color: $blue;
+
+        -webkit-transition: color 0.3s;
+        transition: color 0.3s;
+      }
+    }
+
+    &:first-of-type{
+      a {
+        width: 115px; // fill the leftover 6px gap
+      }
+    }
+
+		&.active{
+			a{
+				color: $bw;
+				position: relative;
+				background-color: $blue;
+				z-index: 1;
+
+				&:after{
+					content: " ";
+					position: absolute;
+					bottom: -6px;
+					left: 50%;
+					margin-left: -6px;
+					@include sprite(80, 12px, 12px, block);
+					z-index: 5;
+				}
+			}
+		}
+	}
+}
+
+.sorts-wrap {
+	background-color:$bw;
+  background: $lbgy;
+
+  .sorts-content{
+    @include box-center(1210px);
+    color:$lwgy;
+    background: $lbgy;
+    font-size:16px;
+    margin-bottom: 95px;
+  }
+
+  .sorts-list{
+    float:left;
+    position:relative;
+    width:880px;
+  }
+
+  h2,
+  h3{
+		margin: 0;
+		padding: 0;
+  }
+
+  .section{
+    margin-top: 40px;
+
+    &:first-of-type{
+      margin-top: 0;
+    }
+  }
+
+  .section-title{
+		font-size: 24px;
+		color: $mwgy;
+		margin-bottom: 30px;
+	}
+
+  .section-list{
+  	margin-top: 35px;
+
+    &:first-of-type{
+      margin-top: 0;
+    }
+
+  	// The <li>
+  	.service-block{
+  		border: 1px solid $line;
+  		box-shadow: $gbboxShadow;
+  		background: $bw;
+  		margin-top: 20px;
+
+      > a {
+        display: block;
+        padding: 30px;
+        position: relative;
+        overflow: visible;
+      }
+
+  		&.has-discount{
+        > a {
+          padding-bottom: 60px;
+        }
+  		}
+
+  		&:first-of-type{
+  			margin-top: 0;
+  		}
+
+  		&:hover{
+  			.service-description{
+  				&,
+  				*{
+  					color: $mwgy;
+  				}
+  			}
+
+        .vendors-count{
+          font-weight: bold;
+        }
+  		}
+
+  	}
+
+  	.cover-wrapper{
+  		float: left;
+  		width: 140px;
+
+  		.service-cover{
+  			width: 140px;
+  			height: 112px;
+  		}
+  	}
+
+  	.li-content{
+  		float: right;
+  		width: 655px;
+  	}
+
+  	.service-title {
+  		color: $dwgy;
+  		font-size: 24px;
+  		margin-bottom: 16px;
+  		float: left;
+      max-width: 350px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  	}
+
+  	.infos{
+  		float: right;
+  		position: relative;
+  		top: -8px;
+
+  		.subtle-info{
+	  		font-size: 12px;
+	  		line-height: 1.5em;
+	  		color: $mwgy;
+	  		text-align: right;
+
+  			.current-location{
+	  			color: $lwgy;
+	  		}
+
+	  		.counter{
+	  			color: $pomelo;
+	  		}
+
+  		}
+  	}
+
+ 		.service-description{
+ 			height: 64px; // limit to 3 rows
+ 			overflow: hidden;
+ 			text-overflow: ellipsis;
+
+ 			&,
+ 			*{
+	 			font-size: 14px;
+	 			line-height: 1.6em;
+	 			color: $lwgy;
+
+				-webkit-transition: color 0.3s;
+				transition: color 0.3s;
+ 			}
+
+ 			ul {
+ 				margin: 0;
+ 				padding: 0 0 0 1.2em;
+
+ 				li {
+ 					list-style: disc;
+ 				}
+ 			}
+ 		}
+
+  	.discount-info{
+  		color: #fff;
+  		font-size: 14px;
+  		text-align: center;
+  		padding: 6px 1em 7px 1em;
+  		background: $blue;
+  		position: absolute;
+  		left: 0;
+  		right: 0;
+  		bottom: 0;
+      z-index: 1;
+  	}
+
+  	&.special-sets{
+  		.discount-info{
+  			background: $pomelo;
+  		}
+  	}
+
+  }
+
+  .sidebar{
+    float:right;
+    width:280px;
+    img{
+      vertical-align: top;
+    }
+
+    .pmo-block{
+      padding-bottom: 20px;
+
+      a {
+        &,
+        img {
+          border: 0;
+          display: block;
+        }
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }    
+
+    .common {
+      border: 1px solid $line;
+      margin-bottom:20px;
+      padding: 0 19px;
+      background-color: $bw;
+      box-shadow: 0px 1px 2px 0px rgba( 7, 0, 2,.05 );
+      h2 {
+        position: relative;
+        left: -19px;
+      }
+    }
+    .more{
+      display:block;
+      color:$lwgy;
+      width:100%;
+      height:34px;
+      line-height:34px;
+      text-align:center;
+      background-color:$lbgy;
+      border-radius:3px;
+      &:hover{
+        color:#3873aa;
+        background-color:#e5f0f8;
+      }
+    }
+
+    .coupon-list {
+      padding-bottom: 20px;
+      ul{
+        padding-top:20px;
+      }
+      li{
+        padding-top:20px;
+        &:first-of-type{
+          padding-top: 0;
+        }
+      }
+      .coupon-intro{
+        white-space: nowrap;
+      }
+
+      .no-coupon{
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+
+    .experts{
+      padding-bottom:6px;
+
+      .title-image{
+        > img {
+          width: 278px;
+          height: 119px;
+        }
+      }
+      
+      ul {
+        padding-top:20px;
+      }
+
+      li{
+        padding-top:15px;
+        border-top:1px solid $line;
+        margin-bottom:20px;
+
+        // don't rely on .last in JSP
+        &:first-of-type{
+          border-top: 0;
+          padding-top: 0;
+        }
+      }
+      .figure{
+        position:relative;
+        padding-left:84px;
+        img{
+          position:absolute;
+          height: 65px;
+          width: 65px;
+          left:-2px;
+          border:1px solid $line;
+          border-radius:50%;
+        }
+
+        .figcaption{
+          position: relative;
+          min-height: 60px; // fallback when expert description is too short (< 2 lines)
+        }
+      }
+      h3{
+        padding-bottom:7px;
+        font-size:16px;
+        color:$mwgy;
+      }
+      em{
+        position:absolute;
+        right:0;
+        top:5px;
+        color:$blue;
+        font-size:12px;
+      }
+      p{
+        margin-bottom:8px;
+        font-size: 12px;
+        color:$lwgy;
+        line-height:18px;
+        text-align: justify;
+        max-height: 72px;
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        
+        /* number of lines to show */
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+      }
+      .btn{
+        padding:4px 35px;
+        background-color:$green;
+        border-color:$green;
+        color:$bw;
+
+        -webkit-transition: background 0.3s;
+        transition: background 0.3s;
+
+        &:hover{
+          background-color:$dgreen;
+          border-color:$dgreen;
+          color:$bw;
+        }
+      }
+    }
+  }
+}

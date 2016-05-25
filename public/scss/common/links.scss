@@ -1,0 +1,106 @@
+@import 'variable';
+@import 'maxin';
+
+.links{
+    border-top: 1px solid $line;
+    background-color: $bw;
+    .links-inner{
+        width: $w1;
+        margin: 0 auto;
+        padding: 37px 0 33px;
+        overflow: hidden;
+    }
+    .links-box{
+        float: left;
+        min-height: 130px;
+        border-right: 1px solid $line;
+        width: 872px;
+        padding-right: 35px;
+        >p{
+            display: none;
+            &.active{
+                display: block;
+            }
+            a{
+                display: inline-block;
+                margin-bottom: 8px;
+                font-size: 12px;
+                color: $lwgy;
+                &:hover{
+                    color: $dwgy;
+                }
+                &:before{
+                    content: "| ";
+                }
+                &:first-child:before{
+                    content: "";
+                }
+                &.lw-join{
+                    display: block;
+                    &:before{
+                        content: "";
+                    }
+                }
+            }
+        }
+    }
+    .links-contact{
+        float: left;
+        padding-left: 75px;
+        text-align: center;
+        strong{
+            display: block;
+            color: $blue;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        span{
+            color: $lwgy;
+            font-size: 12px;
+        }
+        .btn{
+            margin-top: 30px;
+            display: block;
+            position: relative;
+            border-radius: 3px;
+            border: 1px solid $mwgy;
+            color: $mwgy;
+            background-color: transparent;
+            i{
+                @include sprite(30, 18px, 18px);
+                position: absolute;
+                left: 42px;
+                top: 7px;
+            }
+            &:hover{
+                border: 1px solid $blue;
+                color: $blue;
+                i{
+                    background-position: -170px 0;
+                }
+            }
+            
+        }
+    }
+    .links-tab{
+        border-bottom: 1px solid $line;
+        margin-bottom: 10px;
+        li{
+            float: left;
+            margin: 0 25px -1px 0;
+            border-bottom: 1px solid $line;
+            a{
+                display: block;
+                padding-bottom: 5px;
+                color: $mwgy;
+            }
+            &.active{
+                border-bottom: 1px solid $dwgy;
+                a{
+                    color: $dwgy;
+                }
+            }
+        }
+    }
+    
+}

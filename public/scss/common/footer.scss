@@ -1,0 +1,34 @@
+.footer{
+	background-color: $dwgy;
+	.f-inner{
+		width: $w1;
+		margin: 0 auto;
+		padding: 25px 0;
+		overflow: hidden;
+	}
+	.f-logo{
+		float: left;
+		margin-right: 10px;
+		margin-top: 2px;
+	}
+	.f-content{
+		color: $lwgy;
+		float: left;
+		font-size: 12px;
+		.f-map{
+			margin-bottom: 2px;
+		}
+		a{
+			color: $lwgy;
+			&:hover{
+				color: #dddddd;
+			}
+		}
+	}
+	.f-safe{
+		float: right;
+		img{
+			height: 30px;
+		}
+	}
+}

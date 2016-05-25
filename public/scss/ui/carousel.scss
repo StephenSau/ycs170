@@ -1,0 +1,74 @@
+.carousel{
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.carousel-indicators{
+    position: absolute;
+    list-style: none;
+    bottom: 12px;
+    width: 100%;
+    text-align: right; 
+    z-index: 10;
+}
+
+
+.carousel-indicators li, .carousel-indicators span{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #000000;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+    border-radius: 50%;
+    margin-right: 13px;
+    cursor: pointer;
+}
+
+.carousel-indicators li.active, .carousel-indicators span.active{
+    opacity: .4;
+    filter: alpha(opacity=40);
+}
+
+.carousel-inner{
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    li{
+        position: absolute;
+        top: 800px;
+        &.active{
+            top: 0px;
+        }
+    }
+}
+
+.carousel-move{
+    li{
+        position: absolute;
+        z-index: 2;
+        top: 800px;
+        &.active{
+            position: static;
+        }
+    }
+    
+}
+
+.carousel-gradual{
+    position: relative;
+    li{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        &.active{
+           z-index: 1;
+           opacity: 1;
+           filter: alpha(opacity=100);
+        }
+    }
+}

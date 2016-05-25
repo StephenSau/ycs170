@@ -1,0 +1,387 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+.container{
+	background-color: $lbgy;
+	padding-bottom: 100px;
+}
+
+.content{
+	width: $w1;
+	margin: 0 auto;
+}
+
+.lBanner{
+	float: left;
+	img{
+		display: block;
+	}
+}
+
+
+
+.login-box{
+	border: 1px solid $line;
+	position: relative;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	background-color: $bw;
+	padding: 60px 80px 0;
+	width: 258px;
+	height: 356px;
+	float: left;
+}
+
+.login-tab{
+	border-bottom: 2px solid $line;
+	margin-bottom: 30px;
+	li{
+		float: left;
+		width: 50%;
+		margin-bottom: -2px;
+		text-align: center;
+		height: 36px;
+		line-height: 36px;
+		border-bottom: 2px solid $line;
+		a{
+			display: block;
+			font-size: 16px;
+			color: $dbgy;
+		}
+		&.active{
+			border-bottom-color: $blue;
+			a{
+				color: $blue;
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+.form-text{
+	height: 34px;
+	line-height: 34px;
+	background: none;
+	border: 1px solid $line;
+	padding: 0 10px;
+	width: 236px
+}
+
+.login-form{
+	color: $lwgy;
+	overflow: hidden;
+	position: relative;
+	width: 258px;
+	height: 200px;
+	div{
+		position: absolute;
+		top: 0;
+		left: 100%;
+		width: 258px;
+		height: 200px;
+		&.active{
+			left: 0;
+		}
+	}
+	li{
+		margin-bottom: 15px;
+	}
+	.btn-primary{
+		display: block;
+		width: 100%;
+		background-color: $blue;
+		color: $bw;
+	}
+	.lf-col2{
+		.form-text{
+			width: 112px;
+			vertical-align: top;
+		}
+		.btn-default{
+			margin-left: 10px;
+			padding: 7px 12px;
+			width: 88px;
+		}
+	}
+
+	.lf-col3{
+		.form-text{
+			width: 108px;
+			
+			vertical-align: top;
+		}
+
+		img{
+			width: 80px;
+			height: 36px;
+			vertical-align: top;
+		}
+		a{
+			margin-left: 10px;
+			&:hover{
+				.icon{
+					background-position: -30px -260px\9; 	
+					-moz-transform: rotate(90deg); 	
+					-webkit-transform: rotate(90deg); 
+					-o-transform: rotate(90deg);
+					transform: rotate(90deg); 
+				}
+			}
+			span{
+				background-color: $lbgy;
+				padding: 9px 8px 6px 8px;
+				text-align: center;
+				border: 1px solid $line;
+				border-left: none;
+				display: inline-block;
+				.icon{
+					@include sprite(36, 16px, 16px);
+					-webkit-transition: -webkit-transform 0.5s ease-out;
+				    -o-transition: -o-transform 0.5s ease-out;
+				    transition: transform 0.5s ease-out;
+				}
+			}
+		}
+		
+	}
+}
+
+.other-login{
+	color: $lwgy;
+
+	.icon{
+		@include sprite(20, 20px, 20px);
+	}
+
+	.icon-wx{
+		background-position: -370px -80px;
+	}
+
+	.icon-qq{
+		background-position: -250px 0;
+	}
+	a{
+		vertical-align: top;
+		margin-left: 10px;
+		&:hover{
+			.icon-wx{
+				background-position: -100px -80px;
+			}
+			.icon-qq{
+				background-position: -150px 0;
+			}
+		}
+	}
+}
+
+.replenish{
+	position: absolute;
+	color: $lwgy;
+	font-size: 12px;
+	bottom: 20px;
+	right: 15px;
+	a{
+		color: $lwgy;
+		margin: 0 5px;
+		&:hover{
+			color: $blue;
+		}
+	}
+}
+
+.wxLoginBox{
+    width: 300px;
+    padding: 50px;
+    background: url('../img/loading.gif') 50% 50% no-repeat;
+}
+
+.loadingBox{
+    padding: 55px 150px;
+    text-align: center;
+    img{
+        margin-bottom: 20px;
+    }
+    p{
+        color: $lwgy;
+        font-size: 18px;
+        font-family: $ffa;
+    }
+}
+
+.binding-content{
+    width: 1108px;
+    background-color: #ffffff;  
+}
+
+.register_box, .binding_box{
+	.ui-tips{
+        margin-bottom: 10px;
+        display: none;
+        width: auto;
+        background-color: #f7f7f7;
+        border-radius: 4px;
+        padding: 5px 8px 5px 29px;
+        position: relative;
+        color: #666666;
+        vertical-align: top;
+        &:before{
+            content: "!";
+            background: url('../img/formVerified-error-bg.png') 0 0 no-repeat;
+            color: #ffffff;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            display: block;
+            width: 16px;
+            position: absolute;
+            top: 5px;
+            left: 8px;
+            margin-right: 5px;
+        }
+    }
+}
+
+.register_box{
+	.ui-tips{
+		width: 225px;
+		margin-left: 92px;
+	}
+	float: left;
+	padding: 60px 0 65px 80px;
+	ol{
+		display: none;
+		&.active{
+			display: block;
+		}
+	}
+	h2{
+		color: $blue;
+		font-size: 24px;
+		font-weight: normal;
+		margin-bottom: 8px;
+	}
+	p{
+		color: $lwgy;
+		margin-bottom: 35px;
+		max-width: 600px;
+	}
+
+	li{
+        margin-bottom: 15px;
+    }
+    
+    .rb_title{
+        display: inline-block;
+        width: 6em;
+        text-align: right;
+        color: $mwgy;
+        margin-right: 5px;
+        em{
+            color: #db281f;
+        }
+    }
+    
+    .rb_text{
+        border:1px solid $line;
+        padding: 0 5px;
+        height: 34px;
+        line-height: 34px;
+        width: 248px;
+        vertical-align: middle;
+    }
+    
+    .rb_agreeline{
+        padding-left: 89px;
+        margin-bottom: 31px;
+        label{
+            color: $mwgy;
+            a{
+                @include links($blue);
+            }
+        }
+    }
+
+    .rb_phoneCodeLine{
+        .rb_text{
+            width: 100px;
+            margin-right: 10px;
+        }
+        .btn-default{
+			width: 112px;
+			padding: 7px 12px;
+        }
+
+
+    }
+
+    .rb_imgCodeLine{
+    	.rb_text{
+            width: 100px;
+            margin-right: 10px;
+        }
+
+    	img{
+        	vertical-align: middle;
+        	margin-right: 10px;
+        }
+
+        a{
+        	@include links($blue);
+        }
+    }
+    
+    .rb_btnline{
+        padding-left: 92px;
+        .btn{
+            width: 260px;
+        }
+    }
+}
+
+.binding_box{
+	float: right;
+	padding: 25px 28px 38px;
+	margin: 115px 80px 0 0;
+	border: 1px solid $line;
+	h2{
+		font-size: 18px;
+		margin-bottom: 25px;
+		color: $dwgy;
+		text-align: center;
+	}
+	p{
+		text-align: center;
+		font-size: 12px;
+		margin-bottom: 8px;
+		a{
+
+			@include links($lwgy);
+		}
+		
+		color: $lwgy;
+	}
+	ol{
+		width: 260px;
+	}
+	li{
+        margin-bottom: 15px;
+    }
+    
+    .bb_text{
+        border:1px solid $line;
+        padding: 0 5px;
+        height: 34px;
+        line-height: 34px;
+        width: 248px;
+    }
+
+    .bb_btnline{
+    	text-align: center;
+		.btn-default{
+			width: 260px;
+			display: block;
+		}
+
+
+    }
+}
+

@@ -1,0 +1,270 @@
+/*
+cartinfo here
+*/
+
+.cartinfo-wrap{
+  overflow: hidden;
+
+  .btn-shop{
+    color:$bw;
+    background-color:$pomelo;
+    border-color:$pomelo;
+  }
+
+  .btn-buy{
+    background-color:$lbgy;
+    border-color:$lbgy;
+    color:$lwgy;
+    font-size:14px;
+    font-family:$ffa;
+    margin-bottom:10px;
+    padding:6px 0;
+    width:238px;
+    cursor:default;
+
+    &.active{
+      color:$bw;
+      background-color:$pomelo;
+      border-color:$pomelo;
+      cursor:pointer;
+    }
+  }
+  padding-bottom:100px;
+  background-color:$lbgy;
+  .cartinfo-content{
+    position:relative;
+    @include box-center(1210px);
+  }
+  .cartinfo-step{
+    float:left;
+    width:880px;
+  }
+  h2{
+    height:39px;
+    line-height:39px;
+    background-color:$blue;
+    font-weight:700;
+    color:$bw;
+    font-size:16px;
+    text-align: center;
+  }
+  .step-1,.step-2{
+    margin-bottom:20px;
+    padding-bottom:9px;
+    border:1px solid $line;
+    box-shadow: 0px 1px 2px 0px rgba( 7, 0, 2 ,.05);
+    background-color:$bw;
+
+    >ul{
+      padding:0 28px;
+      >li{
+        padding:40px 0 20px;
+        border-bottom:1px dashed #d3d3d3;
+        &.last{
+          border:none;
+        }
+      }
+      ul{
+        display:table-cell;
+        vertical-align: middle;
+        >li{
+          position:relative;
+          float:left;
+          margin:0 20px 20px 0;
+          width:176px;
+          height:86px;
+          border:2px solid $line;
+          text-align: center;
+          cursor:pointer;
+          &.active,&:hover{
+           border-color:$pomelo;
+            .item{
+              color:$dwgy;
+            }
+            .price{
+              color:$pomelo;
+            }
+          }
+          &.active{
+            .checked{
+              display:block;
+            }
+          }
+        }
+      }
+      .item{
+        width:178px;
+        height:56px;
+        display: table-cell;
+        vertical-align: middle;
+        color:$mwgy;
+        text-align:center;
+      }
+      .price{
+        color:$lwgy;
+      }
+      .checked{
+        position:absolute;
+        bottom:-1px;
+        right:-1px;
+        @include sprite(67,29px,29px,none);
+      }
+    }
+    h3{
+      position:relative;
+      display:table-cell;
+      padding-right:30px;
+      width:109px;
+      color:$lwgy;
+      text-align:left;
+      font-size:18px;
+      height:90px;
+      vertical-align: middle;
+      span{
+        display: table-cell;
+        width:95px;
+        height:90px;
+        vertical-align: middle;
+      }
+      em{
+        display: table-cell;
+        height:90px;
+        vertical-align: middle;
+      }
+    }
+    a{
+      display: table-cell;
+      vertical-align: middle;
+      color:$blue;
+      &:hover{
+        color:$pomelo;
+      }
+      em{
+        font-family: $fft;
+      }
+    }
+  }
+
+
+
+  .cartlist{
+    float:right;
+    padding:16px 19px 29px;
+    width:240px;
+    border:1px solid $line;
+    background-color:$bw;
+    box-shadow: 0px 1px 2px 0px rgba( 7, 0, 2 ,.05);
+    overflow-y:auto;
+    z-index:100001;
+    h3{
+      color:$mwgy;
+      font-size:16px;
+      text-align:center;
+      font-weight:700;
+      padding-bottom:14px;
+      border-bottom:1px solid $line;
+    }
+    dl{
+      padding:20px 0 10px;
+      border-bottom:1px solid $line;
+    }
+    dt,dd{
+      padding-bottom:20px;
+    }
+    dt{
+      position:relative;
+      padding-left:90px;
+      h4{
+        color:$dwgy;
+        padding-bottom:6px;
+      }
+      .title{
+        padding-bottom:12px;
+        font-size:12px;
+        color:$lwgy;
+      }
+      .price{
+        color:$lwgy;
+      }
+      img{
+        position:absolute;
+        left:0;
+        top:0;
+      }
+    }
+    dd{
+      margin-bottom:20px;
+      border:1px solid $line;
+      padding:19px 16px 18px 16px;
+      background-color:$bw;
+      &:hover{
+        background-color:$lbgy;
+      }
+      .ok{
+        display:table-cell;
+        vertical-align: middle;
+        width:39px;
+        em{
+          @include sprite(70,25px,25px,table-cell);
+        }
+      }
+      .item{
+        display:table-cell;
+        vertical-align: middle;
+        width:153px;
+        color:$mwgy;
+        p{
+          color:$lwgy;
+          font-size:12px;
+          &:first-child{
+            padding-bottom:4px;
+            font-size:14px;
+            color:$mwgy;
+            line-height:18px;
+          }
+        }
+      }
+      .delete{
+        display:table-cell;
+        vertical-align: middle;
+        i{
+          @include sprite(68,14px,14px);
+          cursor:pointer;
+          text-indent:-9999px;
+          &:hover{
+            @include sprite(69,14px,14px);
+          }
+        }
+      }
+    }
+
+    .cash{
+      padding:29px 0 18px 8px;
+      .amount{
+        padding-bottom:16px;
+        font-size: 18px;
+        color:$mwgy;
+      }
+      em{
+        color:$pomelo;
+        font-weight:700;
+      }
+      .message{
+        color:$pomelo;
+      }
+      .servicer{
+        display:none;
+        color:$lwgy;
+      }
+    }
+    .shop{
+      a{
+        padding:6px 0;
+        width:238px;
+        &:first-child{
+          margin-bottom:20px;
+        }
+      }
+    }
+  }//.cartlist
+}

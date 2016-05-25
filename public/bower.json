@@ -1,0 +1,32 @@
+{
+  "name": "yicaishui",
+  "version": "0.0.1",
+  "authors": [
+    "Kevin Yang"
+  ],
+  "description": "the front pages for yicaishui",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "www.zhiyebangs.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.8.3",
+	  "requirejs": "~2.1.19",
+	  "handlebars": "~3.0.3",
+	  "ejs": "1.0.0",
+	  "store": "^2.3.2",
+    "modernizr": "~2.8.3",
+	  "jquery-cookie": "~1.4.1",
+	  "jquery-json": "~2.5.1",
+    "jquery-mousewheel": "^3.1.13"
+  }
+}

@@ -1,0 +1,108 @@
+.btn {
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    transition: none;
+    -webkit-transition: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    min-width: 3em;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+$c: (
+		default: #666666,
+		primary: #ffffff,
+		success: #ffffff,
+		info: #ffffff,
+		warning: #ffffff,
+		danger: #ffffff,
+		link: #666666
+	);
+
+$bg: (
+		default: #f9f9f9,
+		primary: #047bce,
+		success: #7abb55,
+		info: #ffffff,
+		warning: #f06d54,
+		danger: #ffffff,
+		link: transparent	
+	);
+
+$bc: (
+		default: #EBEBEB,
+		primary: #047bce,
+		success: #7abb55,
+		info: #ffffff,
+		warning: #f06d54,
+		danger: #ffffff,
+		link: transparent	
+	);
+
+$ch: (
+		default: #313131,
+		primary: #ffffff,
+		success: #ffffff,
+		info: #ffffff,
+		warning: #ffffff,
+		danger: #ffffff,
+		link: #666666,	
+	);
+
+$bgh: (
+		default: #f9f9f9,
+		primary: #047bce,
+		success: #5ca234,
+		info: #ffffff,
+		warning: #da5238,
+		danger: #ffffff,
+		link: transparent	
+	);
+
+$bch: (
+		default: #EBEBEB,
+		primary: #047bce,
+		success: #5ca234,
+		info: #ffffff,
+		warning: #da5238,
+		danger: #ffffff,
+		link: transparent	
+	);
+
+
+
+@each $suffix, $color in $c {
+    .btn-#{$suffix} {
+        color: $color;
+        background-color: map-get($bg, #{$suffix});
+        border-color: map-get($bc, #{$suffix});
+        &:hover {
+		    color: map-get($ch, #{$suffix});
+		    background-color: map-get($bgh, #{$suffix});
+		    border-color: map-get($bch, #{$suffix});
+		  }
+    }
+}
+
+.btn-large{
+	padding: 10px 16px;
+	font-size: 16px;
+	line-height: 1.33333;
+}
+
+.btn-small{
+	padding: 3px 10px;
+	line-height: 1.4;
+}
+
+.btn-xsmall{
+	padding: 1px 5px;
+}

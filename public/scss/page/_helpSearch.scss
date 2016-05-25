@@ -1,0 +1,163 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+body{
+	background-color: $lbgy;
+}
+
+.container{
+	background-color: $lbgy;
+	padding-bottom: 100px;
+}
+
+.content{
+	width: $w1;
+	margin: 0 auto;
+}
+
+$helpSpriteUrl: url('../img/help-sprite.png');
+$helpSpritePos:
+	(0 0) (-70px 0) (-140px 0) (-210px 0) (-280px 0)
+	(-350px 0) (-420px 0) (-490px 0) (-560px 0) (0 -70px)
+	(-70px -70px) (-140px -70px) (-210px -70px) (-280px -70px) (-350px -70px)
+	(-420px -70px) (-490px -70px) (-560px -70px) (0 -140px) (-80px -140px)
+	(-160px -140px) (-240px -140px) (-320px -140px) (-400px -140px) (-480px -140px)
+	(-560px -140px) (-640px -140px) (0 -220px) (-20px -220px) (0 -250px)
+	(-200px -250px) (-460px -250px) (0 -340px) (-240px -340px) (-450px -340px)
+	(0 -430px) (-160px -430px) (-450px -430px) (-40px -230px) (-630px 0)
+	(-700px 0) (-770px 0) (-840px 0) (-910px 0) (-630px -70px) 
+	(-700px -70px) (-770px -70px) (-840px -70px) (-910px -70px) (-700px -250px) (-740px -340px)
+	(-660px -430px) (0 -520px) (-270px -520px); 
+@mixin helpSprite($position: 1, $width: 20px, $height: 20px, $display: inline-block){
+	display: $display;
+	width: $width;
+    height: $height;
+    background-image: $helpSpriteUrl;
+    background-position: nth($helpSpritePos, $position);
+}
+
+.helpbaner{
+	width:100%;
+  	height:500px;
+  	background:url("../img/help-banner-bg-01.jpg") center no-repeat transparent;
+  	background-size:cover;
+  	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+}
+
+
+
+
+.help-search{
+	position: absolute;
+	top: 220px;
+	left: 50%;
+	margin-left: -353px;
+	box-shadow: 0 5px 8px rgba(0, 0, 0, 0.23);
+	input{
+		height: 52px;
+		line-height: 52px;
+		font-size: 18px;
+		color: $mwgy;
+		padding: 0 20px;
+		background-color: $bw;
+		border-radius: 4px 0 0 4px;
+		width: 560px;
+		border: none;
+		vertical-align: top;
+	}
+	button{
+		height: 52px;
+		line-height: 52px;
+		font-size: 20px;
+		color: $bw;
+		padding: 0 30px;
+		background-color: $blue;
+		border-radius: 0 4px 4px 0;
+		border: none;
+	}
+}
+
+.help-box{
+	position: relative;
+	padding: 85px 0 80px;
+	width: $w1;
+	margin: -210px auto 100px;
+	background-color: $bw;
+	box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+	border: 1px solid $line;
+}
+
+.help-list{
+	margin: 0 121px 0 124px;
+	padding-bottom: 10px;
+	li{
+		margin-bottom: 30px;
+		padding-bottom: 30px;
+		border-bottom: 1px dashed $line;
+	}
+	h3{
+		font-size: 18px;
+		margin-bottom: 5px;
+		a{
+			color: $dwgy;
+			@include detrans;
+			em{
+				color: $pomelo;
+			}
+			&:hover{
+				color: $blue;
+				em{
+					color: $blue;
+				}
+			}
+		}
+	}
+	div{
+		margin-bottom: 18px;
+		color: $lwgy;
+	}
+	.hl_labelline{
+		font-size: 12px;
+		a{
+			em{
+				color: $pomelo;
+			}
+			margin-right: 15px;
+			color: $dbgy;
+			@include detrans;
+			em{
+				color: $pomelo;
+			}
+			&:hover{
+				color: $blue;
+				em{
+					color: $blue;
+				}
+			}
+		}
+	}
+}
+
+.help-noResult{
+	padding: 110px 0 212px;
+	text-align: center;
+	p:first-child{
+		font-size: 20px;
+		color: $dwgy;
+		margin-bottom: 25px;
+		em{
+			color: $pomelo;
+		}
+		&+p{
+			color: $lwgy;
+			margin-bottom: 5px;
+		}
+		&+p+p{
+			color: $lwgy;
+			a{
+				@include links($blue);
+			}
+		}
+	}
+}
+

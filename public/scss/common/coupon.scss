@@ -1,0 +1,295 @@
+@import "variable";
+@import "maxin";
+.coupon {
+    color: $bw;
+    font-size: 12px;
+    width: 210px;
+    height: 104px;
+    padding: 11px 15px 0;
+    background: transparent url('../img/pc-coupon-bg.png') 0 0 repeat-x;
+    .coupon-title {
+        text-align: center;
+        margin-bottom: 8px;
+        em {
+            display: inline-block;
+            color: #4fa2dd;
+            background-color: $bw;
+            padding: 3px 10px;
+            margin-right: 5px;
+        }
+        strong {
+            font-weight: bold;
+            font-size: 18px;
+            vertical-align: bottom;
+        }
+    }
+    .coupon-intro {
+        text-align: center;
+        width: 210px;
+        height: 14px;
+        @include ellipsis;
+        padding-bottom: 10px;
+        margin-bottom: 9px;
+        border-bottom: 1px solid #217ab8;
+    }
+    .coupon-opt {
+        >a {
+            padding: 6px 14px;
+            float: right;
+            color: $bw;
+            background-color: #3873aa;
+            border-radius: 2px;
+            border: 1px solid #3873aa;
+        }
+        .coupon-range+span {
+            padding: 6px 14px;
+            float: right;
+            color: $bw;
+            background-color: #3873aa;
+            border-radius: 2px;
+            border: 1px solid #3873aa;
+        }
+    }
+    &.coupon-blue {
+        background-position: 0 0;
+        em {
+            color: #4fa2dd;
+        }
+        .coupon-intro {
+            border-bottom-color: #3873aa;
+        }
+        .coupon-opt>a {
+            border-color: #3873aa;
+            background-color: #3873aa;
+            &:hover {
+                border-color: $bw;
+                background-color: transparent;
+            }
+        }
+        .coupon-range+span {
+            border-color: #3873aa;
+            background-color: #3873aa;
+        }
+    }
+    &.coupon-green {
+        background-position: 0 -120px;
+        em {
+            color: #56caa5;
+        }
+        .coupon-intro {
+            border-bottom-color: #32a680;
+        }
+        .coupon-opt>a {
+            border-color: #32a680;
+            background-color: #32a680;
+            &:hover {
+                border-color: $bw;
+                background-color: transparent;
+            }
+        }
+        .coupon-range+span {
+            border-color: #32a680;
+            background-color: #32a680;
+        }
+    }
+    &.coupon-orange {
+        background-position: 0 -240px;
+        em {
+            color: #f6907c;
+        }
+        .coupon-intro {
+            border-bottom-color: #d77663;
+        }
+        .coupon-opt>a {
+            border-color: #d77663;
+            background-color: #d77663;
+            &:hover {
+                border-color: $bw;
+                background-color: transparent;
+            }
+        }
+        .coupon-range+span {
+            border-color: #d77663;
+            background-color: #d77663;
+        }
+    }
+    &.coupon-gray {
+        color: $lwgy;
+        background-position: 0 -720px;
+        em {
+            background-color: $dbgy;
+            color: $bw;
+        }
+        .coupon-intro {
+            border-bottom-color: #d3d3d3;
+        }
+        .coupon-range+span {
+            color: $lwgy;
+            border-color: #d3d3d3;
+            background-color: transparent;
+        }
+    }
+    .coupon-range {
+        padding-top: 7px;
+        position: relative;
+        float: left;
+        display: inline-block;
+        z-index: 1;
+        max-width: 10em;
+        height: 14px;
+        padding-bottom: 7px;
+        .coupon-shopList {
+            display: none;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            color: $mwgy;
+            padding: 29px 19px 0 19px;
+            top: 0;
+            left: -420px;
+            background-color: $bw;
+            border: 1px solid $line;
+            z-index: 10;
+            width: 380px;
+            height: 189px;
+            position: absolute;
+            &.coupon-one {
+                width: 190px;
+                left: -230px;
+                padding-bottom: 20px;
+                height: auto;
+                .csl-shop {
+                    width: 100%;
+                    float: none;
+                }
+            }
+        }
+        &:hover {
+            .coupon-shopList {
+                display: block;
+            }
+        }
+        .csl-title {
+            color: $lwgy;
+            margin-bottom: 18px;
+            width: 100%;
+            display: block;
+        }
+        .csl-shop {
+            width: 50%;
+            float: left;
+            margin-bottom: 18px;
+            em {
+                color: $mwgy;
+                display: inline-block;
+                max-width: 6em;
+                margin-right: 1em;
+                vertical-align: bottom;
+                @include ellipsis;
+            }
+            a {
+                color: $blue;
+            }
+        }
+        .csl-moreLine {
+            display: block;
+            position: absolute;
+            bottom: 20px;
+            left: 19px;
+            padding: 8px 20px 8px 0;
+            width: 360px;
+            background-color: $lbgy;
+            text-align: right;
+            em {
+                color: $pomelo;
+            }
+            a {
+                color: $blue;
+            }
+        }
+    }
+}
+
+// Coupon popover info box
+#coupon-info {
+    display: none;
+}
+
+.coupon-popover {
+    width: 700px;
+    .title {
+        height: 45px;
+        line-height: 45px;
+        color: $mwgy;
+        background-color: $lbgy;
+        font-size: 16px;
+        padding: 0 30px;
+        font-weight: 700;
+    }
+    .content {
+    	width: auto;
+        padding: 30px 29px 49px 30px;
+        background-color: $bw;
+        .coupon-info {
+            padding-bottom: 19px;
+            color: $dwgy;
+            em {
+                display: inline-block;
+                margin-right: 10px;
+                vertical-align: top;
+                width: 40px;
+                height: 15px;
+                line-height: 15px;
+                text-align: center;
+                color: $bw;
+                background-color: $pomelo;
+                font-size: 12px;
+            }
+        }
+        .intro {
+            padding-bottom: 17px;
+            color: $lwgy;
+        }
+        ul {
+            margin-bottom: 28px;
+            padding: 26px 0 10px 15px;
+            background-color: $lbgy;
+        }
+        li {
+            float: left;
+            vertical-align: middle;
+            padding-bottom: 16px;
+            padding-left: 15px;
+            width: 190px;
+            color: $dbgy;
+            list-style-type: disc;
+            list-style-position: inside;
+            position: relative;
+            span {
+                color: $mwgy;
+                display: inline-block;
+                vertical-align: middle;
+                max-width: 7em;
+                @include ellipsis;
+            }
+            a {
+                display: inline-block;
+                vertical-align: middle;
+                position: absolute;
+                right: 15px;
+                top: 1px;
+                color: $blue;
+            }
+        }
+        .close {
+            text-align: center;
+        }
+        button {
+            padding: 0;
+            width: 148px;
+            height: 38px;
+            line-height: 16px;
+            font-size: 16px;
+            font-family: $ffa;
+        }
+    }
+}

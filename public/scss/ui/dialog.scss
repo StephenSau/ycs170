@@ -1,0 +1,443 @@
+$lgray: #9e9e9e;
+$mgray: #666666;
+$dgray: #313131;
+$linegray: #dddddd;
+$lblue: #1153a7;
+$mred: #db281f;
+$morange: #f36d00;
+$lorange: #eb9000;
+$mgreen: #629500;
+
+//smallIocn.png sprite
+$sIocnUrl: url('../img/smallIcon.png');
+$sIconType:
+        (0 0) (-20px 0) (-40px 0) (-60px 0) (0 -20px)
+        (-30px -20px) (-80px 0) (-100px 0) (-60px -20px) (-120px 0)
+        (-142px -3px) (-162px -3px) (-184px -5px) (-204px -5px) (-140px -20px)
+        (-160px -20px) (-200px -20px) (-260px 0) (-280px 0) (-220px -20px)
+        (-260px -20px) (-300px 0) (-320px 0) (-280px -20px) (-310px -20px)
+        (-340px -20px) (-360px 0);
+
+@mixin sIconSprite($type: 1, $width: 20px, $height: 20px){
+    width: $width;
+    height: $height;
+    background-image: $sIocnUrl;
+    background-position: nth($sIconType, $type);
+};
+
+
+//bigIocn.png sprite
+$bIocnUrl: url('../img/bigIcon.png');
+$bIconType:
+        (0 0) (-60px 0) (-120px 0) (-180px 0) (-240px 0)
+        (-300px 0) (-360px 0) (-430px 0) (-550px 0) (-250px -320px)
+        (-240px -160px) (-360px -160px) (-480px -80px) (-540px -80px);
+@mixin bIconSprite($type: 1, $width: 54px, $height: 54px){
+    width: $width;
+    height: $height;
+    background-image: $bIocnUrl;
+    background-position: nth($bIconType, $type);
+}
+
+
+.mask{
+    width: 100%;
+    height: 2000px;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    opacity: .5;
+    filter: alpha(opacity=50);
+}
+
+
+.modal{
+    -webkit-transform: translate(0, 50%);
+    -ms-transform: translate(0, 50%);
+    -o-transform: translate(0, 50%);
+    transform: translate(0, 50%);
+    -webkit-transition: -webkit-transform 0.5s ease-out;
+    -o-transition: -o-transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+}
+
+.in .modal{
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+
+
+
+
+.ui-dialog{
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    z-index: 1010;
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: 300px;
+    font-family: "Microsoft YaHei" verdana Arial, sans-serif;
+    
+    .ui-title{
+        font-size: 1.125em;
+        padding: 20px 15px;
+        border-bottom: 1px solid #dddddd;
+        color: #666666;
+        
+    }
+    
+    .ui-content{
+        padding: 30px 15px;
+        border-bottom: 1px solid #c7c7c7;
+        line-height: 1.2em;
+        color: #666666;
+    }
+    
+    .ui-btnGroup{
+        border-top: 1px solid #f8f8f8;
+        padding: 15px;
+        overflow: hidden;
+        button{
+            border: 1px solid #dddddd;
+            background-color: #ffffff;
+            display: inline-block;
+            border-radius: 4px;
+            padding: 8px 16px;
+            float: right;
+            line-height: 1;
+            letter-spacing: 1;
+            cursor: pointer;
+            margin-left: 15px;
+            color: #999999;
+            &:first-child{
+                color: #ffffff;
+                border: 1px solid #0a438b;
+                background-color: #0a438b;
+            }
+        }
+    }
+    
+    .ui-closeBtn{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: #dddddd;
+        font-weight: bold;
+        font-family: verdana;
+        font-size: 20px;
+    }
+
+}
+
+.ui-info{
+
+    position: fixed;
+    z-index: 1010;
+    top: 100px;
+    left: 50%;
+    overflow: hidden;
+}
+
+.ui-info-inner{
+    border: 1px solid #EBEBEB;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.ui-info-content{
+}
+
+.ui-info-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #9e9e9e;
+    &:hover{
+        color: #DB281F;
+    }
+}
+
+.ui-info-loginBox, .ui-info-supplement{
+    .ui-tips{
+        margin-bottom: 10px;
+        display: none;
+        width: auto;
+        background-color: #f7f7f7;
+        border-radius: 4px;
+        padding: 5px 8px 5px 29px;
+        position: relative;
+        color: #666666;
+        vertical-align: top;
+        &:before{
+            content: "!";
+            background: url('../img/formVerified-error-bg.png') 0 0 no-repeat;
+            color: #ffffff;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            display: block;
+            width: 16px;
+            position: absolute;
+            top: 5px;
+            left: 8px;
+            margin-right: 5px;
+        }
+    }
+}
+
+.ui-info-loginBox{
+    width: 360px;
+    padding: 0 50px;
+    .lb_tab{
+        border-bottom: 4px solid $linegray;
+        margin-bottom: 30px;
+        margin-left: 33px;
+        width: 301px;
+        li{
+            float: left;
+            padding-bottom: 8px;
+            border-bottom: 4px solid $linegray;
+            margin-bottom: -4px;
+            &:first-child a{
+                border-left: none;
+            }
+
+            &.active{
+                border-bottom: 4px solid $morange;
+                a{
+                    color: $morange;
+                }
+            }
+        }
+
+        a{
+            font-size: 18px;
+            font-family: $ffa;
+            display: block;
+            width: 150px;
+            text-align: center;
+            border-left: 1px solid $linegray;
+            color: $lgray;
+        }
+    }
+
+    input{
+        vertical-align: middle;
+    }
+
+    li{
+        margin-bottom: 20px;
+    }
+
+    .lb_title{
+        width: 4em;
+        text-align: right;
+    }
+
+    label{
+        font-family: $ffa;
+        font-size: 16px;
+        color: $mgray;
+        margin-right: 5px;
+        display: inline-block;
+    }
+
+    .lb_text{
+        padding: 0 5px;
+        width: 208px;
+        height: 34px;
+        line-height: 34px;
+        border: 1px solid #dddddd;
+    }
+
+    .ui-tips{
+        margin-left: 69px;
+        width: 182px;
+    }
+
+    .lb_find{
+        color: $lgray;
+        font-size: 12px;
+        margin-left: 12px;
+    }
+
+    .lb_rememberline{
+        padding-left: 65px;
+        input{
+            vertical-align: middle;
+        }
+        label{
+            font-size:14px;
+        }
+    }
+
+    .lb_phoneCodeLine{
+        .lb_text{
+            width: 87px;
+        }
+        a{
+            font-size: 12px;
+            color: $mgray;
+            display: inline-block;
+            height: 34px;
+            line-height: 34px;
+            width: 120px;
+            vertical-align: middle;
+            text-align: center;
+            border: 1px solid $linegray;
+            border-left: none;
+            background-color: #f7f7f7;
+        }
+    }
+
+    .lb_btnline{
+        margin-bottom: 20px;
+        padding-left: 68px;
+        button{
+            width: 220px;
+            font-size: 18px;
+            letter-spacing: 5px;
+            height: 40px;
+            line-height: 40px;
+        }
+    }
+
+    .lb_imgCodeLine{
+        .lb_text{
+            width: 100px;
+        }
+        img{
+            cursor: pointer;
+            vertical-align: middle;
+        }
+    }
+
+    .lb_registerline{
+        color: $lgray;
+        font-size: 14px;
+        padding-left: 100px;
+        margin-bottom: 20px;
+        a{
+            color:$lorange;
+            &:hover{
+                color:$lorange;
+            }
+        }
+    }
+    .lb_partnerLoginLine{
+        padding-top: 20px;
+        font-size: 12px;
+        color: $lgray;
+        text-align: center;
+        border-top: 1px dashed $linegray;
+        a{
+            color: $mgreen;
+            width: 108px;
+            height: 26px;
+            line-height: 26px;
+            border: 1px solid $linegray;
+            text-align: center;
+            display: inline-block;
+            .icon{
+                display: inline-block;
+                margin-right: 5px;
+                @include sIconSprite(27, 22px, 18px);
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .lb_telphoneLine, .lb_phoneCodeLine, .lb_imgCodeLine, .lb_imgCodeBtnLine{
+        display: none;
+    }
+
+}
+
+.ui-info-supplement{
+    padding: 40px 40px;
+    width: 480px;
+    font-family: $ffa;
+    .sf_messageBox{
+        padding: 0 40px 30px;
+    }
+    .sf_textLine{
+        color: $mgray;
+        padding: 0 1em;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+    .sf_userLine{
+        background-color: #f7f7f7;
+        padding: 8px 1em;
+        color: $dgray;
+        span{
+            margin-right: 30px;
+        }
+
+        a{
+            color: $lblue;
+            text-decoration: underline;
+        }
+    }
+    h3{
+        font-weight: normal;
+        font-size: 24px;
+        text-align: center;
+        color: $mgreen;
+        margin-bottom: 30px;
+    }
+
+    ol{
+        border-top: 1px dashed $linegray;
+        padding: 30px 0 0 40px;
+        display: none;
+    }
+
+    li{
+        margin-bottom: 20px;
+    }
+
+    .sf_title{
+        color: $mgray;
+        font-size: 16px;
+        width: 4em;
+        margin-right: 5px;
+        display: inline-block;
+        text-align: right;
+        em{
+            color: $mred;
+        }
+    }
+    .sf_text{
+        border: 1px solid #dddddd;
+        height: 34px;
+        line-height: 34px;
+        padding: 0 5px;
+        width: 280px;
+    }
+
+    .btn{
+        width: 130px;
+        margin: 0 auto;
+    }
+
+    .ui-tips{
+        margin-left: 68px;
+        width: 256px;
+    }
+
+    .sf_btnLine{
+        padding-left: 150px;
+    }
+}

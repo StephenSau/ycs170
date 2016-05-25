@@ -1,0 +1,67 @@
+@import 'variable';
+@import 'maxin';
+
+.ng-item{
+	overflow: hidden;
+	position: relative;
+	>a{
+		display: block;
+		.ng-item-title{
+			position: absolute;
+			display: block;
+			font-size: 20px;
+			color: $bw;
+			text-shadow: 0 1px 0px rgba(0, 0, 0, .5);
+			width: 100%;
+			bottom: 0px;
+			padding-top: 65px;
+			height: 35px;
+			text-align: center;
+			left: 0;
+			background: url('../img/black-opacity-line.png') 0 100% repeat-x;
+		}
+		.ng-item-btn{
+			background: url('../img/black-opacity60-bg.png') 0 0 repeat;
+			-webkit-transition: top 0.5s ease-out;
+		    -o-transition: top 0.5s ease-out;
+		    transition: top 0.5s ease-out;
+			position: absolute;
+			text-align: center;
+			top: 100%;
+			width: 100%;
+			height: 100%;
+			em{
+				position: relative;
+				background-color: $pomelo;
+				padding: .5em 1em;
+				top: 46%;
+				color: $bw;
+			}
+		}
+		&:hover{
+			.ng-item-btn{
+				top: 0;
+			}
+		}
+	}
+}
+
+.ng-move{
+	img{
+		width: 100%;
+		transition: all 0.5s ease 0s;
+	}
+	>a{
+		&:hover{
+			img{
+				transform: translateY(-10px);
+			}
+		}
+	}
+}
+
+.ng-item-03{
+	width: 280px;
+	height: 210px;
+	margin-bottom: 20px;
+}

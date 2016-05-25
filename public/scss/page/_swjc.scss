@@ -1,0 +1,320 @@
+.nav{
+	margin-bottom: 0;
+}
+
+@mixin button {
+	display:block;
+    width:220px;
+    height:50px;
+    line-height:50px;
+    color:#ffffff;
+    font-size:24px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f4a822), to(#ef9623));
+    background: -webkit-linear-gradient(top,#f4a822,#ef9623);
+    background: -moz-linear-gradient(top,#f4a822,#ef9623);
+    background: -ms-linear-gradient(top,#f4a822,#ef9623);
+    background: linear-gradient(top,#f4a822,#ef9623);
+    border-radius: 3px;
+    text-align: center;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.lbanner{
+	position: relative;
+  	width:100%;
+  	height:420px;
+  	background: url("../../public/img/landingPage/landingPage004001.jpg") center no-repeat transparent;
+  	background-size:cover;
+  	&:before {
+  		content: " ";
+  		display: block;
+  		position: absolute;
+  		left: 15%;
+  		top: 110px;
+  		background: url("../../public/img/landingPage/landingPage004005.png") center no-repeat transparent;
+  		width: 630px;
+  		height: 120px;
+  	}
+	a{
+  		@include button;
+  		position: absolute;
+  		top: 276px;
+  		left: 15%;
+  	}
+}
+
+
+
+
+.box1, .box2, .box3, .box4, .box5, .box6, .box7 {
+	h2{
+		text-align: center;
+		font-size: 36px;
+		color: $mgray;
+		font-weight: normal;
+		margin-bottom: 20px;
+	}
+}
+
+.box1_1{
+
+	padding:93px 0 60px;
+	margin : 0 auto;
+	width:670px;
+
+	span {
+		display:block;
+		width:100%;
+		height:56px;
+		border:2px solid #4191ba;
+		-webkit-border-radius : 50px;
+		-moz-border-radius : 50px;
+		-ms-border-radius : 50px;
+		border-radius : 50px;
+		color:#4191ba;
+		font-size:28px;
+		font-family:$ffa;
+		font-weight:700;
+		text-align:center;
+		line-height:56px;
+
+
+		&:first-child{
+
+			margin-bottom:30px;
+		}
+
+	}
+
+}
+
+.box1_2{
+	padding:41px 0 38px;
+	width:100%;
+	background-color:#fef1e6;
+	font-family:$ffa;
+
+	.box1_2_info {
+		margin : 0 auto;
+		width: 956px;
+	}
+
+	span {
+		display:block;
+		margin:0 auto 29px;
+		width:395px;
+		height:50px;
+		background-color:#ed6c6c;
+		-webkit-border-radius:50px;
+		-moz-border-radius:50px;
+		-ms-border-radius:50px;
+		border-radius:50px;
+		color:#fff;
+		font-size:30px;
+		line-height:50px;
+		text-align:center;
+	}
+
+	p {
+		color:#ed6c6c;
+		font-size:24px;
+		text-align:center;
+		line-height:36px;
+	}
+	
+
+}
+
+.box1{
+	padding-top: 58px;
+	font-family:$ffa;
+
+	.figure  {
+		margin :0 auto;
+		padding-bottom:60px;
+		overflow:hidden;
+		width:956px;
+		border-bottom: 1px solid #ddd;
+	}
+
+	img {
+		float : left;
+		padding-right:40px;
+		width:204px;
+
+	}
+
+	.intro {
+		float:left;
+		padding-top:30px;
+		width :712px ;
+	}
+
+	.experts {
+		padding : 9px 0 9px 19px;
+		width:237px;
+		height:24px;
+		background:url("../img/landingPage/landingPage004003.png") no-repeat 0 0;
+		font-size : 24px;
+		color:#fff;
+		font-weight:700;
+	}
+
+	span{
+		padding-left:19px;
+		font-size:16px;
+		font-weight:400;
+	}
+
+	p{
+		padding:19px 36px 0 0;
+		line-height:30px;
+		color:#7d7d7d;
+		font-size:20px;
+		
+	}
+
+	a {
+		margin-top:18px;
+		@include button;
+	}
+
+		
+}
+
+.consultBtn {
+	li {
+		display:none;
+	}
+}
+
+.ok_box {
+	width : 358px;
+	text-align:center;
+
+	.icon {
+		display:block;
+		margin : 0 auto;
+		width:60px;
+		height:60px;
+		background:url(../img/landingPage/landingPage003003.png) no-repeat -4px -77px;
+
+	}
+
+	p{
+		padding-top:18px;
+		font-size:24px;
+		color:#629500;
+	}
+}
+
+
+
+.box6{
+	padding: 80px 0 80px;
+	h2{ 
+		margin-bottom: 50px;
+	}
+	ol{
+		background: url('../img/landingPage/landingPage001004.png') 0 0 no-repeat;
+		width: 927px;
+		height: 90px;
+		margin: 0 auto;
+		li{
+			display: none;
+		}
+	}
+}
+
+.box6_2{
+	padding-bottom:80px;
+
+	ul{
+
+		margin:0 auto;
+		padding:39px 0;
+		width:954px;
+		border:1px solid #ddd;
+		overflow:hidden;
+	}
+
+	li {
+		float:left;		
+		height:48px;
+		line-height:48px;
+		font-size:24px;
+		font-family:$ffa;
+
+	}
+
+	i {
+		float:left;
+		margin-right:19px;
+		width:47px;
+		height:47px;
+		background:url('../img/landingPage/landingPage004003.png') 0 0 no-repeat;
+	}
+
+	.msg01{
+		padding:6px 29px;
+		width:275px;
+		color:#f08200;
+		border-right:1px solid #ddd;
+		i {
+			background-position: -2px -63px;
+		}
+	}
+	.msg02{
+		padding:6px 35px 6px 44px;
+		border-right:1px solid #ddd;
+		width:220px;
+		color:#0a53a4;
+		i{
+			background-position:-67px -63px;
+		}
+	}
+	.msg03{
+
+		padding:6px 0px 6px 44px;
+		width:275px;
+		color:#63a231;
+
+		i{
+			background-position:-132px -63px;
+		}
+	}
+}
+
+.box7{
+	background-color: #f2ede7;
+	padding: 35px 0;
+	text-align: center;
+	a{
+		@include button;
+		display: inline-block;
+	}
+}
+
+.fixed_box{
+	display:none;
+}
+
+.box_contactus {
+	position : fixed;
+	right:24px;
+	bottom : 100px;
+	z-index : 99;
+	cursor:pointer;
+}
+
+.phone_box{
+	padding: 50px 30px;
+	p {
+		padding:0 0 23px 58px;
+		text-align:left;
+	}
+}
+
+.ok_box{
+	padding: 50px 30px;
+}

@@ -1,0 +1,80 @@
+.connect-popover{
+	padding:49px 45px 69px 38px;
+	border:1px solid #EBEBEB;
+	width:555px;
+	background-color:#ffffff;
+	.olbb-step{
+		overflow: hidden;
+		width:100%;
+		background-color: #047bce;
+		border-radius:10px;
+		padding:2px 0;
+		margin-bottom:50px;
+	}
+	li{
+		color:#ffffff;
+		position:relative;
+		width:33.333%;
+		float:left;
+		text-align:center;
+		&:first-child:before{
+			content : "";
+		}
+		&:before{
+			content : ">";
+			position:absolute;
+			left:-3px;
+			top:0;
+		}
+	}
+	.connect-telForm{
+		padding-left:42px;
+	}
+	input{
+		border:1px solid #EBEBEB;
+		width:318px;
+		height:34px;
+		padding:0;
+		line-height:34px;
+		text-indent:10px;
+		vertical-align: middle;
+		color:#666666;
+		font-size:14px;
+		border-radius:3px;
+		&.valid{
+	        border-color: #73A80D!important;
+	    }
+	    
+	    &.invalid{
+	        border-color: #db281f!important;
+	    }
+	}
+	button{
+		width:118px;
+		height:34px;
+		line-height:34px;
+		padding:0;
+		background-color:#047bce;
+		color:#ffffff;
+		font-size:16px;
+		cursor: pointer;
+		margin-left:9px;
+	}
+
+}
+
+.connecting-popover{
+	padding:74px 0 80px;
+	width:638px;
+	border:1px solid #EBEBEB;
+	background-color:#ffffff;
+	text-align:center;
+	h2{
+		color:#047bce;
+		font-size: 30px;
+		margin-bottom: 30px;
+	}
+	p{
+		color:$lwgy;
+	}
+}

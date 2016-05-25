@@ -1,0 +1,20 @@
+.glide-box{
+	position: relative;
+	.glide-prev, .glide-next{
+		position: absolute;
+	}
+	
+	.glide-cabinet{
+		width: 200px;
+		overflow: hidden;
+	}
+
+	.glide-content{
+		width: 2000px;
+		overflow: hidden;
+		li{
+			
+			float: left;
+		}
+	}
+}

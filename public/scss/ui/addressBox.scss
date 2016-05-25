@@ -1,0 +1,74 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+.ui-addrBox{
+	display: none;
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	z-index: 180;
+	width: 420px;
+	padding: 15px;
+	border: 1px solid #ebebeb;
+	background-color: #fff;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
+	.ui-ab-tab{
+		overflow: hidden;
+		border-bottom: 1px solid #1471c8;
+		li{
+			float: left;
+			margin-right: 1px;
+			padding: 10px 25px;
+			max-width: 6em;
+			color: #1471c8;
+			background-color: #f7f7f7;
+			white-space: nowrap;
+		    text-overflow: ellipsis;
+		    overflow: hidden;
+		    cursor: pointer;
+			&.active{
+				color: #ffffff;
+			    background-color: #1471c8;
+			}
+		}
+	}
+
+	.ui-ab-content{
+		padding-top: 18px;
+		ul{
+			display: none;
+		}
+		li{
+			margin-bottom: 16px;
+			float: left;
+			padding: 0 0 0 25px;
+			width: 80px;
+			color: #969696;
+			cursor: pointer;
+			&.active{
+				cursor: default;
+				font-weight: bold;
+				color: #313131;
+				&:hover{
+					color: #313131;	
+				}
+			}
+			&:hover{
+				color: $pomelo;
+			}
+			&.ui-ab-longarea{
+				width: 185px
+			}
+		}
+	}
+
+	.ui-ab-closeBtn{
+		position: absolute;
+        top: 5px;
+        right: 12px;
+        color: #c0c0c0;
+        font-family: verdana;
+        font-size: 20px;
+	}
+}

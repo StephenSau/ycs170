@@ -1,0 +1,507 @@
+/*
+*cartlist
+*/
+/*.cartlist-wrap*/
+.cartlist-wrap {
+  padding-bottom: 101px;
+  background-color: $lbgy;
+  .order_login_box {
+    display:none;
+    margin-bottom: 20px;
+    padding: 31px 30px 10px 29px;
+    border: 1px solid $line;
+    background-color: $bw;
+    box-shadow: 0px 1px 2px 0px rgba(7, 0, 2, 0.05);
+    > li {
+      padding-bottom: 20px;
+    }
+    input {
+      vertical-align: middle;
+      font-family: $ffa;
+      font-size: 14px;
+    }
+    button {
+      box-sizing: content-box;
+      font-family: $ffa;
+      font-size: 16px;
+    }
+    .lb_text {
+      margin: 0;
+      border: 1px solid $mbgy;
+      padding: 0 10px;
+      height: 34px;
+      width: 238px;
+      color: $lwgy;
+      line-height: 34px;
+    }
+    .lb_telphoneLine {
+      span {
+        display: inline-block;
+        margin-left: 5px;
+        width: 7em;
+        font-size: 12px;
+        color: $lwgy;
+        vertical-align: middle;
+      }
+      a {
+        color: $blue;
+        text-decoration: underline;
+      }
+    }
+    .lb_phoneCodeLine {
+      .lb_text {
+        width: 118px;
+      }
+      a {
+        display: inline-block;
+        margin-left: 10px;
+        border: 1px solid $mbgy;
+        width: 128px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        background-color: $lbgy;
+        color: $mwgy;
+        border-radius: 3px;
+      }
+    }
+    .lb_btnline {
+      button {
+        border: 1px solid $blue;
+        padding: 0;
+        width: 258px;
+        height: 34px;
+        line-height: 34px;
+        background-color: $blue;
+        color: $bw;
+      }
+    }
+    .lb_nameLine {
+      display: none;
+      >a {
+        margin-left: 5px;
+        color: $blue;
+      }
+    }
+    .lb_passwordLine {
+      a {
+        margin-left: 5px;
+        color: $lwgy;
+      }
+    }
+    
+  }
+  .btn-shop {
+    width: 150px;
+    padding: 9px 0;
+    background-color: $pomelo;
+    border-color: $pomelo;
+    color: $lbgy;
+    font-size:16px;
+    &.active:hover {
+      background-color: $dpomelo;
+      border-color: $dpomelo;
+      color: $bw;
+    }
+  }
+  [disabled]{
+      cursor:default;
+      background-color:$mbgy;
+      border:$mbgy;
+    }
+  .cartlist {
+    @include box-center($w1);
+  }
+  .order-list {
+    display:none;
+    position:relative;
+    margin-bottom: 22px;
+    padding: 40px 29px 21px 29px;
+    border: 1px solid $line;
+    background-color: $bw;
+    box-shadow: 0px 1px 2px 0px rgba(7, 0, 2, 0.05);
+    >a {
+      position:absolute;
+      top:40px;
+      right:29px;
+      color:$blue;
+    }
+    h2 {
+      padding-bottom: 37px;
+      font-size: 24px;
+      color: $lwgy;
+    }
+    .ocb_contactor {
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed $mbgy;
+      p {
+        padding-bottom: 20px;
+        font-size: 16px;
+        color: $mwgy;
+      }
+      label {
+        display: inline-block;
+        margin-right: 14px;
+        width: 123px;
+        text-align: right;
+      }
+      em {
+        color: #ef2117;
+      }
+      input {
+        border: 1px solid $mbgy;
+        padding: 0 10px;
+        width: 238px;
+        height: 34px;
+        line-height: 34px;
+        font-size: 14px;
+        font-family: $ffa;
+      }
+    }
+    .fill_contact{
+      display:none;
+    }
+    .title {
+      padding-bottom: 27px;
+      color: $dwgy;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    h3 {
+      padding-bottom: 9px;
+      color: $mwgy;
+    }
+    .item {
+      padding-bottom: 29px;
+    }
+
+    dd{
+      float:left;
+      position:relative;
+      margin:0 30px 30px 0;
+      border:1px solid #ebebeb;
+      padding:18px 20px;
+      width:208px;
+      height:74px;
+      .position{
+        padding-bottom:10px;
+        color:$mwgy;
+        font-size:18px;
+
+        em{
+          float:right;
+          padding-top:7px;
+          color:$mwgy;
+          font-size:12px;
+        }
+      }
+
+      .phone{
+        padding-bottom:10px;
+        color:$lwgy;
+      }
+      .action{
+        padding-bottom:0;
+        color:#bcbcbc;
+        cursor:pointer;
+        font-size:12px;
+        span{
+          margin-right:10px;
+        }
+        em{
+          color:#bcbcbc;
+        }
+      }
+      strong{
+        position:absolute;
+        display:none;
+        bottom:18px;
+        right:20px;
+        color:$pomelo;
+        font-size:12px;
+        cursor:pointer;
+
+        &.active{
+         display:block; 
+        }
+        &.show{
+          display:block;
+        }
+      }
+
+      &.active{
+        border:2px solid $pomelo;
+        padding:17px 19px;
+        
+        strong{
+          bottom:17px;
+          right:19px;
+        }
+
+
+        .checked-icon{
+          display:block;
+        }
+      }
+
+      .checked-icon {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          @include sprite(67, 29px, 29px, none);
+        }
+
+      &.add{
+        text-align:center;
+      }
+      .add-icon{
+        margin-top:-20px;
+        font-size:70px;
+        color:#d3d3d3;
+        cursor:pointer;
+      }
+      .add-action{
+        margin-top:-5px;
+        color:$lwgy;
+      }
+
+    }
+    ul {
+      border-top: 2px solid $mbgy;
+      border-left: 1px solid $line;
+    }
+    li {
+      border-bottom: 1px solid $line;
+      border-right: 1px solid $line;
+      padding: 24px 0 25px;
+      > div {
+        float: left;
+      }
+      .thumbnail {
+        padding-left: 19px;
+        width: 100px;
+      }
+      .service {
+        padding-top: 2px;
+        width: 326px;
+        color: $lwgy;
+        p:first-child {
+          padding-bottom: 7px;
+          color: $dwgy;
+        }
+      }
+      .type {
+        padding-bottom: 2px;
+        width: 261px;
+        p:first-child {
+          padding-bottom: 7px;
+        }
+      }
+      .address {
+        padding-top: 2px;
+        width: 228px;
+      }
+      .price {
+        padding-top: 2px;
+        width: 110px;
+      }
+      .quantity {
+        padding-bottom: 2px;
+        width: 104px;
+        color: $lwgy;
+      }
+    }
+    .coupon {
+      padding-top: 15px;
+      p {
+        padding-bottom: 28px;
+        color: $dwgy;
+        strong{
+          font-size: 16px;
+          color: $dwgy;
+        }
+
+      }
+      .couponset{
+        display:inline-block;
+        margin-left:5px;
+        font-size:16px;
+        color:$pomelo;
+      }
+      .coupon-tips{
+        margin-left:20px;
+        color:$lwgy;
+      }
+      .cart-title{
+        padding-right:9px;
+      }
+      .coupon-list{
+          em {
+            display: inline-block;
+            margin-right: 10px;
+            height: 15px;
+            width: 40px;
+            background-color: $pomelo;
+            line-height: 15px;
+            font-size: 12px;
+            color: $bw;
+            text-align: center;
+          }
+          i {
+            margin-left: 30px;
+            color: $pomelo;
+          }
+          a{
+            margin-left:30px;
+            color:$blue;
+            text-decoration:underline;
+          }
+        }
+      select{
+        width:260px;
+        height:36px;
+      }
+      input {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        border: 1px solid $dbgy;
+        vertical-align: middle;
+        color: $lwgy;
+        font-family: $ffa;
+        font-size: 14px;
+        height: 34px;
+        line-height: 34px;
+      }
+      .exchange-code {
+        margin-right: 6px;
+        padding: 0 10px;
+        width: 148px;
+      }
+      .exchange-btn {
+        border-color: #1471c8;
+        background-color: #1471c8;
+        color: $bw;
+        width: 78px;
+        font-size: 16px;
+      }
+    }
+  }
+  .account {
+    display:none;
+    padding: 39px 80px 37px 0;
+    border: 1px solid $line;
+    background-color: $bw;
+    box-shadow: 0px 1px 2px 0px rgba(7, 0, 2, 0.05);
+    .account-content {
+      float: right;
+    }
+    .acount-right {
+      float: left;
+    }
+    .market-price, .reduce-price {
+      color: $mwgy;
+      font-size: 18px;
+      em {
+        font-weight: 700;
+      }
+    }
+    .market-price {
+      padding-bottom: 15px;
+    }
+    .reduce-price {
+      padding-bottom: 25px;
+    }
+    .sum-price {
+      float: left;
+      padding-top: 90px;
+      color: $mwgy;
+      font-size: 24px;
+      em {
+        margin-right: 21px;
+        display: inline-block;
+        color: $pomelo;
+        font-weight: 700;
+      }
+    }
+    .submit-btn {
+      i {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+  .lb_passwordLine{
+        display: none;
+    }
+
+    .lb_telphoneLine{
+        >span{
+            display: inline-block;
+            width: 8em;
+            font-size: 12px;
+            color: $lgray;
+            vertical-align: middle;
+            a{
+                color: $lblue;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .edit-address{
+      padding:59px 0 ;
+      width:618px;
+      .contactor {
+        padding-bottom:20px;
+      }
+      .action{
+        margin:0 auto;
+        width:400px;
+        padding-top:30px;
+      }
+      
+      p{
+        width:400px;
+        margin:0 auto;
+        label{
+          float:left;
+          width:120px;
+          text-align:right;
+          line-height:37px;
+          font-size:16px;
+          color:$mwgy;
+        }
+        span{
+          color:#dc2e1c;
+        }
+      }
+      input[type='text']{
+        float:right;
+        border:1px solid #d3d3d3;
+        width:258px;
+        height:35px;
+        line-height:35px;
+        text-indent:9px;
+        font-size:16px;
+        color:$dwgy;
+      }
+
+      input[type='submit'],input[type='button']{
+        margin-left:140px;
+        padding:0;
+        width:118px;
+        height:34px;
+        line-height:34px;
+        font-size:16px;
+      }
+      
+      input[type='button']{
+        margin-left:20px;
+        color:$mwgy;
+        background-color:$lbgy;
+        border-color:$line;
+      }
+    }

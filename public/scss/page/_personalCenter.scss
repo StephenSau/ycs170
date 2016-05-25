@@ -1,0 +1,677 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+$pcSpriteUrl: url('../img/pc-sprite.png');
+$pcSpritePos:
+	(0 0) (-40px 0) (-80px 0) (0 -40px) (-10px -40px)
+	(-30px -40px) (-50px -40px) (-70px -40px) (-90px -40px) (-100px -40px)
+	(-110px -40px) (0 -70px) (0 -130px) (-50px -130px) (-100px -130px)
+	(0 -180px) (-50px -180px) (-100px -180px) (0 -230px) (-20px -230px)
+	(-40px -230px) (-50px -230px) (-60px -230px) (-70px -230px) (-100px -290px); 
+@mixin pcSprite($position: 1, $width: 20px, $height: 20px, $display: inline-block){
+	display: $display;
+	width: $width;
+    height: $height;
+    background-image: $pcSpriteUrl;
+    background-position: nth($pcSpritePos, $position);
+}
+
+
+.container{
+	background-color: $lbgy;
+	padding-bottom: 100px;
+}
+
+.content{
+	width: $w1;
+	margin: 0 auto;
+}
+
+.pcBox{
+	width: $w10;
+	float: right;
+}
+
+.pcb-summary{
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	border: 1px solid $line;
+	margin-bottom: 20px;
+	background-color: $bw;
+	padding: 28px 0;
+}
+
+.pcbs-user{
+	width: 280px;
+	float: left;
+	padding-left: 100px;
+	position: relative;
+	.pcbsu-img{
+		position: absolute;
+		top: 0;
+		left: 20px;
+		img{
+			display: block;
+			background:transparent url('../img/pc-sprite.png') 0 -70px no-repeat;
+		}
+	}
+
+	.pcbsu-name{
+		margin-bottom: 10px;
+		a{
+			font-size: 24px;
+			@include links($dwgy);
+		}
+	}
+
+	.pcbsu-company{
+		font-size: 16px;
+		margin-bottom: 15px;
+		color: $lwgy;
+	}
+
+	.pcbsu-binded{
+		margin-bottom: 6px;
+		color: $mwgy;
+		&:before{
+			content: " ";
+			margin-right: 5px;
+			@include pcSprite(19, 12px, 10px);
+		}
+	}
+
+	.pcbsu-unbind{
+		margin-bottom: 6px;
+		color: $lwgy;
+		&:before{
+			content: " ";
+			margin-right: 5px;
+			@include pcSprite(20, 12px, 12px);
+		}
+	}
+}
+
+.pcbs-links{
+	float: left;
+	padding-top: 30px;
+	li{
+		float: left;
+		width: 100px;
+	}
+	a{
+		display: block;
+		margin-bottom: 10px;
+		@include links;
+		em{
+			color: $pomelo;
+		}
+	}
+	.icon{
+		@include pcSprite(13, 50px, 50px);
+	}
+
+	.pcbsl-unpay{
+		.icon{
+			background-position: nth($pcSpritePos, 13);
+		}
+		a:hover{
+			.icon{
+				background-position: nth($pcSpritePos, 16);
+			}
+		}
+	}
+
+	.pcbsl-service{
+		.icon{
+			background-position: nth($pcSpritePos, 14);
+		}
+
+		a:hover{
+			.icon{
+				background-position: nth($pcSpritePos, 17);
+			}
+		}
+	}
+
+	.pcbsl-comment{
+		.icon{
+			background-position: nth($pcSpritePos, 15);
+		}
+
+		a:hover{
+			.icon{
+				background-position: nth($pcSpritePos, 18);
+			}
+		}
+	}
+}
+
+.pcbs-coupon{
+	float: right;
+	padding: 0 20px;
+	width: 240px;
+	.pcbs-emptyLine{
+		text-align: center;
+		padding-top: 10px;
+		font-size: 18px;
+		color: $lwgy;
+	}
+	h3{
+		font-size: 18px;
+		color: $lwgy;
+		margin-bottom: 20px;
+		em{
+			font-weight: bold;
+			color: $pomelo;
+		}
+	}
+
+	.glide-cabinet{
+		height: 115px;
+		width: 240px;
+	}
+
+	li{
+		cursor: default;
+	}
+
+	.pcbsc-more{
+		margin: -38px 0 22px;
+		text-align: right;
+		a{
+			@include links($lwgy);
+		}
+	}
+
+	.glide-box{
+		overflow: hidden;
+		&:hover{
+			.glide-prev{
+				left: 0;
+			}
+			.glide-next{
+				right: 0;
+			}
+		}	
+	}
+
+	.glide-prev, .glide-next{
+		top: 42px;
+		background:transparent url('../img/black-opacity10-bg.png') left top repeat;
+		&:before{
+			content: " ";
+			width: 10px;
+			height: 17px;
+			display: block;
+			background:transparent url('../img/glide-sprite.png') left top no-repeat;
+		}
+		padding: 6px 5px;
+	}
+
+	.glide-prev{
+		left: -20px;
+		&:before{
+			background-position: 0 0px;
+		}
+		&:hover{
+			background-image: url('../img/black-opacity40-bg.png');
+		}
+	}
+
+	.glide-next{
+		right: -20px;
+		&:before{
+			background-position: 100% 0px;
+		}
+
+		&:hover{
+			background-image: url('../img/black-opacity40-bg.png');
+		}
+	}
+}
+
+
+
+.pcb-list{
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	border: 1px solid $line;
+	margin-bottom: 20px;
+	background-color: $bw;
+}
+
+.pcbl-order{
+	width: 660px;
+	padding: 30px 39px 0 19px;
+	float: left;
+	h2{
+		margin-bottom: 10px;
+		font-size: 18px;
+		color: $dbgy;
+	}
+
+	.pcblr-more{
+		line-height: 22px;
+		margin: -32px 0 10px;
+		font-size: 12px;
+		text-align: right;
+		a{
+			@include links($lwgy);
+		}
+	}
+	.pcblr-noneLine{
+		display: none;
+		padding: 93px 0 0 191px;
+		&.active{
+			display: block;
+		}
+		p{
+			padding-left: 75px;
+			position: relative;
+			&:before{
+				content: " ";
+				@include pcSprite(25, 55px, 55px);
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+		strong{
+			color: $lwgy;
+			display: inline-block;
+			margin-bottom: 15px;
+			font-size: 18px;
+		}
+		a{
+			@include links($blue);
+		}
+	}
+	table{
+		width: 100%;	
+	}
+
+	td{
+		line-height: 1.5em;
+		vertical-align: top;
+		padding: 17px 0;
+		a{
+			font-size: 12px;
+			@include links($lwgy);
+		}
+		border-top: 1px solid $line;
+	}
+
+	tr:first-child{
+		td{
+			border-top: none;
+		}
+	}
+
+	.ol-time{
+		color: $lwgy;
+		font-size: 12px;
+		text-align: center;
+	}
+
+	.ol-orderNo{
+		@include links($dwgy);
+	}
+
+	.ol-remark{
+		font-size: 12px;
+	}
+
+	.ol-orange{
+		color: $pomelo;
+	}
+
+	.ol-blue{
+		color: $blue;
+	}
+
+	.ol-green{
+		color: #7abb55;
+	}
+
+	.ol-gray{
+		color: $dbgy;
+	}
+
+	.ol-contactor, .ol-money{
+		text-align: center;
+		em{
+			display: block;
+			color: $dwgy;
+		}
+		span{
+			font-size: 12px;
+			display: block;
+			color: $mwgy;
+		}
+	}
+
+	.ol-status{
+		text-align: center;
+		a{
+			display: block;
+		}
+	}
+
+
+	.ol-summary{
+		.ol-photo{
+			float: left;
+			margin-right: 10px;
+			img{
+				display: block;
+			}
+		}
+		span{
+			float: left;
+			color: $lwgy;
+			font-size: 12px;
+			width: 175px;
+			line-height: 1.5em;
+		}
+
+		a{
+			@include links($dwgy);
+		}
+	}
+
+}
+
+.pcblbanner{
+	width: 280px;
+	float: right;
+	img{
+		display: block;
+	}
+}
+
+
+.pcb-record{
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	border: 1px solid $line;
+	background-color: $bw;
+	padding: 33px 0;
+}
+
+.pcbr-emptyLine{
+	text-align: center;
+	width: 850px;
+	padding-top: 30px;
+	font-size: 18px;
+	color: $lwgy;
+}
+
+.pcbr-coupon{
+	float: left;
+	padding: 0 70px;
+	height: 174px;
+	h3{
+		color: $dbgy;
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+
+	.glide-cabinet{
+		width: 840px;
+		height: 115px;
+		li{
+			margin-right: 60px;
+		}
+	}
+
+	.glide-prev, .glide-next{
+		&:before{
+			content: " ";
+			width: 10px;
+			height: 17px;
+			display: block;
+			background:transparent url('../img/glide-sprite.png') left top no-repeat;
+		}
+		padding: 41px 10px;
+	}
+
+	.glide-prev{
+		top: 10px;
+		left: -40px;
+		&:before{
+			background-position: 0 -20px;
+		}
+		&:hover{
+			&:before{
+				background-position: 0 -40px;
+			}
+		}
+	}
+
+	.glide-next{
+		top: 10px;
+		right: -40px;
+		&:before{
+			background-position: 100% -20px;
+		}
+
+		&:hover{
+			&:before{
+				background-position: 100% -40px;
+			}
+		}
+	}
+}
+
+.pcbr-browse{
+	h3{
+		color: $dbgy;
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+	float: left;
+	padding: 0 49px;
+
+	.pcbrb-content{
+		
+		width: 560px;
+		overflow: hidden;
+	}
+	ul{
+		width: 1160px;
+		
+	}
+	li{
+		overflow: hidden;
+		
+		margin-left: 20px;
+		float: left;
+		border: 1px solid $line;
+		a{
+			display: block;
+			padding: 16px 0 16px 16px;
+			width: 252px;
+			background-color: $bw;
+			&:hover{
+				background-color: $lbgy;
+			}
+		}
+		
+		&:first-child{
+			margin-left: 0;
+		}
+		img{
+			float: left;
+			display: block;
+			margin-right: 20px;
+		}
+		strong{
+			color: $dwgy;
+			display: block;
+			margin-bottom: 5px;
+		}
+		em{
+			color: $pomelo;
+			display: block;
+			margin-bottom: 8px;
+		}
+		span{
+			display: block;
+			font-size: 12px;
+			color: $lwgy;
+		}
+	}
+}
+
+.orderList-detailBox{
+	display: none;
+	position: absolute;
+	top: 665px;
+	left: 928px;
+	border: 1px solid $line;
+	background-color: $bw;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+	padding: 12px 20px 20px;
+	width: 380px;
+
+	h4{
+		padding-bottom: 12px;
+		border-bottom: 1px solid $line;
+		margin-bottom: 20px;
+		color: $mwgy;
+		font-weight: bold;
+	}
+
+	p{
+		margin: -49px 0 32px;
+		text-align: right;
+		a{
+			@include links($mwgy);
+		}
+	}
+
+	ul{
+		padding: 0 25px;
+		font-size: 12px;
+		li{
+			position: relative;
+			padding:0 0 25px 13px;
+			border-left: 1px solid $line;
+			&:first-child{
+				.icon{
+					background-position: nth($pcSpritePos, 9);
+				}
+			}
+			&.third-child{
+				border-left-style: dashed;
+			}
+			&.last-child{
+				border-left-color: transparent;
+				padding-bottom: 0;
+			}
+		}
+		.third-child+.last-child{
+			margin-top: -10px;
+		}
+		.icon{
+			position: absolute;
+			left: -4px;
+			@include pcSprite(10, 8px, 8px);
+		}
+		em{
+			display: block;
+			position: relative;
+			top: -2px;
+			color: $dwgy;
+		}
+		span{
+			display: block;
+			color: $lwgy;
+		}
+
+	}
+}
+
+.pcbs-coupon,
+.pcbr-coupon{
+	.coupon-range{
+		&:hover{
+			.coupon-shopList{
+				display: none;
+			}
+		}
+	}
+}
+
+
+.coupon-shopList{
+	display: none;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+	font-size: 14px;
+	color: $mwgy;
+	padding: 29px 19px 0 19px;
+	top: 0;
+	left: -420px;
+	background-color: $bw;
+	border: 1px solid $line;
+	width: 380px;
+	height: 189px;
+	position: absolute;
+	&.coupon-one{
+		width: 190px;
+		padding-bottom: 20px;
+		height: auto;
+		.csl-shop{
+			width: 100%;
+			float: none;
+		}
+	}
+}
+
+.pc-shoplist{
+	.coupon-shopList{
+		display: block;
+		position: static;
+	}
+}
+.csl-title{
+	color: $lwgy;
+	margin-bottom: 18px;
+	width: 100%;
+	display: block;
+}
+
+.csl-shop{
+	width: 50%;
+	float: left;
+	margin-bottom: 18px;
+	em{
+		color: $mwgy;
+		display: inline-block;
+		max-width: 6em;
+		margin-right: 1em;
+		vertical-align: bottom;
+		@include ellipsis;
+	}
+
+	a{
+		color: $blue;
+	}
+}
+
+.csl-moreLine{
+	display: block;
+	position: absolute;
+	bottom: 20px;
+	left: 19px;
+	padding: 8px 20px 8px 0;
+	width: 360px;
+	background-color: $lbgy;
+	text-align: right;
+	em{
+		color: $pomelo;
+	}
+	a{
+		color: $blue;
+	}
+}
+
+
+

@@ -1,0 +1,42 @@
+@import "../common/variable";
+@import "../common/maxin";
+$lgray: #9e9e9e;
+$mgray: #666666;
+.paginate{
+    line-height: 24px;
+    text-align: center;
+    a{
+        margin: 0 3px;
+        padding: 2px 0;
+        cursor: pointer;
+        vertical-align: middle;
+        color: $lwgy;
+    }
+    .p-start-btn{
+        margin-right:10px;
+    }
+    .p-end-btn{
+        margin-left:10px;
+    }
+    .p-num,.p-prev-btn, .p-next-btn{
+        display: inline-block;
+        width: 26px;
+        border: 1px solid $line;
+        background-color:$bw;
+    }
+    
+    .p-selected{
+        background-color: $blue;
+        color: $bw;
+        border-color:$blue;
+    }
+    
+    .p-ellipsis{
+        color: $mgray;
+    }
+    
+    .p-disabled{
+        cursor: default;
+        color: $lgray;
+    }
+}

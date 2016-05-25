@@ -1,0 +1,233 @@
+@import "../common/variable";
+@import "../common/maxin";
+$newsSpriteUrl: url('../img/news-sprite.png');
+$newsSpritePos: 
+    (0 0) (-20px 0) (-40px 0) (-60px 0) (-80px 0)
+    (-100px 0) (100% -40px) (100% -60px) (100% -80px) (100% -100px) 
+    (100% -120px) (100% -140px);
+@mixin newsSprite($position: 1, $width: 20px, $height: 20px, $display: inline-block) {
+    display: $display;
+    width: $width;
+    height: $height;
+    background-image: $newsSpriteUrl;
+    background-position: nth($newsSpritePos, $position);
+}
+
+body {
+    background-color: $lbgy;
+}
+
+h1 {
+    width: $w1;
+    margin: 18px auto;
+    color: $mwgy;
+    font-size: 22px;
+}
+
+.news-section {
+    width: $w1;
+    margin: 0 auto 100px;
+}
+
+.news-content {
+    width: 910px;
+    float: left;
+    ul {
+        padding-bottom: 35px;
+    }
+    .badge {
+        color: $bw;
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        padding: 0 15px 0 10px;
+        background: url('../img/news-sprite.png') 100% 0 no-repeat;
+        &.badge-1 {
+            background-position: nth($newsSpritePos, 7);
+        }
+        &.badge-2 {
+            background-position: nth($newsSpritePos, 8);
+        }
+        &.badge-3 {
+            background-position: nth($newsSpritePos, 9);
+        }
+        &.badge-4 {
+            background-position: nth($newsSpritePos, 10);
+        }
+        &.badge-5 {
+            background-position: nth($newsSpritePos, 11);
+        }
+        &.badge-6 {
+            background-position: nth($newsSpritePos, 12);
+        }
+    }
+    li {
+        overflow: hidden;
+        box-shadow: $gbboxShadow;
+        background-color: $bw;
+        border: 1px solid $line;
+        position: relative;
+        height: 138px;
+        padding: 20px;
+        margin-bottom: 15px;
+        &:hover {
+            .nb-shareBtn {
+                display: block;
+            }
+        }
+        &.nb-hasPhoto {
+            padding-left: 265px;
+            h4 {
+                .badge {
+                    display: none;
+                }
+            }
+            .nb-photo {
+                display: block;
+            }
+        }
+    }
+    .nb-photo {
+        position: absolute;
+        display: none;
+        left: 20px;
+        top: 20px;
+        img {
+            display: block;
+        }
+        a {
+            display: block;
+        }
+        .badge {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    h4 {
+        margin-bottom: 18px;
+        @include ellipsis;
+        a {
+            color: $dwgy;
+            font-weight: bold;
+            font-size: 18px;
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+    .nb-content {
+        color: $mwgy;
+        line-height: 1.5em;
+        overflow: hidden;
+        height: 65px;
+        margin-bottom: 18px
+    }
+    .nb-share {
+        font-size: 12px;
+        color: $lwgy;
+        a {
+            color: $lwgy;
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+    .nb-class {
+        float: left;
+        margin-right: 20px;
+    }
+    .nb-links {
+        float: left;
+        a {
+            margin-left: 15px;
+            @include links;
+        }
+    }
+    .nb-shareBtn {
+        display: none;
+        float: right;
+    }
+    .nb-moreLine {
+        box-shadow: $gbboxShadow;
+        text-align: center;
+        border: 1px solid $line;
+        background-color: $line;
+        height: 44px;
+        line-height: 44px;
+        a {
+            font-size: 18px;
+            @include links($mwgy);
+        }
+    }
+}
+
+.news-aside {
+    width: 280px;
+    float: right;
+}
+
+.message-dialog {
+    display: none;
+}
+
+.message-popover {
+    padding: 61px 35px 59px 39px;
+    border: 1px solid $line;
+    background-color: $bw;
+    .title {
+        margin-bottom: 39px;
+        padding-left: 59px;
+        color: $mwgy;
+        i {
+            float: left;
+            margin-top: 5px;
+            @include sprite(77,
+            40px,
+            40px);
+        }
+        p {
+            float: left;
+            margin-left: 20px;
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+    .tips {
+        margin-bottom: 23px;
+        color: $lwgy;
+    }
+    input[type="text"] {
+        border: 1px solid $line;
+        width: 218px;
+        height: 34px;
+        line-height: 34px;
+        font-family: $ffa;
+        font-size: 14px;
+        text-indent: 9px;
+        color: $lwgy;
+        border-radius: 3px;
+    }
+    .btn {
+        width: 118px;
+        height: 34px;
+        line-height: 34px;
+        padding: 0;
+        background-color: $blue;
+        color: $bw;
+        font-size: 16px;
+        cursor: pointer;
+        font-family: $ffa;
+    }
+    .input-text {
+        margin-bottom: 37px;
+        em {
+            font-size: 18px;
+            color: $mwgy;
+        }
+    }
+    .input-btn {
+        text-align: center;
+    }
+}

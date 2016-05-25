@@ -1,0 +1,74 @@
+@import 'variable';
+
+@mixin links($default: $mwgy, $hover: $blue) {
+    color: $default;
+    &:hover{
+        color: $hover;
+    } 
+}
+
+@mixin detrans{
+    transition: none;
+    -webkit-transition: none;
+}
+
+@mixin opacity($opacity:1){
+  opacity: $opacity/100;
+  filter: alpha(opacity=$opacity);
+}
+
+@mixin box-center($value: 1200px){
+    width: $value;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin ellipsis{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@mixin title($color: $mwgy){
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: $color;
+    font-family: $ffa;
+}
+
+$spriteUrl: url('../img/sprite.png');
+$spritePos:
+	(0 0) (-20px 0) (-30px 0) (-20px -10px) (-50px 0)
+    (-50px -10px) (100% 0) (-70px 0) (0 -20px) (-30px -20px)
+    (-60px -20px) (-90px -20px) (-170px 0) (-90px 0) (-180px -80px)
+    (-130px 0) (-150px 0) (-190px 0) (-210px 0) (-80px -80px)
+    (0 -50px) (0 -80px) (-20px -80px) (-40px -80px) (-60px -80px)
+
+    (0 -100px) (-240px -80px) (-260px -80px) (0 -240px) (-230px 0)
+    (0 -280px) (-180px -180px) (-210px -180px) (-240px -180px) (-270px -180px)
+    (-10px -260px) (-30px -260px) (-120px -100px) (-180px -100px) (0 -340px)
+    (-50px -340px) (-100px -340px) (-150px -340px) (-30px -50px) (0 -280px)
+    (-60px -280px) (-30px -280px) (-90px -280px) (-170px -260px) (-180px -260px)
+
+    (-190px -260px) (-200px -260px) (-240px -100px) (-240px -140px ) (-115px -260px)
+    (-130px -265px) (-155px -260px) (-70px -260px) (-210px -260px) (-230px -260px)
+    (-250px -260px) (-270px -260px) (-290px -260px) (-290px -270px) (-310px -80px)
+    (-330px -80px) (-90px -50px) (-130px -50px) (-150px -50px) (-360px -180px)
+    (-280px -100px) (-340px -100px) (-350px -80px) (-310px -260px) (-330px -260px)
+
+    (-350px -260px) (-250px -20px) (-300px -180px) (-330px -180px) (-370px -260px)
+    (-170px -50px) (-190px -50px);
+
+@mixin sprite($position: 1, $width: 20px, $height: 20px, $display: inline-block){
+	display: $display;
+	width: $width;
+    height: $height;
+    background-image: $spriteUrl;
+    background-position: nth($spritePos, $position);
+}
+
+// service providers' image width and height (defined in suadm)
+@mixin spImgWH {
+    width: 240px;
+    height: 155px;
+}

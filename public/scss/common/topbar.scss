@@ -1,0 +1,231 @@
+@import "variable";
+@import "maxin";
+
+.top-bar{
+	font-size: 12px;
+	color: $mwgy;
+	background-color: $bw;
+	border-bottom: 1px solid $line;
+	position: relative;
+	z-index: 150;
+	.tb-inner{
+		width: $w1;
+		margin: 0 auto;
+	}
+	a{
+		color: $mwgy;
+		.icon{
+			@include sprite(2, 9px, 6px);
+			margin-left: 5px;
+			transition:transform 0.5s;
+			-webkit-transition:transform 0.5s;
+				
+		}
+	}
+	.tb-left{
+		float: left;
+	}
+	.tb-right{
+		float: right;
+	}
+	.tb-left, .tb-right{
+		>li{
+			position: relative;
+			z-index: 10;
+			float: left;
+			>ul{
+				position: absolute;
+				display: none;
+			}
+			&:before{
+				content: "|";
+				position: absolute;
+				top: 8px;
+				color: $line;
+			}
+			&.tb-login, &.tb-reg-out, &.tb-status{
+				&:before{
+					content: "";
+				}
+			}
+			&.active{
+				.icon{
+					transform: rotate(180deg);
+					-moz-transform: rotate(180deg);
+					-webkit-transform: rotate(180deg);
+					background-position: -20px -10px\9;
+				}
+				>ul{
+					display: block;
+				}
+				.tb-map{
+					display: block;
+				}
+				>a:first-child{
+					background-color: $lbgy;
+				}
+				&:before{
+					content: "";
+				}
+				&+li{
+					&:before{
+						content: "";
+					}
+				}
+			}
+		}
+	}
+
+	.tb-right{
+		display: none;
+	}
+
+	.tb-reg-out,.tb-shopcar{
+		&:hover{
+			&:before{
+				content: "";
+			}
+			a{
+				background-color: $lbgy;
+				color: $dbl;
+			}
+			&+li{
+				&:before{
+					content: "";
+				}
+			}
+		}
+		.badge{
+			color: $red;
+		}
+	}
+
+	.tb-status{
+		display: none;
+		a{
+			&:hover{
+				background-color: $lbgy;
+				color: $dbl;
+			}
+		}
+	}
+
+	.tb-td,.tb-help,.tb-map,.tb-login-menu{
+		border: 1px solid $line;
+		background-color: $bw;
+	}
+
+	.tb-td{
+		li{
+			border-top: 1px dashed $line;
+			padding: 10px;
+			overflow: hidden;
+			width: 198px;
+			&:first-child{
+				border-top: none;
+			}
+		}
+		.tb-td-img{
+			float: left;
+			margin-right: $mg;
+		}
+		.tb-td-content{
+			float: left;
+			line-height: 1.5em;
+		}
+		h4{
+			color: $dwgy;
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 5px;
+		}
+		img{
+			display: block;
+			width: 74px;
+		}
+	}
+
+	.tb-help,.tb-login-menu{
+		padding: 5px 22px 5px 10px;
+		li{
+			padding: 5px 0;
+		}
+		a:hover{
+			color: $dbl;
+		}
+	}
+
+	.tb-map{
+		display: none;
+		position: absolute;
+		font-size: 14px;
+		margin-left:-421px;
+		width: 1198px;
+		padding: 35px 0 35px 10px;
+		h5{
+			color: $dwgy;
+			margin-bottom: 14px;
+		}
+		>div{
+			padding-left: 30px;
+			height: 168px;
+			border-left: 1px solid $line;
+			width: 115px;
+			float: left;
+			&.tb-map-01{
+				border-left: none;
+				width: 320px;
+				a{
+					width: 9em;
+				}
+			}
+			&.tb-map-02, &.tb-map-03{
+				width: 233px;
+			}
+		}
+		a{
+			display: inline-block;
+			margin: 0 30px 14px 0;
+			width: 6em;
+			@include ellipsis;
+			@include links($lwgy);
+		}
+	}
+
+	.tb-login-menu{
+		margin-left: -48px;
+		width: 7em;
+		padding-right: 10px;
+	}
+
+	.tb-item{
+		padding: 8px 10px;
+		display: inline-block;
+		white-space: nowrap;
+	}
+
+	.tb-place{
+		.tb-item{
+			padding-left: 15px;
+			&:before{
+				content: "";
+			}
+		}
+		a{
+			color: #lwgy;
+			&:hover{
+				color: $dbl;
+			}
+		}
+		.icon{
+			@include sprite(1, 11px, 16px);
+			position: absolute;
+			left: 0;
+			top: 8px;
+		}
+		&:before{
+			content: ""!important;
+		}
+	}
+
+}

@@ -1,0 +1,203 @@
+@import "variable";
+@import "maxin";
+
+
+.footer-float{
+	position: fixed;
+	bottom: 150px;
+	z-index: 20;
+	right: 0;
+	.ff-td{
+		display: none;
+	}
+	>a{
+		margin-bottom: 1px;
+		font-size: 12px;
+		display: block;
+		background-color: $lwgy;
+		background-color: rgba(150, 150, 150, 0.4);
+		color: $bw;
+		width: 53px;
+		text-align: center;
+		position: relative;
+		@include detrans;
+		&:first-child{
+			border-top: none;
+		}
+		&:hover{
+			.ff-hoverBox{
+				display: block;
+			}
+		}
+	}
+	.ff-hoverBox{
+		display: none;
+		color: $dwgy;
+		background-color: $bw;
+		position: absolute;
+		top: -1px;
+		right: -1px;
+		height: 53px;
+		border: 1px solid $line;
+	}
+
+	.ff-car{
+		margin-top: 1px;
+		height: 34px;
+		padding-top: 19px;
+		>.icon{
+			@include sprite(14, 18px, 18px, block);
+			margin: 0 auto 4px;
+		}
+		.badge{
+			margin-top: 5px;
+			@include sprite(15, 20px, 20px);
+			color: $bw;
+			font-size: 12px;
+			line-height: 20px;
+		}
+		.ff-hoverBox{
+			overflow: hidden;
+			width: 52px;
+			>.icon{
+				margin: 10px auto 2px;
+				@include sprite(8, 18px, 18px, block);
+			}
+			>em{
+				display: block;
+				margin: 0 auto 0;
+				width: 3em;
+			}
+		}
+		
+	}
+
+	.ff-qq{
+		height: 34px;
+		padding-top: 19px;
+		>.icon{
+			@include sprite(16, 18px, 18px, block);
+			margin: 0 auto 4px;
+		}
+		.ff-hoverBox{
+			overflow: hidden;
+			width: 78px;
+			>.icon{
+				@include sprite(17, 18px, 18px);
+				float: left;
+				margin: 18px 10px 0 12px
+			}
+			>em{
+				float: left;
+				width: 2em;
+				margin-top: 12px;
+			}
+		}
+	}
+
+	.ff-phone{
+		height: 34px;
+		padding-top: 19px;
+		>.icon{
+			@include sprite(18, 18px, 18px, block);
+			margin: 0 auto 4px;
+		}
+		.ff-hoverBox{
+			overflow: hidden;
+			width: 196px;
+			>.icon{
+				@include sprite(19, 18px, 18px);
+				float: left;
+				margin: 18px 10px 0 12px
+			}
+			>em{
+				text-align: left;
+				float: left;
+				margin-top: 12px;
+			}
+		}
+	}
+
+	.ff-wx{
+		height: 34px;
+		padding-top: 19px;
+		>.icon{
+			@include sprite(20, 19px, 18px, block);
+			margin: 0 auto 4px;
+		}
+		.ff-hoverBox{
+			width: 52px;
+			>em{
+				display: block;
+				width: 2em;
+				margin: 12px auto 0;
+			}
+		}
+		&:hover{
+			.ff-td{
+				display: block;
+			}
+		}
+	}
+
+	.ff-top{
+		height: 33px;
+		padding-top: 20px;
+		>.icon{
+			@include sprite(21, 23px, 14px, block);
+			margin: 0 auto 4px;
+		}
+		.ff-hoverBox{
+			width: 52px;
+			>em{
+				display: block;
+				width: 2em;
+				margin: 12px auto 0;
+			}
+		}
+	}
+
+	.ff-td{
+		position: absolute;
+		bottom: -30px;
+		right: 53px;
+		padding-right: 2px;
+		ul{
+			background-color: $bw;
+			border: 1px solid $line;
+		}
+		li{
+			border-top: 1px dashed $line;
+			padding: 10px;
+			overflow: hidden;
+			width: 198px;
+			&:first-child{
+				border-top: none;
+			}
+		}
+		.ff-td-img{
+			float: left;
+			margin-right: $mg;
+		}
+		.ff-td-content{
+			float: left;
+			line-height: 1.25em;
+			color: $lwgy;
+		}
+		h4{
+			color: $dwgy;
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 5px;
+		}
+		img{
+			display: block;
+			width: 74px;
+		}
+	}
+}
+
+.footer-float-right{
+	left: 100%;
+	margin-left: -55px;
+}

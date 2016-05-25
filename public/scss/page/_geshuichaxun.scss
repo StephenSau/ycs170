@@ -1,0 +1,102 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+.container{
+	background-color: $lbgy;
+}
+.content{
+	border: 1px solid $line;
+	width: 1052px;
+	background-color: $bw;
+	margin: 0 auto 100px;
+	padding: 77px 126px 79px 122px;
+}
+
+.line3{
+	h2{
+		margin-bottom: 0;
+	}
+	h3{
+		font-size: 18px;
+		color: $lwgy;
+		font-weight: bold;
+		margin-bottom: 25px;
+		text-align: center;
+	}
+	.line3_content{
+		border: 1px solid $line;
+		overflow: hidden;
+	}
+	.col01{
+		float: left;
+		width: 368px;
+		padding: 40px 100px;
+		height: 300px;
+		
+		p{
+			margin-bottom: 20px;
+		}
+		li{
+			color: $mwgy;
+			margin-bottom: 20px;
+		}
+		label{
+			color: $lwgy;
+			display: inline-block;
+			width: 7em;
+			text-align: right;
+		}
+
+		.tfSelect{
+			width: 230px;
+			margin-right: 10px;
+			height: 36px;
+		}
+
+		input{
+			height: 30px;
+			line-height: 30px;
+			background-color: #ffffff;
+			border: 1px solid $line;
+			width: 218px;
+			padding: 0 5px;
+			margin-right: 10px;
+		}
+
+		.btn{
+			display: inline-block;
+			font-size: 16px;
+			width: 113px;
+			
+		}
+
+		.btn-warning{
+			margin-left: 100px;
+		}
+	}
+	.col02{
+
+		float: right;
+		padding: 40px 70px;
+		width: 250px;
+		height: 300px;
+		background: #f7f7f7 url('../img/topic/topic007003.png') 0 50% no-repeat;
+		h3{
+			margin-bottom: 40px;
+		}
+		li{
+			margin-bottom: 20px;
+		}
+		span{
+			color: $mwgy;
+			display: inline-block;
+			width: 7em;
+			text-align: right;
+		}	
+		em{
+			margin-left: 20px;
+			font-weight: bold;
+			color: $pomelo; 
+		}
+	}
+}

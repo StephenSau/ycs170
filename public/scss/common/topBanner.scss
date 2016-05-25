@@ -1,0 +1,28 @@
+@import "variable";
+@import "maxin";
+.top-banner{
+	display: none;
+	.tbr-inner{
+		position: relative;
+		width: $w1;
+		margin: 0 auto;
+		img{
+			display: block;
+		}
+		.tbr-closeBtn{
+			display: block;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 16px;
+			height: 16px;
+			padding: 1px;
+			border-radius: 50%;
+			background-color: #000000;
+			background-color: rgba(0, 0, 0, .5);
+			color: $bw;
+			font-family: "simsun";
+			text-align: center;
+		}
+	}
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
+    <title>我的购物车_壹财税</title>
+    <link rel="stylesheet" href="../public/css/cart.css"/>
+<!--=include ../tpl/_thirdpartyHeader.html -->
+</head>
+<body>
+<!--=include ../tpl/_headFloat.html -->
+<!--=include ../tpl/_topBar.html -->
+<!--=include ../tpl/_headWrap.html -->
+<div class="crumbs-box">
+    <div class="crumbs-box-inner">
+        <p class="crumbs">
+            <a href="/">首页</a> &gt;
+            <span>我的购物车</span>
+        </p>
+    </div>
+</div>
+<div class="shopcart-wrap">
+    <p class="loading-bar">加载中...</p>
+</div>
+<div class="cart-wrapper">
+        <div class="cart-inner">
+            <div class="cart-content">
+                <div class="left">
+                    <img src="../public/img/cart.png">
+                </div>
+                <div class="right">
+                    <div class="info">
+                        购物车是空的哟，赶快去买买买吧！
+                    </div>
+                    <div class="return">
+                        <a href="/service/qryAllServiceGoods.htm">购买服务 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- tempate here start -->
+<script type="x-handlebars-template" id="shop-tpl">
+
+    <div class="cartnav">
+        <ul class="clearfix">
+            <li class="option-1">
+                <input type="checkbox" class="checkedall" checked/>全选
+            </li>
+            <li class="option-2">服务</li>
+            <li class="option-3">服务规格</li>
+            <li class="option-4">服务区域</li>
+            <li class="option-5">单价</li>
+            <li class="option-6">数量</li>
+            <li class="option-7">小计</li>
+            <li class="option-8">操作</li>
+        </ul>
+    </div>
+    <div class="cart-content">
+        <div class="cartlist">
+            {{#each cartList}}
+            <div class="item">
+                        <h3 data-srid="{{srid}}" data-uniqueid="{{toUnique srid}}" data-provincecode="{{provincecode}}" data-citycode="{{citycode}}" data-districtcode="{{districtcode}}" data-srname="{{srname}}">
+                            <input type="checkbox" class="itemCheck" checked/>
+                            {{srname}}
+                            <i data-contracts="{{servicer_contracts}}" class="tel-icon" data-phone="{{servicer_contracts}}" data-spy="dial"></i>
+                        </h3>
+                        <table>
+                        {{#each services}}
+                            {{#each groups}}
+                                {{#each items}}
+                                
+                            <tr data-itemgroupid="{{itemgroupid}}" data-itemgroupname="{{itemgroupname}}" data-id="{{id}}" data-account="{{account}}" data-sdid="{{sdid}}" data-siid="{{siid}}" data-srsid="{{srsid}}" data-modifynum="{{modifynum}}" data-account={{account}} data-ispromotion="{{ispromotion}}" data-itemrequired="{{itemrequired}}"
+                            >
+
+
+                                <td class="thumbnail option-1">
+                                {{#if cover}}
+                                    <img src="{{cover}}" width="80" height="64" alt=""/>
+                                {{else}}
+                                    <img src="/public/img/serviceCover_80x64.png" width="80" height="64" alt=""/>
+                                {{/if}}
+                                </td>
+                                <td class="service option-2">
+                                    <p data-sdname = {{sdname}}>{{sdname}}</p>
+                                    <p data-siname={{siname}}>{{siname}}</p>
+                                </td>
+                                <td class="type option-3">
+                                    {{#if account}}
+                                    <p data-payTypes="{{payTypes}}">
+                                        付款方式
+                                        <select data-paytype="{{paytype}}">
+                                                {{#toPayTypes payTypes paytype}}
+                                                    <option value="{{type}}" {{selected}}>{{value}}</option>
+                                                {{/toPayTypes}}
+                                            </select>
+                                    </p>
+                                    {{else}}
+                                     <p data-payTypes="{{payTypes}}" data-paytype="{{paytype}}"></p>
+                                    {{/if}}
+
+                                    {{#if options}}
+                                    {{#each options}}
+                                    <div class="option-items">
+                                        <p data-name="{{specdefinename}}" data-content="{{getType options}}" class="receive">{{specdefinename}}：<i>{{getType options}}</i></p>
+                                         <p class="alter">修改规格</p>
+                                        <div class="options" data-type="{{type}}" data-ssoid="{{ssoid}}" data-ssdid="{{ssdid}}" data-specdefinename="{{specdefinename}}">
+                                            <h3>{{specdefinename}}</h3>
+                                            <ul>
+                                            {{#toType type}}
+                                                    <li class="clearfix" data-unit="{{unit}}" data-isseleceted="{{isSeleceted}}" data-price="{{price}}" data-optionname="{{optionname}}" data-sort="{{sort}}">
+
+                                                        <label><input type="radio" name="{{radioname}}" {{checked}}>
+                                                        <div class="info">
+                                                            <p><i>{{optionname}}</i> <span>￥{{price}}  {{unit}}</span></p>
+                                                        </div>
+                                                        </label>
+                                                    </li>
+                                            {{else}}
+                                                    <li class="clearfix"  data-unit="{{unit}}" data-isseleceted="{{isSeleceted}}" data-orignselected="{{isSeleceted}}" data-price="{{price}}" data-optionname="{{optionname}}" data-sort="{{sort}}">
+                                                        <label><input type="checkbox" name="{{checkboxname}}" {{checked}} data-rule="checkEmpty"> 
+                                                        <div class="info">
+                                                            <p><i>{{optionname}}</i> <span>￥{{price}}  {{unit}}</span></p>
+                                                        </div>
+                                                        </label>
+                                                    </li>
+                                            {{/toType}}
+                                            </ul>
+                                            <em>x</em>
+                                       </div>
+                                    </div>
+                                    {{/each}}
+                                    {{/if}}
+
+
+                                </td>
+                                <td class="address option-4" data-province="{{province}}" data-city="{{city}}" data-district="{{district}}">
+                                    【{{province}} {{city}} {{district}}】
+                                </td>
+                                <td class="item-price" data-price="{{price}}" data-unitname="{{unitname}}" class="price option-5" data-unit="{{unit}}">￥{{price}}/{{unitname}}</td>
+                                <td class="quantity option-6">
+                                    {{#if modifynum}}
+                                    <p><i class="decrease">-</i><input data-quantity={{quantity}} type="text" class="quan" value="{{quantity}}"/><i class="increase">+</i></p>
+                                    {{else}}
+                                        <p class="disabled" data-quantity="{{quantity}}">{{quantity}}</p>
+                                    {{/if}}
+                                </td>
+                                <td class="amount option-7">￥<i  data-amount="{{toAmount quantity price}}">{{toAmount quantity price}}</i></td>
+                                {{#deleteList ../../this ../../../this}}
+                                <td class="delete option-8" rowspan="{{rowspan}}" data-deleteid="{{deleteid}}">删除</td>
+                                {{/deleteList}}
+
+                            </tr>
+                            {{/each}}
+                        {{/each}}
+                    {{/each}}
+                        </table>
+            </div>
+            {{/each}}
+            
+        </div>
+         <div class="cart-next">加载中...</div>
+     </div>
+</script>
+
+<script type="x-handlebars-template" id="cartnext-tpl">
+
+    <div class="service-chk">
+        <input type="checkbox" class="checkedall" checked/>
+        全选<em id="checked-delete">删除选中的服务</em>
+    </div>
+    <div class="buy-now clearfix">
+        <div class="coupon clearfix">
+        {{#showCoupon this}}
+            <h3>
+                促销优惠 ：
+            </h3>
+            <div class="item">
+                {{#each giveCoupons}}
+
+                {{#if isReach}}
+                <p><em data-id="{{toCouponList resultList.[0].giveCouponList}}" data-willgift="{{id}}">{{setCouponType resultList.[0].resultSubType}}</em>{{tips}} <i></i></p>
+
+                {{else}}
+                <p><strong class="unreach-item unreach-space"><em>{{setCouponType resultList.[0].resultSubType}}</em>{{tips}}</strong> <i>您尚未满足优惠条件</i></p>
+
+                {{/if}}
+                
+                {{/each}}
+                {{#if showCouponSet}}
+                    <p class="options">以下优惠仅能享受一项：</p>
+                    {{#each showCouponSet}}
+                    {{#if isReach}}
+                    <p data-result="{{resultList.[0].resultSubType}}"><label><input type="radio" name="coupon" data-id="{{id}}" {{checkedType isDefaultCheck}} value="{{discount}}"/><em>{{couponType resultList.[0].resultSubType}}</em>{{tips}}<span>{{#toShow resultList.[0].resultSubType}}可为您节省：￥{{discount}}{{/toShow}} </span></label></p>
+                    {{#addNoCoupon isReach @index ../../this}}
+
+                        <p><input type="radio" name="coupon" />不使用活动优惠</p>
+                    {{/addNoCoupon}}
+                    {{else}}
+                        <p data-result="{{resultList.[0].resultSubType}}"><label><strong class='unreach-item'><em>{{couponType resultList.[0].resultSubType}}</em>{{tips}}</strong><i> 您尚未满足优惠条件</i></label></p>
+                        
+                    {{/if}}
+                    {{/each}}
+                {{/if}}
+            </div>
+        {{/showCoupon}}
+        </div>
+        <div class="buy-info">
+            <div class="l"><span>已选 <strong data-totalserivce>...</strong>  件服务</span></div>
+            <div class="r">
+                <p class="calcTotal">
+                    <span>原价：<em><small>&nbsp;</small>￥<i data-totalamount>...</i></em></span>
+                </p>
+                <p class="totalRePrice">节省：<span><small>-</small>￥<em>加载中</em></span></p>
+                <p class="sumPrice">总价：<span><small>&nbsp;</small>￥<em>加载中</em></span></p>
+            </div>
+            <p class="buy-btn clearfix">
+                <a href="/service/qryAllServiceGoods.htm" class="btn btn-keep" target="_blank">继续选购</a>
+                <span class="btn btn-shop">去结算</span>
+            </p>
+        </div>
+    </div>
+    
+</script>
+<script type="x-handlebars-template" id="coupon-tpl">
+     {{#showCoupon this}}
+            <h3>
+                促销优惠 ：
+            </h3>
+            <div class="item">
+                {{#each giveCoupons}}
+
+                {{#if isReach}}
+                <p><em data-id="{{toCouponList resultList.[0].giveCouponList}}" data-willgift="{{id}}">{{setCouponType resultList.[0].resultSubType}}</em>{{tips}} <i></i></p>
+
+                {{else}}
+                <p><strong class="unreach-item unreach-space"><em>{{setCouponType resultList.[0].resultSubType}}</em>{{tips}}</strong> <i>您尚未满足优惠条件</i></p>
+
+                {{/if}}
+                
+                {{/each}}
+                {{#if showCouponSet}}
+                    <p class="options">以下优惠仅能享受一项：</p>
+                    {{#each showCouponSet}}
+                    {{#if isReach}}
+                    <p data-result="{{resultList.[0].resultSubType}}"><label><input type="radio" name="coupon" data-id="{{id}}" {{checkedType isDefaultCheck}} value="{{discount}}"/><em>{{couponType resultList.[0].resultSubType}}</em>{{tips}}<span>{{#toShow resultList.[0].resultSubType}}可为您节省：￥{{discount}}{{/toShow}} </span></label></p>
+                    {{#addNoCoupon isReach @index ../../this}}
+
+                        <p><input type="radio" name="coupon" />不使用活动优惠</p>
+                    {{/addNoCoupon}}
+                    {{else}}
+                        <p data-result="{{resultList.[0].resultSubType}}"><label><strong class='unreach-item'><em>{{couponType resultList.[0].resultSubType}}</em>{{tips}}</strong><i> 您尚未满足优惠条件</i></label></p>
+                        
+                    {{/if}}
+                    {{/each}}
+                {{/if}}
+            </div>
+        {{/showCoupon}}
+</script>
+<!-- tempate here end -->
+
+<!--shopcart here start-->
+<!--=include ../tpl/_advantage.html -->
+
+<!--=include ../tpl/_footer.html -->
+<!--=include ../tpl/_footerFloat.html -->
+<!--=include ../tpl/_thirdpartyFooter.html -->
+<!--=include ../tpl/_commonjs.html -->
+<script type="text/javascript" src="/public/js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+.choice-input{
+
+}
+
+.choice-input{
+	opacity: 0.01;
+    filter: alpha(opacity=1);
+	margin-right: -16px;
+}
+
+.choice-checkbox, .choice-radio{
+	cursor: pointer;
+	&:before{
+		content: " ";
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		vertical-align: bottom;
+		margin-right: 5px;
+	}
+}
+
+.choice-checkbox{
+	&:before{
+		background: url('../img/choiceIcon.png') 0 0px no-repeat;
+	}
+	&.active{
+		&:before{
+			background-position: -20px 0px;
+		}
+	}
+}
+
+.choice-radio{
+	&:before{
+		background: url('../img/choiceIcon.png') 0 -20px no-repeat;
+	}
+	&.active{
+		&:before{
+			background-position: -20px -20px;
+		}
+	}
+}

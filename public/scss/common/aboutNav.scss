@@ -1,0 +1,30 @@
+@import "variable";
+@import "maxin";
+
+.about-nav-box{
+	border-bottom: 1px solid $line;
+	.anb-inner{
+		overflow: hidden;
+		width: $w1;
+		margin: 0 auto;
+	}
+	
+	li{
+		float: left;
+		a{
+			display: block;
+			font-size: 18px;
+			color: $dwgy;
+			height: 100px;
+			line-height: 100px;
+			padding: 0 54px;
+			&.active{
+				color: $blue;
+				font-weight: bold;
+			}
+			&:hover{
+				color: $blue;
+			}
+		}
+	}
+}

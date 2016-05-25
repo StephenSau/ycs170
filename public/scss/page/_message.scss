@@ -1,0 +1,99 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+$pcSpriteUrl: url('../img/pc-sprite.png');
+$pcSpritePos:
+	(0 0) (-40px 0) (-80px 0) (0 -40px) (-10px -40px)
+	(-30px -40px) (-50px -40px) (-70px -40px) (-90px -40px) (-100px -40px)
+	(-110px -40px) (0 -70px) (0 -130px) (-50px -130px) (-100px -130px)
+	(0 -180px) (-50px -180px) (-100px -180px) (0 -230px) (-20px -230px)
+	(-40px -230px) (-50px -230px) (-60px -230px) (-70px -230px); 
+@mixin pcSprite($position: 1, $width: 20px, $height: 20px, $display: inline-block){
+	display: $display;
+	width: $width;
+    height: $height;
+    background-image: $pcSpriteUrl;
+    background-position: nth($pcSpritePos, $position);
+}
+
+.container{
+	background-color: $lbgy;
+	padding-bottom: 100px;
+}
+
+.content{
+	width: $w1;
+	margin: 0 auto;
+}
+
+.message-box{
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	border: 1px solid $line;
+	background-color: $bw;
+	padding: 20px 19px;
+	width: 960px;
+	float: right;
+}
+
+.message-list{
+	color: $lwgy;
+	.fr{
+		float: right;
+	}
+	.fl{
+		float: left;
+	}
+	li{
+		border: 1px solid $mbgy;
+		padding: 20px;
+		margin-bottom: 20px;
+		background-color: $lbgy;
+		&:hover{
+			color: $mwgy;
+			background-color: $bw;
+			.mbl-title .fl{
+				color: $dwgy;
+			}
+		}
+	}
+	p{
+		overflow: hidden;
+	}
+
+	.mbl-delbtn{
+		margin-right: 10px;
+		display: inline;
+		@include detrans;
+		color: $dbgy;
+		&:hover{
+			color: $blue;
+			&:before{
+				background-position: nth($pcSpritePos, 6);
+			}
+		}
+		&:before{
+			content: " ";
+			@include pcSprite(5, 13px, 16px);
+			vertical-align: bottom;
+			margin-right: 4px;
+		}
+
+	}
+
+
+	.mbl-title{
+		.fl{
+			color: $mwgy;
+			font-weight: bold;
+		}
+		margin-bottom: 15px;
+		padding-bottom: 12px;
+		border-bottom: 1px solid $line;
+	}
+
+	.mbl-content{
+		a{
+			@include links($blue, $pomelo);
+		}
+	}
+}

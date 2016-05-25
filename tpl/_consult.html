@@ -1,0 +1,50 @@
+<!--consult start-->
+<div class="consult common">
+    <h2><img src="../public/img/sp-consult.png" alt="" width="278" /></h2>
+    <div class="carousel" data-spy="carousel" data-direction="up">
+        <ul class="carousel-inner">
+            <li class="item active">
+                <span class="user">陈**</span>
+                <span class="phone">138********</span>
+                <span class="time">2小时前预约</span>
+            </li>
+            <li class="item">
+                <span class="user">陈**</span>
+                <span class="phone">138********</span>
+                <span class="time">2小时前预约</span>
+            </li>
+        </ul>
+    </div>
+    <form name="consultForm" id="consultForm">
+        <p><input type="text" name="title" class="sp-txt" data-rule="checkWords:2,20" maxlength="20" placeholder="您的称呼" /></p>
+        <p><input type="text" name="tel" class="sp-txt" data-rule="checkTelphone" maxlength="11" placeholder="您的电话" /></p>
+
+        <p class="clearfix">
+            <select data-rule="checkEmpty" class="province" name="province" id="spb-province">
+                <option value="">请选择</option>
+            </select>
+            <select data-rule="checkEmpty" class="city" name="city" id="spb-city">
+                <option value="">请选择</option>
+            </select>
+            <select data-rule="checkEmpty" class="district" name="district" id="spb-district">
+                <option value="">请选择</option>
+            </select>
+        </p>
+
+        <p>
+            <select class="service" name="sdcat1" id="your_needs_select">
+              <option value="-1">选择您的需求</option>
+              <option value="310000">工商服务</option>
+              <option value="320000">财会服务</option>
+              <option value="330000">税务服务</option>
+              <option value="340000">行政许可</option>
+              <option value="350000">商标专利</option>
+              <option value="360000">人事服务</option>
+              <option value="370000">社保公积金</option>
+              <option value="-1">我不太清楚该选择哪项</option>
+            </select>
+        </p>
+        <p><button type="submit" class="submit btn btn-warning">由壹财税免费为您推荐</button></p>
+    </form>
+</div>
+<!--consult end-->

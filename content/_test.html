@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>测试DEMO</title>
+    <meta name="keywords" content="..." />
+    <meta name="description" content="..." />
+    <link type="text/css" rel="stylesheet" href="/public/css/about.css" />
+
+<style type="text/css">
+/* TEMP STYLE BLOCK */
+
+section {
+	width: 1210px;
+	margin: 0 auto;
+	padding: 1.5em 0;
+	clear: both;
+	overflow: hidden;
+}
+
+h1 {
+	font-size: 24px;
+	margin: 0 0 1em 0;
+}
+
+h2 {
+	font-size: 20px;
+	margin: 0 0 1em 0;
+}
+
+p {
+	padding-bottom: 1em;
+}
+
+iframe {
+	border: 1px dotted #aaa;
+}
+
+.left,
+.right {
+	width: 48%;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+	padding-right: 2px;
+}
+
+.hidden {
+	display: none;
+}
+
+</style>
+
+</head>
+<body>
+	<!--=include ../tpl/_headFloat.html -->
+	<!--=include ../tpl/_headWrap.html -->
+
+	<section>
+		<h1>这是iframe他爸 【环境：<span id="env"></span>】</h1>
+		<p>给儿子们打招呼： <button id="fButton" type="button">Say Hello</button></p>
+		<p class="hidden">http儿子回复：<span id="childMsg"></span></p>
+		<p class="hidden">HTTPS儿子回复：<span id="childHTTPSMsg"></span></p>
+	</section>
+
+	<!-- https://www.ycs.com/app/_test_iframe.html -->
+	<!-- /app/_test_iframe.html -->
+	<section>
+		<div class="left">
+			<h2>HTTP</h2>
+			<iframe id="iframe" src="http://www.ycs.com/app/_test_iframe.html" scroll="0" border="0" height="300" width="100%"></iframe>
+		</div>
+
+		<div class="right">
+			<h2>HTTPS</h2>
+			<iframe id="iframeHTTPS" src="https://www.ycs.com/app/_test_iframe.html" scroll="0" border="0" height="300" width="100%"></iframe>
+		</div>
+
+	</section>
+
+	<!--=include ../tpl/_advantage.html -->
+	
+	<!--=include ../tpl/_footer.html -->
+	<!--=include ../tpl/_footerFloat.html -->
+
+	<!--=include ../tpl/_commonjs.html -->
+    <script type="text/javascript" src="/public/js/_test.js"></script>
+</body>
+</html>

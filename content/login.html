@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>用户登录_壹财税</title>
+    <meta name="keywords" content="..." />
+    <meta name="description" content="..." />
+    <link type="text/css" rel="stylesheet" href="/public/css/login.css" />
+</head>
+<body>
+	<!--=include ../tpl/_topBar.html -->
+	<!-- head wrap start -->
+	<div class="head-wrap">
+		<div class="head-wrap-inner clearfix">
+			<h2 class="hw-logo">
+				<a href="/">
+					<img src="../public/img/logo-3.png" width="108" height="30" />
+				</a>
+			</h2>
+			<h3 class="hw-title">欢迎登录</h3>
+			<div class="hw-searchBox">
+				<form id="headWrapSearchForm" action="/article/tag.htm" method="get">
+					<label class="icon hwsb-title" for="hwsb-text">搜索</label>
+					<input name="querycondition" type="text" class="hwsb-text" id="hwsb-text" data-role="search" data-menu-id="hwsb-serviceList" data-words-id="hwsb-hotSearch" /><button class="hwsb-button">搜索</button>
+				</form>
+				<ul class="hwsb-serviceList" id="hwsb-serviceList">
+					<li>
+						<a href="#">
+							<em>工商服务</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<em>财会服务</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<em>税务服务</em>
+							<span>约有 5 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<em>行政许可</em>
+							<span>约有 10 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<em>商标专利</em>
+							<span>约有 6 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<em>人事服务</em>
+							<span>约有 5 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<em>社保公积金</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+				</ul>
+				<!-- <p class="hwsb-hotSearch" id="hwsb-hotSearch">
+					<a href="#">0元开公司</a>
+				</p> -->
+			</div>
+		</div>
+	</div>
+	<!-- head wrap end-->
+
+	<div class="crumbs-box">
+		<div class="crumbs-box-inner">
+			<p class="crumbs">
+				<a href="/">首页</a> &gt;
+				<span>用户登录</span>
+			</p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="content clearfix">
+			<div class="lBanner"><img src="../public/img/login-image-01.jpg" width="790" height="420" /></div>
+			<div class="login-box"> 
+				<ul id="login-tab" class="login-tab clearfix">
+					<li class="active" data-target="common-form"><a href="javascript:;">普通登录</a></li>
+					<li data-target="phone-form"><a href="javascript:;">手机验证登录</a></li>
+				</ul>
+				<div class="login-form">
+					<div id="common-form" class="common-form active">
+						<form action="/user/login.htm" name="loginForm">
+							<ol>
+								<li>
+									<input maxlength="20" class="form-text" type="text" name="user" placeholder="用户名" /></li>
+								<li>
+									<input maxlength="20" class="form-text" type="password" name="password" placeholder="密码" />
+								</li>
+								<li>
+									<input type="checkbox" name="remember" checked="true" id="cRemember" /><label for="cRemember">记住我</label>
+								</li>
+								<li>
+									<button class="btn btn-primary">登录</button>
+								</li>
+							</ol>
+						</form>
+					</div>
+					<div id="phone-form" class="phone-form">
+						<form action="/user/loginByPhone.htm" name="phoneForm">
+							<ol>
+								<li>
+									<input class="form-text" type="text" id="pf-phoneNo" name="phoneNo" placeholder="手机号码" /></li>
+								<li class="lf-col2">
+									<input class="form-text" type="text" name="authCode" placeholder="短信验证码" /><a id="pf-getPhoneCode" href="javascript:;" class="btn btn-default">获取验证码</a>
+								</li>
+								<li>
+									<input type="checkbox" name="remember" checked="true" id="pRemember" /><label for="pRemember">记住我</label>
+								</li>
+								<li>
+									<button class="btn btn-primary">登录</button>
+								</li>
+							</ol>
+						</form>
+					</div>
+					<div id="code-form" class="code-form">
+						<form action="/user/sendAuthCode4Login.htm" name="codeForm">
+							<ol>
+								<li class="lf-col3">
+									<input class="form-text" type="text" name="authCodeImg" id="cf-authCodeImg" placeholder="图形验证码" />
+									<a href="javascript:;" id="cf-changeCodeBtn"><img src="../public/img/code-sample.png" alt="" id="cf-imgCode" width="80px" height="36px" /><span href="javascript:;"><i class="icon"></i></span></a>
+								</li>
+								<li>
+									<button class="btn btn-primary">确定</button>
+								</li>
+							</ol>
+						</form>
+					</div>
+				</div>
+				<p class="other-login">
+					<span>其他登录方式</span>
+					<a href="javascript:;" id="lb_wxLogin"><i class="icon icon-wx"></i></a>
+					<a href="/user/QQLogin.htm" target="_blank"><i class="icon icon-qq"></i></a>
+				</p>
+				<p class="replenish">
+					<a href="/app/register.html">注册壹财税帐号</a> |
+					<a href="/app/findPassword.html">找回密码</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<!--=include ../tpl/_advantage.html -->
+	
+	<!--=include ../tpl/_footer.html -->
+	<!--=include ../tpl/_footerFloat.html -->
+	<script  type="text/x-handlebars-template" id="supplement-template">
+    	<div class="ui-info-supplement">
+    		<div class="sf_messageBox">
+    			<p class="sf_iconLine"><span class="icon"></span></p>
+    			<h3>登录成功！</h3>
+    			{{#if password}}
+    			<p class="sf_textLine">{{mobile}} 的手机用户，欢迎您登录壹财税网站！我们已为您自动生成用户名和密码：</p>
+    			<p class="sf_userLine"><span>用户名：{{username}}</span><span>密码：{{password}}</span><a href="javascript:;" id="sf_showForm">修改</a></p>
+    			{{else}}
+    			<p class="sf_textLine">{{mobile}} 的手机用户，欢迎您登录壹财税网站！为了保障您的账号安全，请设置用户名和密码：<a href="javascript:;" id="sf_showForm">设置</a></p>
+    			{{/if}}
+    		</div>
+    		<form action="/user/setIDAndPwd.htm" method="post" name="supplementForm" id="supplementForm">
+    			<ol id="sf_form">
+    				<li class="ui-tips" id="ui-supplement-tips">测试</li>
+    				<li>
+    					<label class="sf_title" for="sf_username"><em>*</em>用户名</label>
+    					<input class="sf_text" type="text" name="username" id="sf_username" placeholder="请输入4-20位字母、数字或“-”、“_”" />
+    				</li>
+    				<li>
+	    				<label class="sf_title" for="sf_password"><em>*</em>密码</label>
+	    				<input class="sf_text" type="password" name="password" id="sf_password" placeholder="6-20位字符，不能包含空格" />
+	    			</li>
+	    			<li class="sf_btnLine">
+	    				<button type="submit" class="btn btn-warning">确认</button>
+	    			</li>
+	    		</ol>
+	    	</form>
+	    </div>
+    </script>
+    <script  type="text/x-handlebars-template" id="wxLoginBox-template">
+    	<div class="wxLoginBox" id="wxLoginBox"></div>
+    </script>
+    <script  type="text/x-handlebars-template" id="loadingBox-template">
+    	<div class="loadingBox">
+    		<img src="../public/img/loading.gif" />
+    		<p>加载中...</p>
+    	</div>
+    </script>
+    <script  type="text/x-handlebars-template" id="binddingbox-template">
+    	<div class="binding-content clearfix">
+	        <div class="register_box">
+	            <h2>{{title}}</h2>
+	            <p>尊敬的{{type}}用户 {{nickname}}，为了更好地保护您的账号安全，请完善您的用户名、密码及手机号码。</p>
+	            <form action="" name="registerForm">
+	                <ol class="active" id="register_form">
+	                	<li class="ui-tips" id="ui-register-tips">测试</li>
+	                    <li>
+	                        <label class="rb_title"><em>*</em>用户名</label>
+	                        <input class="rb_text" type="text" name="username" maxlength="20" data-rule="checkUser" />
+	                    </li>
+	                    <li>
+	                        <label class="rb_title"><em>*</em>密码</label>
+	                        <input class="rb_text" type="password" name="password"  maxlength="20" data-rule="checkPassword" />
+	                    </li>
+	                    <li>
+	                        <label class="rb_title"><em>*</em>手机号码</label>
+	                        <input class="rb_text rb_phone" type="text" name="phoneNo" maxlength="11" id="rb_phone" data-rule="checkTelphone" />
+	                    </li>
+	                    <li class="rb_phoneCodeLine">
+	                        <label for="rb_telCode" class="rb_title"><em>*</em>短信验证码</label>
+	                        <input type="text" maxlength="4" tabindex="4" name="telCode" id="rb_telCode" class="rb_text" data-rule="checkPhoneCode" /><a id="rb_getPhoneCodeBtn" class="btn btn-default" href="javascript:;">获取验证码</a>
+	                    </li>
+	                    
+	                    <li class="rb_agreeline">
+	                        <span class="form-choice-group">
+	                            <input type="checkbox" id="rb_agree" value="1"  data-rule="checkEmpty" name="agree">
+	                            <label for="rb_agree">我已阅读并同意《<a href="/app/agreement.html" target="_blank">用户注册协议</a>》和《<a href="/app/privacy.html" target="_blank">隐私保护协议</a>》</label>
+	                        </span>
+	                    </li>
+	                    <li class="rb_btnline">
+	                        <button type="submit" class="btn btn-primary">完成注册</button>
+	                    </li>
+	                </ol>
+	            </form>
+	            <form action="" name="imagecodeForm">
+	                <ol id="imagecode_form"> 
+	                    <li class="rb_imgCodeLine">
+	                        <label for="rb-imgCodeText" class="rb_title"><em>*</em>图形验证码</label>
+	                        <input type="text" maxlength="4" tabindex="4" name="telCode" id="rb-imgCodeText" class="rb_text" data-rule="checkPhoneCode" />
+	                        <img id="rb-imgCode" src="../public/img/code-sample.png" width="133" height="34" />
+	                        <a id="rb-changeImgCode" href="javascript:;">换一换</a>
+	                    </li>
+	                    <li class="rb_btnline">
+	                        <button type="submit" class="btn btn-primary">确定</button>
+	                    </li>
+	                </ol>
+	            </form>
+	        </div>
+	        <div class="binding_box">
+	            <h2>已有壹财税账号？直接绑定</h2>
+	            <form action="" id="binding_form" name="bindingForm">
+	                <ol>
+	                	<li class="ui-tips" id="ui-binding-tips">测试</li>
+	                    <li>
+	                        <input class="bb_text" id="bb-username" placeholder="用户名" type="text" name="username" maxlength="20" data-rule="checkAccount" />
+	                    </li>
+	                    <li>
+	                        <input class="bb_text" id="bb-password" placeholder="密码" type="password" name="password"  maxlength="20" data-rule="checkPassword" />
+	                    </li>
+	                    
+	                    <li class="bb_btnline">
+	                        <button type="submit" class="btn btn-default">绑定账号</button>
+	                    </li>
+	                </ol>
+	            </form>
+	            <p>绑定后，您的{{type}}和壹财税账号都可以登录壹财税</p>
+	        </div>
+	    </div>
+    </script>
+    <!--=include ../tpl/_thirdpartyFooter.html -->
+<!--=include ../tpl/_commonjs.html -->
+    <script src="//res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    <script type="text/javascript" src="/public/js/login.js"></script>
+</body>
+</html>

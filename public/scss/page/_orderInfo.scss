@@ -1,0 +1,532 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+$pcSpriteUrl: url('../img/myService-bg.png');
+$pcSpritePos:
+	(0 0) (-40px 0) (-80px 0) (0 -40px) (-10px -40px)
+	(-30px -40px) (-50px -40px) (-70px -40px) (-90px -40px) (-100px -40px)
+	(-110px -40px); 
+@mixin pcSprite($position: 1, $width: 20px, $height: 20px, $display: inline-block){
+	display: $display;
+	width: $width;
+    height: $height;
+    background-image: $pcSpriteUrl;
+    background-position: nth($pcSpritePos, $position);
+}
+
+.container{
+	background-color: $lbgy;
+	padding-bottom: 100px;
+}
+
+.content{
+	width: $w1;
+	margin: 0 auto;
+}
+
+.orderInfo-box{
+	width: $w10;
+	float: right;
+}
+
+.ri-header, .ri-steps, .orderInfo, .ri-amount{
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	border: 1px solid $line;
+	margin-bottom: 20px;
+	background-color: $bw;
+	padding-left: 19px;
+	padding-right: 19px;
+}
+
+.ri-header{
+	padding: 0;
+	.ri-noLine{
+		background-color: #e5f0f8;
+		font-size: 16px;
+		color: $mwgy;
+		font-weight: bold;
+		padding: 20px;
+	}
+
+	.oi-no{
+		display: inline-block;
+		width: 240px;
+	}
+
+	.btn{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.btn-warning{
+		background-color: $pomelo;
+		border-color: $pomelo;
+		&:hover{
+			background-color: $dpomelo;
+			border-color: $dpomelo;
+		}
+	}
+
+	.btn-link{
+		background-color: #e5f0f8;
+		border-color: #e5f0f8;
+		&:hover{
+			background-color: #e5f0f8;
+			color: $blue;
+			border-color: #e5f0f8;
+		}
+	}
+
+	.oi-status{
+		display: inline-block;
+		width: 200px;
+	}
+	.ri-contactLine{
+		background-color: $bw;
+		color: $mwgy;
+		padding: 20px;
+		a{
+			@include links($blue, $pomelo);
+		}
+	}
+}
+
+.ri-steps{
+	padding-top: 40px;
+	padding-bottom: 20px;
+	ol{
+		margin-bottom: 60px;
+		background-color: $line;
+		width: 100%;
+		border-radius: 12px;
+		li{
+			float: left;
+			width: 33.3%;
+			height: 24px;
+			line-height: 24px;
+			position: relative;
+			text-align: center;
+			span{
+				position: absolute;
+				color: $lwgy!important;
+				top: 32px;
+				font-size: 12px;
+				width: 10em;
+				left: 50%;
+				margin-left: -5em;
+			}
+		}
+	}
+	h3{
+		font-size: 16px;
+		color: $dwgy;
+		margin-bottom: 28px;
+	}
+	ul{
+		li{
+			margin-bottom: 18px;
+			color: $mwgy;
+		}
+		span{
+			width: 188px;
+			display: inline-block;
+		}
+	}
+	.ri-steps-on01{
+		.ri-step-01{
+			color: $bw;
+			background-color: $blue;
+			border-radius: 12px;
+		}
+	}
+	.ri-steps-on02{
+		.ri-step-01{
+			color: $bw;
+			background-color: $blue;
+			border-radius: 12px 0 0 12px;
+		}
+
+		.ri-step-02{
+			color: $bw;
+			background-color: $blue;
+			border-radius: 0 12px 12px 0;
+		}
+	}
+	.ri-steps-on03{
+		.ri-step-01, .ri-step-02, .ri-step-03{
+			color: $bw;
+			background-color: $blue;
+		}
+		.ri-step-01{
+			border-radius: 12px 0 0 12px;
+		}
+		.ri-step-03{
+			border-radius: 0 12px 12px 0;
+		}
+	}
+
+	.ri-steps-on04{
+		.ri-step-01, .ri-step-02, .ri-step-03, .ri-step-04{
+			color: $bw;
+			background-color: $blue;
+		}
+		.ri-step-01{
+			border-radius: 12px 0 0 12px;
+		}
+		.ri-step-04{
+			border-radius: 0 12px 12px 0;
+		}
+	}
+}
+
+.orderInfo{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	h2{
+		font-size: 24px;
+		color: $lwgy;
+		margin-bottom: 25px;
+	}
+	h3{
+		color: $dwgy;
+		padding-top: 28px;
+		margin-top: 30px;
+		font-weight: bold;
+		margin-bottom: 13px;
+		border-top: 1px dotted $line;
+	}
+	h2+h3{
+		padding-top: 0;
+		margin-top: 0;
+		border-top: none;
+	}
+
+	li{
+		color: $mwgy;
+		margin-bottom: 15px;
+		a{
+			@include links($mwgy);
+		}
+	}
+
+	table{
+		width: 100%;
+		border: 1px solid $line;
+		em{
+			color: $dwgy;
+		}
+	}
+	
+	th{
+		background-color: $lbgy;
+		padding: 5px 5px;
+		text-align: center; 
+		color: $mwgy;
+	}
+
+	td{
+		line-height: 1.5em;
+		vertical-align: top;
+		text-align: center;
+		padding: 15px 0;
+		color: $lwgy;
+		&:first-child{
+			text-align: left;
+			padding-left: 20px;
+		}
+	}
+
+	.ol-summary{
+		.ol-photo{
+			float: left;
+			margin-right: 20px;
+			img{
+				display: block;
+			}
+		}
+		span{
+			float: left;
+			width: 185px;
+			line-height: 1.5em;
+		}
+
+		a{
+			@include links($dwgy);
+		}
+	}
+
+	.ol-money{
+		em{
+			display: block;
+			color: $dwgy;
+			font-weight: bold;
+		}
+		span{
+			display: block;
+		}
+	}
+
+	.ol-change{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.btn-default{
+		color: $lwgy;
+		padding: 3px 25px;
+		&:hover{
+			background-color: $bw;
+			color: $blue;
+			border-color: $blue;
+
+		}
+	}
+}
+
+.ri-amount{
+	font-size: 16px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	line-height: 30px;
+	color: $mwgy;
+	padding-right: 30px;
+	text-align: right;
+	ul{
+		float: right;
+	}
+	li{
+		width: 320px;
+	}
+	em{
+		display: inline-block;
+		width: 6em;
+		padding-left: 1em;
+		text-align: left;
+	}
+	.ri-reduce{
+		em{
+			text-indent: -7px;
+		}
+	}
+
+	.ri-change{
+		background-color: $lbgy;
+		padding-top: 13px;
+		margin-top: 13px;
+		color: $blue;
+	}
+
+	.ri-change+.ri-change{
+		margin-top: 0;
+		padding-top: 0;
+		padding-bottom: 13px;
+	}
+
+	.ri-play{
+		padding-top: 13px;
+		margin-top: 20px;
+		font-weight: bold;
+		border-top: 1px solid $line;
+		span{
+			color: $dwgy;
+		}
+		em{
+			color: $pomelo;
+		}
+	}
+
+	.icon{
+		background:transparent url('../img/myService-bg.png') -110px -40px no-repeat;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		vertical-align: middle;
+		margin-right: 6px;
+	}
+}
+
+
+.orderInfo-detailBox{
+	display: none;
+	position: absolute;
+	top: 665px;
+	left: 928px;
+	border: 1px solid $line;
+	background-color: $bw;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+	padding: 12px 20px 20px;
+	width: 380px;
+
+	h4{
+		padding-bottom: 12px;
+		border-bottom: 1px solid $line;
+		margin-bottom: 20px;
+		color: $mwgy;
+		font-weight: bold;
+	}
+
+	p{
+		margin: -49px 0 32px;
+		text-align: right;
+		a{
+			@include links($mwgy);
+		}
+	}
+
+	ul{
+		padding: 0 25px;
+		font-size: 12px;
+		li{
+			position: relative;
+			padding:0 0 25px 13px;
+			border-left: 1px solid $line;
+			&:first-child{
+				.icon{
+					background-position: nth($pcSpritePos, 9);
+				}
+			}
+			&.third-child{
+				border-left-style: dashed;
+			}
+			&.last-child{
+				border-left-color: transparent;
+				padding-bottom: 0;
+			}
+		}
+		.third-child+.last-child{
+			margin-top: -10px;
+		}
+		.icon{
+			position: absolute;
+			left: -4px;
+			@include pcSprite(10, 8px, 8px);
+		}
+		em{
+			display: block;
+			position: relative;
+			top: -2px;
+			color: $dwgy;
+		}
+		span{
+			display: block;
+			color: $lwgy;
+		}
+
+	}
+}
+
+
+.orderList-blockBox{
+	padding: 50px 30px;
+	width: 555px;
+
+	.olbb-step{
+		overflow: hidden;
+		width: 100%;
+		background-color: $blue;
+		border-radius: 10px;
+		padding: 2px 0;
+		margin-bottom: 24px;
+		li{
+			color: $bw;
+			position: relative;
+			width: 25%;
+			float: left;
+			text-align: center;
+			&:first-child{
+				&:before{
+					content: "";
+				}
+			}
+			&:before{
+				content: ">";
+				position: absolute;
+				left: -3px;
+				top: 0;
+			}
+		}
+	}
+
+	.olbb-info{
+		line-height: 30px;
+		color: $mwgy;
+		li{
+			margin-bottom: 30px;
+			padding-left: 16px;
+			text-indent: -16px;
+		}
+	}
+
+	.olbb-btnLine{
+		text-align: center;
+		.btn{
+			margin: 0 30px;
+			width: 94px;
+			&:hover{
+				color: $blue;
+				border-color: $blue;
+				background-color: $bw;
+			}
+		}
+
+		.btn-primary{
+			color: $bw;
+			border-color: $blue;
+			background-color: $blue;
+		}
+
+		.btn-default{
+			color: $lwgy;
+		}
+	}
+}
+
+.ui-info-close{
+	top: 0;
+}
+
+.message-box{
+	padding-bottom: 50px;
+	h3{
+		background-color: $lbgy;
+		color: $dwgy;
+		padding: 10px 20px;
+		font-size: 14px;
+		margin-bottom: 40px;
+	}
+}
+
+.confirm-box{
+	p{
+		color: $mwgy;
+		padding: 0 60px;
+		width: 460px;
+		margin-bottom: 20px;
+	}
+	.mb-btnline{
+		text-align: center;
+		margin-top: 40px;
+		.btn{
+			margin: 0 10px;
+		}
+	}
+}
+
+.cancel-box{
+	.cancel_reason{
+		width: 265px;
+		height: 34px;
+	}
+	.mb_optline{
+		padding-left: 20px;
+		margin-bottom: 30px;
+		.btn-default{
+			min-width: 4em;
+		}
+	}
+
+	.consult_line{
+		color: $mwgy;
+		padding: 0 20px;
+	}
+}

@@ -1,0 +1,1032 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+$pcSpriteUrl: url('../img/pc-sprite.png');
+$pcSpritePos:
+	(0 0) (-40px 0) (-80px 0) (0 -40px) (-10px -40px)
+	(-30px -40px) (-50px -40px) (-70px -40px) (-90px -40px) (-100px -40px)
+	(-110px -40px) (0 -70px) (0 -130px) (-50px -130px) (-100px -130px)
+	(0 -180px) (-50px -180px) (-100px -180px) (0 -230px) (-20px -230px)
+	(-40px -230px) (-50px -230px) (-60px -230px) (-70px -230px) (0 -250px)
+
+	(-40px -250px) (-80px -250px) (-120px -250px) (-160px -250px) (-200px -250px)
+	(-130px -40px) (-150px -40px) (-120px 0) (-160px 0) (-200px 0)
+	(-240px 0) (-170px -40px) (-270px -40px) (0 -290px) (-50px -290px)
+	(-80px -230px) (-100px -230px); 
+@mixin pcSprite($position: 1, $width: 20px, $height: 20px, $display: inline-block){
+	display: $display;
+	width: $width;
+    height: $height;
+    background-image: $pcSpriteUrl;
+    background-position: nth($pcSpritePos, $position);
+}
+
+optgroup{
+	font-style: normal;
+}
+
+.container{
+	background-color: $lbgy;
+	padding-bottom: 100px;
+}
+
+.content{
+	width: $w1;
+	margin: 0 auto;
+}
+
+.settings-box{
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	border: 1px solid $line;
+	background-color: $bw;
+	width: $w10;
+	float: right;
+	padding-bottom: 60px;
+	min-height: 798px;
+}
+
+
+.sb-header{
+	background-color: $lbgy;
+	padding: 30px 0 32px 18px;
+	overflow: hidden;
+	img{
+		@include pcSprite(12, 60px, 60px, block);
+		float: left;
+		margin-right: 20px;
+	}
+	h1{
+		color: $dwgy;
+		font-size: 24px;
+		margin-top: 15px;
+	}
+}
+
+.sb-content{
+	padding: 0 19px;
+
+}
+
+.sbc-header{
+	position: relative;
+	margin-top: -1px;
+	padding: 30px 30px 30px 50px;
+	border-top: 1px solid $line;
+	&:first-child{
+		border-top: none;
+		margin-top: 0;
+	}
+	&:before{
+		content: " ";
+		position: absolute;
+		@include pcSprite(25, 36px, 36px);
+		top: 30px;
+		left: 0;
+	}
+	h2{
+		color: $mwgy;
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 8px;
+		em{
+			margin-left: 10px;
+		}
+	}
+	.btn-default{
+		position: absolute;
+		top: 35px;
+		right: 30px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		width: 64px;
+		&:hover{
+			color: $blue;
+			background-color: $bw;
+			border-color: $blue;
+		}
+	}
+	p{
+		color: $lwgy;
+	}
+	&.sbc-account-header{
+		&:before{
+			background-position: nth($pcSpritePos, 25);
+		}
+	}
+
+	&.sbc-password-header{
+		&:before{
+			background-position: nth($pcSpritePos, 26);
+		}
+	}
+
+	&.sbc-phone-header{
+		&:before{
+			background-position: nth($pcSpritePos, 27);
+		}
+	}
+
+	&.sbc-email-header{
+		&:before{
+			background-position: nth($pcSpritePos, 28);
+		}
+	}
+
+	&.sbc-qq-header{
+		&:before{
+			background-position: nth($pcSpritePos, 29);
+		}
+	}
+
+	&.sbc-wx-header{
+		&:before{
+			background-position: nth($pcSpritePos, 30);
+		}
+	}
+
+	&.sbc-unbind{
+		h2>em{
+			@include pcSprite(31, 20px, 20px);
+			vertical-align: bottom;
+		}
+		p{
+			color: $pomelo;
+		}
+	}
+
+	&.sbc-binded{
+		h2>em{
+			color: #7abb55;
+		}
+	}
+}
+
+.sbc-box{
+	border: 1px solid $line;
+	background-color: $lbgy;
+	&.active{
+		display: block;
+	}
+}
+
+
+
+.sb-form{
+	padding: 30px 0;
+	li{
+		margin-bottom: 20px;
+	}
+	.sb-title{
+		color: $mwgy;
+		width: 370px;
+		font-size: 16px;
+		display: inline-block;
+		text-align: right;
+		margin-right: 10px;
+		em{
+			color: $pomelo;
+		}
+	}
+
+	.sb-text{
+		margin-right: 10px;
+		width: 178px;
+		line-height: 32px;
+		height: 32px;
+		border: 1px solid $mbgy;
+		background-color: $bw;
+		padding: 0 10px;
+		color: $mwgy;
+		font-size: 14px;
+	}
+
+	.sb-string{
+		font-size: 14px;
+		color: $dwgy;
+		display: inline-block;
+		padding: 0 11px;
+	}
+
+	.btn-primary{
+		width: 200px;
+		margin-left: 380px;
+		font-size: 16px;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		color: $bw;
+		border-color: $blue;
+		background-color: $blue;
+	}
+
+	img{
+		margin-right: 20px;
+		vertical-align: top;
+		height: 34px;
+		width: 94px;
+	}
+
+	.btn-default{
+		vertical-align: top;
+		color: $mwgy;
+		border-color: $dbgy;
+	}
+
+	.sb-warning{
+		color: $pomelo;
+		margin-left: 10px;
+	}
+
+	.sb-label{
+		color: $mwgy;
+	}
+
+	a{
+		@include links($blue, $pomelo);
+	}
+}
+
+.sbc-wx-header{
+	border-bottom: none;
+}
+
+.sbca-account,
+.sbca-contactors,
+.sbc-password-box,
+.sbc-phone-box,
+.sbc-email-box,
+.sbc-qq-box,
+.sbc-wx-box{
+	display: none;
+	&.active{
+		display: block;
+	}
+}
+
+.sbca-account{
+	padding-top: 30px;
+}
+
+.sbc-account-box{
+	display: none;
+}
+
+.sbca-contactors-form{
+	padding: 60px 29px 40px;
+	li{
+		float: left;
+		margin-bottom: 20px!important;
+		margin-right: 20px;
+		.sb-title{
+			width: 130px;
+			font-size: 14px;
+		}
+	}
+	
+	.sbca-addCompanyLine{
+		width: 100%;
+		a{
+			margin-left: 138px;
+		}
+	}
+
+	.sbca-companyLine{
+		width: 100%;
+		margin-top: 48px;
+		margin-right: 0;
+		padding-top: 32px;
+		border-top: 1px solid $line;
+	}
+
+	.sbca-companyOpt{
+		a{
+			margin-left: 138px;
+		}
+		a:first-child{
+			margin-right: 300px;
+		}
+		b{
+			font-size: 18px;
+		}
+	}
+
+	.btn-primary{
+		width: 10em!important;
+		margin-right: 10px;
+	}
+
+	.btn-default{
+		padding-top: 7px;
+		padding-bottom: 7px;
+	}
+
+	.sbca-submitLine{
+		margin-top: 40px;
+	}
+
+}
+
+.sbca-company-form{
+	padding-top: 59px;
+	margin: 0 28px 39px;
+	border: 1px solid transparent;
+	&.sbca-company-border{
+		border-color: $bw;
+		background-color: $bw;
+	}
+	li{
+		float: left;
+		margin-bottom: 20px!important;
+		margin-right: 20px;
+		.sb-title{
+			width: 130px;
+			font-size: 14px;
+		}
+	}
+
+	.btn-primary{
+		width: 10em!important;
+		margin-right: 10px;
+	}
+
+	.btn-default{
+		padding-top: 7px;
+		padding-bottom: 7px;
+	}
+
+	.sbcac-description-line{
+		.sb-title{
+			padding-top: 8px;
+			vertical-align: top;
+		}
+		.sb-text{
+			width: 668px;
+			height: 60px;
+		}
+	}
+
+	.sbca-business-line{
+		.sb-text{
+			width: 668px;
+		}
+	}
+
+	.sbcac-submitLine{
+		margin-top: 40px;
+	}
+}
+
+.sbc-account-box{
+	ol>li{
+		margin-bottom: 30px;
+	}
+	.sb-title{
+		width: 350px;
+	}
+
+	.btn-primary{
+		margin-left: 360px;
+		width: 260px;
+	}
+
+	.sb-text{
+		width: 238px;
+	}
+
+	.sb-string{
+		width: 210px;
+	}
+
+	.sb-noTitle{
+		padding-left: 360px;
+	}
+
+	.sbca-MUNBtn{
+		display: none;
+	}
+}
+
+.sbca-userNameform{
+	.btn-primary{
+		width: 171px;
+		margin-right: 20px;
+	}
+}
+
+form .error{
+	background-color: $bw;
+	margin-top: 0;
+	margin-left: 0;
+}
+
+.sbca-nickNameForm,
+.sbca-userNameform,
+.sbca-form-tab,
+.sbca-contactors-form,
+.sbca-contactors-list,
+.sbca-company-form,
+.sbcp-phone-form,
+.sbcp-password-form,
+.sbcp-email-form,
+.sbcp-update-form,
+.sbca-addCompanyLine,
+.sbca-companyLine,
+.sbca-companyOpt,
+.sbca-submitLine,
+.sbcp-email-box,
+.sb-success-box,
+.sbb-bindMobile-form,
+.sbb-phone-form,
+.sbb-rebindMobile-form,
+.sbce-tab,
+.sbp-tab,
+.sb-info-box,
+.sbe-tips,
+.sbb-cibpie-form,
+.sbb-cibeie-form,
+.sbb-gcie-form,
+.sbb-bindEmail-form,
+.sbb-checkIdByEmailIP-form
+{
+	display: none;
+	&.active{
+		display: block;
+	}
+}
+
+.sb-info-box{
+	padding: 100px;
+	text-align: center;
+	p{
+		font-size: 16px; 
+		color: $mwgy;
+		.btn{
+			padding: 3px 20px;
+			margin-left: 17px;
+		}
+	}
+}
+
+
+.sbca-tab{
+	border-bottom: 1px solid $blue;
+	li{
+		float: left;
+		margin-bottom: -1px;
+		&.active{
+			a{
+				color: $blue;
+				border-bottom-color: $blue;
+			}
+		}
+	}
+	a{
+		display: block;
+		width: 159px;
+		text-align: center;
+		height: 45px;
+		line-height: 45px;
+		border-bottom: 2px solid transparent;
+		font-size: 16px;
+		@include links;
+	}
+}
+
+.sbca-contactors-list{
+	ul{
+		padding: 30px 0 0 40px;
+		&:first-child{
+			li{
+				height: 121px;
+			}
+		}
+	}
+	li{
+		width: 208px;
+		height: 91px;
+		background-color: $bw;
+		border: 1px solid $line;
+		float: left;
+		padding: 17px 20px 0 20px;
+		margin: 0 40px 40px 0;
+		position: relative;
+		&:hover{
+			border-color: #d3d3d3;
+			.sbcacl-def{
+				display: inline!important;
+			}
+		}
+	}
+	h3{
+		padding: 37px 0 0 40px;
+		font-size: 18px;
+		color: $dwgy;
+		border-top: 1px solid $line;
+	}
+	h4{
+		font-size: 18px;
+		width: 8em;
+		@include ellipsis;
+		color: $mwgy;
+		margin-bottom: 10px;
+	}
+	.sbca-opt{
+		padding-right: 40px;
+		margin-top: -18px;
+		text-align: right;
+		a{
+			font-size: 12px;
+			margin-left: 10px;
+			@include links($dbgy, $blue)
+		}
+	}
+	.sbca-noneLine{
+		padding: 15px 0 37px 40px;
+		color: $lwgy;
+	}
+	.sbca-addComLine{
+		border-top: 1px solid $line;
+		padding: 40px;
+	}
+	.sbca-addCompanyBtn{
+		border: 1px solid $line;
+		width: 248px;
+		height: 38px;
+		padding-top: 20px;
+		background-color: $bw;
+		display: block;
+		color: $lwgy;
+		text-align: center;
+		font-size: 16px;
+		@include detrans;
+		&:before{
+			content: " ";
+			vertical-align: top;
+			margin-right: 10px;
+			@include pcSprite(41px, 17px, 17px);
+		}
+		&:hover{
+			background-color: $lbgy;
+			border-color: #d3d3d3;
+			color: $blue;
+			&:before{
+				background-position: nth($pcSpritePos, 42);
+			}
+		}
+	}
+	.sbcacl-title{
+		color: $mwgy;
+		font-size: 12px;
+		position: absolute;
+		top: 23px;
+		right: 20px;
+	}
+
+	.sbcacl-mobile{
+		color: $lwgy;
+		margin-bottom: 10px;
+	}
+
+	.sbcacl-opt{
+		overflow: hidden;
+		margin-bottom: 10px;
+		font-size: 12px;
+		a{
+			float: left;
+			@include links($lwgy, $blue);
+			&:first-child{
+				margin-right: 10px;
+			}
+			&.sbcacl-def{
+				display: none;
+				float: right;
+				@include links($pomelo, $pomelo);
+			}
+		}
+		span{
+			color: $pomelo;
+			float: right;
+		}
+	}
+
+	.sbcacl-company{
+		a{
+			display: block;
+			background-color: $lbgy;
+			padding: 6px 0;
+			border-radius: 3px;
+			font-size: 12px;
+			color: $lwgy;
+			text-align: center;
+			&:hover{
+				color: $blue;
+				background-color: #e5f0f8;
+			}
+		}
+	}
+
+	.sbcacl-addBtn{
+		display: block;
+		position: absolute;
+		width: 248px;
+		height: 104px;
+		top: 0;
+		left: 0;
+		padding-top: 34px;
+		text-align: center;
+		background-color: $bw;
+		color: $lwgy;
+		@include detrans;
+		&:before{
+			content: " ";
+			margin: 0 auto 12px;
+			@include pcSprite(39, 50px, 50px, block);
+		}
+		&:hover{
+			color: $blue;
+			background-color: $lbgy;
+			&:before{
+				background-position: nth($pcSpritePos, 40);
+			}
+		}
+	}
+}
+
+
+
+.sbca-province, .sbcac-province{
+	width: 80px;
+	height: 34px;
+	margin-right: 10px;
+}
+
+.sbca-city, .sbcac-city{
+	width: 80px;
+	height: 34px;
+	margin-right: 10px;
+}
+
+.sbca-district, .sbcac-district{
+	width: 80px;
+	margin-right: 10px;
+	height: 34px;
+}
+
+.sbca-company, .sbcac-industry, .sbcac-peoples{
+	width: 260px;
+	margin-right: 30px;
+	height: 34px;
+}
+
+.sbcac-industry, .sbcac-peoples{
+	margin-right: 10px;
+}
+
+.chosen_facade{
+	border-color: $mbgy;
+}
+
+.sb-steps-box{
+	padding: 0 80px 20px;
+	border-bottom: 1px solid $line;
+	overflow: hidden;
+	width: 540px;
+	margin-left: 129px;
+	li{
+		float: left;
+		width: 180px;
+		font-size: 16px;
+		text-align: center;
+		position: relative;
+		color: $lwgy;
+		&.active{
+			color: $blue;
+			.icon{
+				background-position: nth($pcSpritePos, 32);
+			}
+		}
+		&:first-child{
+			&:before{
+				display: none;
+			}
+		}
+		&:before{
+			content: " ";
+			top: 2px;
+			left: -5px;
+			position: absolute;
+			@include pcSprite(4, 10px, 16px);
+		}
+		.icon{
+			@include pcSprite(37, 20px, 20px);
+			text-align: center;
+			line-height: 20px;
+			color: $bw;
+			margin-right: 10px;
+		}
+	}
+}
+
+.sb-tips{
+	margin: 30px 0 0 180px;
+	font-size: 16px;
+	color: $mwgy;
+	display: none;
+}
+
+.sbe-tips{
+	padding-top: 30px;
+	font-size: 16px;
+	line-height: 1.5em;
+	color: $mwgy;
+	text-indent: -35px;
+	margin-left: 338px;
+	&:before{
+		content: " ";
+		vertical-align: middle;
+		margin-right: 10px;
+		@include pcSprite(38, 25px, 25px);
+	}
+}
+
+.sbc-password-box, .sbc-phone-box, .sbc-email-box{
+	min-height: 280px;
+	padding: 60px 0;	
+}
+
+.sbc-tab{
+	overflow: hidden;
+	position: relative;
+	padding-left: 360px;
+	margin: 30px 0 0 185px;
+	min-height: 24px;
+	&.sbce-tab{
+		margin-left: 186px;
+		padding-left: 360px;
+	}
+	li{
+		float: left;
+		cursor: pointer;
+		margin-left: 20px;
+		font-size: 12px;
+		color: $lwgy;
+		padding: 5px;
+		span{
+			margin-left: 15px;
+			display: none;
+		}
+		i{
+			display: inline;
+		}
+		&:hover{
+			color: $blue;
+		}
+		&.active{
+			cursor: default;
+			width: 350px;
+			padding-top: 0;
+			font-size: 16px;
+			color: $mwgy;
+			position: absolute;
+			left: 0;
+			span{
+				display: inline;
+			}
+			i{
+				display: none;
+			}
+			&:hover{
+				color: $mwgy;
+			}
+		}
+	}
+}
+
+.sbcp-email-box{
+	padding-top: 60px;
+	.btn-primary{
+		font-size: 16px;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		color: $bw;
+		border-color: $blue;
+		background-color: $blue;
+		width: 174px;
+	}
+
+	.sbcp-email-text{
+		padding-left: 298px;
+		margin-bottom: 43px;
+		color: $lwgy;
+		position: relative;
+		line-height: 1.8em;
+		em{
+			font-size: 16px;
+			color: $mwgy;
+		}
+		&:before{
+			content: " ";
+			position: absolute;
+			left: 238px;
+			top: 4px;
+			@include pcSprite(33, 40px, 40px);
+			margin-right: 20px;
+		}
+	}
+
+	.sbcp-email-button{
+		padding-left: 380px;
+	}
+}
+
+.sb-success-box{
+	padding: 100px;
+	text-align: center;
+	p{
+		font-size: 16px; 
+		color: $mwgy;
+		&:before{
+			content: " ";
+			vertical-align: middle;
+			margin-right: 20px;
+			@include pcSprite(33, 40px, 40px);
+			margin-right: 20px;
+		}
+	}
+}
+
+.sbc-wx-box, .sbc-qq-box{
+	padding: 50px;
+	p:first-child{
+		color: $dwgy;
+		margin-bottom: 20px;
+	}
+	h4{
+		font-size: 18px;
+		font-weight: bold;
+		color: $blue;
+		margin-bottom: 32px;
+	}
+	ol{
+		padding-bottom: 10px;
+		li{
+			margin-bottom: 20px;
+			color: $mwgy;
+		}
+	}
+}
+
+.ui-info-close{
+	top: 0;
+}
+
+.del-company-dialog{
+	width: 560px;
+	padding-top: 80px;
+	height: 180px;
+	h3{
+		text-align: center;
+		font-size: 18px;
+		color: $mwgy;
+		margin-bottom: 65px;
+	}
+	p{
+		text-align: center;
+	}
+
+	.btn{
+		font-size: 16px;
+		padding-top: 9px;
+		padding-bottom: 9px;
+		margin: 0 8px;
+		min-width: 5em;
+	}
+
+	.btn-primary{
+		&:hover{
+			color: $blue;
+			background-color: $bw;
+			border-color: $blue;
+		}
+	}
+}
+
+.unbind-qq-dialog, .unbind-wx-dialog{
+	width: 560px;
+	height: 255px;
+	h3{
+		height: 44px;
+		line-height: 44px;
+		padding: 0 20px;
+		font-size: 16px;
+		color: $mwgy;
+		font-weight: bold;
+		background-color: $lbgy;
+		border-bottom: 1px solid #ebebeb;
+		margin-bottom: 45px;
+	}
+	h3+p{
+		margin-left: 145px;
+		padding-left: 60px;
+		position: relative;
+		color: $mwgy;
+		margin-bottom: 35px;
+		strong{
+			font-size: 18px;
+			color: $dwgy;
+			display: block;
+			margin-bottom: 12px;
+		}
+		&:before{
+			content: " ";
+			@include pcSprite(34, 40px, 40px);
+			position: absolute;
+			top: 5px;
+			left: 0;
+		}
+	}
+	h3+p+p{
+		text-align: center;
+	}
+	.btn{
+		font-size: 16px;
+		margin: 0 10px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		min-width: 6em;
+	}
+}
+
+.qq-tips-dialog, .qq-tips-dialog{
+	width: 580px;
+	height: 285px;
+	h3{
+		height: 44px;
+		line-height: 44px;
+		padding: 0 20px;
+		font-size: 16px;
+		color: $mwgy;
+		font-weight: bold;
+		background-color: $lbgy;
+		border-bottom: 1px solid #ebebeb;
+		margin-bottom: 45px;
+	}
+	h4{
+		font-size: 18px;
+		color: $dwgy;
+		margin-bottom: 12px;
+	}
+	li{
+		color: $mwgy;
+		margin-bottom: 5px;
+	}
+	div{
+		margin-left: 82px;
+		padding-left: 60px;
+		position: relative;
+		color: $mwgy;
+		margin-bottom: 35px;
+		&:before{
+			content: " ";
+			@include pcSprite(34, 40px, 40px);
+			position: absolute;
+			top: 15px;
+			left: 0;
+		}
+	}
+	
+	p{
+		text-align: center;
+	}
+	.btn{
+		font-size: 16px;
+		margin: 0 10px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		min-width: 6em;
+	}
+}
+
+.binging-success-dialog, .unbind-success-dialog{
+	width: 410px;
+	height: 125px;
+	padding-top: 80px;
+	p{
+		text-align: center;
+		font-size: 18px;
+		color: $mwgy;
+		&:before{
+			content: " ";
+			margin-right: 20px;
+			vertical-align: middle;
+			@include pcSprite(33, 40px, 40px);
+		}
+	}
+}
+
+.wxBindBox{
+    width: 300px;
+    padding: 50px;
+    background: url('../img/loading.gif') 50% 50% no-repeat;
+}
+
+

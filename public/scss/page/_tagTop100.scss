@@ -1,0 +1,107 @@
+@import "../common/variable";
+@import "../common/maxin";
+body {
+    background-color: $lbgy;
+}
+
+h1 {
+    width: $w1;
+    margin: 18px auto;
+    color: $mwgy;
+    font-size: 22px;
+}
+
+.news-section {
+    width: $w1;
+    margin: 0 auto 100px;
+}
+
+.news-content {
+    width: 910px;
+    float: left;
+    border: 1px solid $line;
+    background-color: $bw;
+    ul {
+        padding: 79px 32px 49px 59px;
+    }
+    li {
+        width: 140px;
+        float: left;
+        margin: 0 23px 30px 0;
+    }
+    a {
+        background-color: #e5f0f8;
+        color: $blue;
+        padding: 4px 7px;
+        max-width: 126px;
+        display: inline-block;
+        @include ellipsis;
+    }
+}
+
+.news-aside {
+    width: 280px;
+    float: right;
+}
+
+.message-dialog {
+    display: none;
+}
+
+.message-popover {
+    padding: 61px 35px 59px 39px;
+    border: 1px solid $line;
+    background-color: $bw;
+    .title {
+        margin-bottom: 39px;
+        padding-left: 59px;
+        color: $mwgy;
+        i {
+            float: left;
+            margin-top: 5px;
+            @include sprite(77, 40px, 40px);
+        }
+        p {
+            float: left;
+            margin-left: 20px;
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+    .tips {
+        margin-bottom: 23px;
+        color: $lwgy;
+    }
+    input[type="text"] {
+        border: 1px solid $line;
+        width: 218px;
+        height: 34px;
+        line-height: 34px;
+        font-family: $ffa;
+        font-size: 14px;
+        text-indent: 9px;
+        color: $lwgy;
+        border-radius: 3px;
+    }
+    .btn {
+        width: 118px;
+        height: 34px;
+        line-height: 34px;
+        padding: 0;
+        background-color: $blue;
+        color: $bw;
+        font-size: 16px;
+        cursor: pointer;
+        font-family: $ffa;
+    }
+    .input-text {
+        margin-bottom: 37px;
+        em {
+            font-size: 18px;
+            color: $mwgy;
+        }
+    }
+    .input-btn {
+        text-align: center;
+    }
+}

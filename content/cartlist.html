@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
+    <title>填写订单信息_壹财税</title>
+    <link rel="stylesheet" href="../public/css/cartlist.css"/>
+</head>
+<body>
+<!--=include ../tpl/_headFloat.html -->
+<!--=include ../tpl/_topBar.html -->
+<!--=include ../tpl/_headWrap.html -->
+<!--crumbs nav here start-->
+<div class="crumbs-box">
+    <div class="crumbs-box-inner">
+        <p class="crumbs">
+            <a href="/">首页</a> &gt;
+            <span>结算页</span>
+        </p>
+    </div>
+</div>
+<!--crumbs nav here start-->
+<!--cartinfo here start-->
+<div class="cartlist-wrap">
+    <div class="cartlist">
+        <form action="/user/login.htm" name="loginform" id="login_form">
+            <ol class="order_login_box" id="order_login_box">
+                <li class="lb_nameLine" id="lb_nameLine">
+                    <input class="lb_text" type="text" id="l_name" name="username" tabindex="1" maxlength="20" placeholder="用户名">
+                    <a href="javascript:;" id="toPhoneLogin">手机验证登录</a>
+                </li>
+                <li class="lb_passwordLine" id="lb_passwordLine">
+                    <input class="lb_text" type="password" id="l_password" name="password" tabindex="2" maxlength="20" placeholder="密码">
+                    <a class="lb_find" href="/app/findPassword.html" id="lb_forget">找回密码</a>
+                </li>
+                <li id="lb_telphoneLine" class="lb_telphoneLine" >
+                    <input class="lb_text" placeholder="手机号码" type="text" id="l_telphone" name="telphone" tabindex="3" maxlength="11">
+                    <span id="lb_toNormalLine">已有壹财税帐号使用<a href="javascript:;" id="lb_toNormalLogin">普通登录</a></span>
+                </li>
+                <li id="lb_phoneCodeLine" class="lb_phoneCodeLine" >
+                    <input class="lb_text" placeholder="验证码" type="text" id="l_telCode" name="telCode" tabindex="4" maxlength="4"><a href="javascript:;" id="lb_getPhoneCode">获取验证码</a>
+                </li>
+                <li id="lb_imgCodeLine" class="lb_imgCodeLine" style="display: none;">
+                    <label class="lb_title" for="l_imgCode"><em>*</em>图片验证</label>
+                    <input class="lb_text" type="text" id="l_imgCode" name="imgCode" tabindex="5" maxlength="4">
+                    <img src="/vc.htm" id="lb_imgCode" width="100" height="36">
+                    <a class="lb_find" href="javascript:;" id="lb_changeImgCode">换一换</a>
+                </li>
+                <li class="lb_btnline" id="lb_btnline">
+                    <button type="submit" id="lb_submitBtn" class="btn btn_warning">提交</button>
+                </li>
+            </ol>
+        </form>
+        <div class="order-list">
+            <h2>填写并核对订单信息</h2>
+            <a href="/app/cart.html#back">返回修改购物车</a>
+            <div class="ocb_contactor">
+                <div class="title">联系人信息</div>
+                <div class="fill_contact">
+                    <p><label class="ocb_title"><em>*</em>联系人</label>
+                        <input name="contacts" class="ocb_text" data-rule="checkName:2,20" id="ocb_contacts" type="text" value="">
+                    </p>
+                    <p><label class="ocb_title"><em>*</em>联系人手机号码</label>
+                        <input name="contactsmobile" class="ocb_text" data-rule="checkTelphone" id="ocb_contactsmobile" maxlength="11" type="text" value="">
+                    </p>
+                </div>
+                <dl class="clearfix" id="contactlist">
+                    加载中...
+                </dl>
+            </div>
+
+            <div class="cart-list">
+                <div class="title">服务清单</div>
+                <div class="list">
+                    加载中...
+                </div>
+                <div class="coupon">
+                    <div class="coupon-list">
+                    </div>
+                    <p>
+                        <strong class="cart-title">使用卡/券：</strong>
+
+                        <select class="card-list" >
+                                <option value="">不使用优惠卡券</option>
+                            </select>
+                        <em class="couponset"></em>
+                    </p>
+                    <p>
+                        <strong>输入兑换码：</strong>
+                        <input type="text" name="exchage-code" class="exchange-code" placeholder="请输入兑换码"/>
+                        <input type="button" value="兑换" class="exchange-btn btn"/>
+                        <em class="coupon-tips">如果您拥有壹财税优惠卡券的兑换码，请在此输入，卡券将会马上放入您的账户</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="account clearfix">
+            <div class="account-content">
+                <p class="sum-price">应付金额： <em>￥<i>加载中...</i></em></p>
+                <div class="acount-right">
+                    <p class="market-price">原价：   <em>￥<i>加载中...</i></em></p>
+                    <p class="reduce-price">节省： <em>-￥<i>加载中...</i></em></p>
+                    <p class="submit-btn"> <input type="button" class="btn btn-shop" value="提交订单" disabled></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--cartinfo here end-->
+
+<!-- tempate here start -->
+<script type="x-handlebars-template" id="shop-tpl">
+    {{#each cartList}}
+    <div class="item">
+                <h3>
+                    {{srname}}
+                </h3>
+                <ul>
+                {{#each items}}
+                    <li class="clearfix" data-itemgroupid="{{itemgroupid}}" data-itemgroupname="{{itemgroupname}}" data-id="{{id}}" data-account="{{account}}" data-sdid="{{sdid}}" data-siid="{{siid}}" data-srsid="{{srsid}}" data-modifynum="{{modifynum}}" data-account={{account}}
+                    >
+
+
+                        <div class="thumbnail option-1">
+                            {{#if cover}}
+                                    <img src="{{removeHttp cover}}" width="80" height="64" alt=""/>
+                                {{else}}
+                                    <img src="/public/img/serviceCover_80x64.png" width="80" height="64" alt=""/>
+                                {{/if}}
+                        </div>
+                        <div class="service option-2">
+                            <p data-sdname = {{sdname}}>{{sdname}}</p>
+                            <p data-siname={{siname}}>{{siname}}</p>
+                        </div>
+                        <div class="type option-3">
+                           <p>
+                                    付款方式:{{toDefaultType paytype}}
+                                </p>
+                            {{#if options}}
+                                {{#each options}}
+                                <p class="receive">{{specdefinename}}：<i>
+                                    {{#options}}
+                                        {{toSelect this}}
+                                    {{/options}}
+                                </i></p>
+                                {{/each}}
+                            {{/if}}
+                        </div>
+                        <div class="address option-4" data-province="{{province}}" data-city="{{city}}" data-district="{{district}}">
+                            【{{province}} {{city}} {{district}}】
+                        </div>
+                        <div data-price="{{price}}" data-unitname="{{unitname}}" class="price option-5" data-unit="{{unit}}">￥{{price}}</div>
+                        <div class="quantity option-6">
+                            <p class="disabled" data-quantity="{{quantity}}">x{{quantity}}</p>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+    </div>
+    {{/each}}
+</script>
+
+<script type="x-handlebars-template" id="coupon-tpl">
+    {{#each showCouponSet}}
+    <p data-couponid="{{id}}" data-isreach="{{isReach}}" data-discount="{{../this.couponIdAllDiscount}}">
+        <strong>促销优惠 ：</strong><em>{{couponType resultList.[0].resultSubType}}</em>{{tips}}{{#toShow  ../this}}<i>为您节省：￥{{discount}}</i>{{else}}<i>您未满足使用此项优惠的条件<a href="/app/cart.html#back">返回购物车重新选择优惠</a></i>{{/toShow}}
+    </p>
+    {{/each}}
+</script>
+
+<script type="x-handlebars-template" id="card-tpl">
+     
+    {{#each myCouponList}}
+    {{#if isCanUse}}
+        <option value="{{myCardConsumeId}}" data-consumeId="{{myCardConsumeId}}" data-cardid="{{myCardCouponId}}">{{couponname}}</option>
+    {{/if}}
+    {{/each}}
+</script>
+<script type="x-handlebars-template" id="contactlist-tpl">
+     
+{{#each this}}
+    <dd class="{{#if @index}}{{else}}active{{/if}}" data-init>
+        <p class="position clearfix"><span>{{name}}</span><em>{{title}}</em></p>
+        <p class="phone">{{mobile}}</p>
+        <p class="action" data-id="{{id}}"><span>编辑</span><em>删除</em></p>
+        <strong data-default="{{isdefault}}" class="{{#if isdefault}}active{{/if}}">{{#if isdefault}}默认联系人{{else}}设置默认联系人{{/if}}</strong>
+        <i class="checked-icon"></i>
+    </dd>
+{{/each}}
+    <dd class="add">
+        <div class="add-icon">+</div>
+        <div class="add-action">新增联系人</div>
+    </dd>
+</script>
+
+<!--=include ../tpl/_advantage.html -->
+
+<!--=include ../tpl/_footer.html -->
+<!--=include ../tpl/_footerFloat.html -->
+<!--=include ../tpl/_thirdpartyFooter.html -->
+<!--=include ../tpl/_commonjs.html -->
+<script type="text/javascript" src="/public/js/cartlist.js"></script>
+</body>
+</html>

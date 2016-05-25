@@ -1,0 +1,41 @@
+form{
+    .form-choice-group{
+        border-bottom: 1px solid transparent;
+    }
+    
+    .valid{
+        border-color: #73A80D!important;
+    }
+    
+    .invalid{
+        border-color: #db281f!important;
+    }
+
+    .error{
+    	background-color: #f7f7f7;
+	    border-radius: 2px;
+	    display: inline-block;
+	    height: 34px;
+	    line-height: 34px;
+	    margin-left: 10px;
+	    padding: 0 8px;
+	    color: #666666;
+	    vertical-align: top;
+	    margin-top: 2px;
+	    &:before{
+			content: "!";
+			background: url('../img/formVerified-error-bg.png') 0 0 no-repeat;
+			color: #ffffff;
+			height: 16px;
+			line-height: 16px;
+			text-align: center;
+			display: inline-block;
+			width: 16px;
+			margin-right: 5px;
+	    }
+    }
+}
+
+*+html form .error{
+	color: #db281f;
+}

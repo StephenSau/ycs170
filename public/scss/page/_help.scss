@@ -1,0 +1,840 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+body{
+	background-color: $lbgy;
+}
+
+.container{
+	background-color: $lbgy;
+	padding-bottom: 100px;
+}
+
+.content{
+	width: $w1;
+	margin: 0 auto;
+}
+
+$helpSpriteUrl: url('../img/help-sprite.png');
+$helpSpritePos:
+	(0 0) (-70px 0) (-140px 0) (-210px 0) (-280px 0)
+	(-350px 0) (-420px 0) (-490px 0) (-560px 0) (0 -70px)
+	(-70px -70px) (-140px -70px) (-210px -70px) (-280px -70px) (-350px -70px)
+	(-420px -70px) (-490px -70px) (-560px -70px) (0 -140px) (-80px -140px)
+	(-160px -140px) (-240px -140px) (-320px -140px) (-400px -140px) (-480px -140px)
+	(-560px -140px) (-640px -140px) (0 -220px) (-20px -220px) (0 -250px)
+	(-200px -250px) (-460px -250px) (0 -340px) (-240px -340px) (-450px -340px)
+	(0 -430px) (-160px -430px) (-450px -430px) (-40px -230px) (-630px 0)
+	(-700px 0) (-770px 0) (-840px 0) (-910px 0) (-630px -70px) 
+	(-700px -70px) (-770px -70px) (-840px -70px) (-910px -70px) (-700px -250px) (-740px -340px)
+	(-660px -430px) (0 -520px) (-270px -520px); 
+@mixin helpSprite($position: 1, $width: 20px, $height: 20px, $display: inline-block){
+	display: $display;
+	width: $width;
+    height: $height;
+    background-image: $helpSpriteUrl;
+    background-position: nth($helpSpritePos, $position);
+}
+
+.helpbaner{
+	width:100%;
+  	height:500px;
+  	background:url("../img/help-banner-bg-01.jpg") center no-repeat transparent;
+  	background-size:cover;
+  	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+}
+
+
+
+
+.help-search{
+	position: absolute;
+	top: 220px;
+	left: 50%;
+	margin-left: -353px;
+	box-shadow: 0 5px 8px rgba(0, 0, 0, 0.23);
+	input{
+		height: 52px;
+		line-height: 52px;
+		font-size: 18px;
+		color: $mwgy;
+		padding: 0 20px;
+		background-color: $bw;
+		border-radius: 4px 0 0 4px;
+		width: 560px;
+		border: none;
+		vertical-align: top;
+	}
+	button{
+		height: 52px;
+		line-height: 52px;
+		font-size: 20px;
+		color: $bw;
+		padding: 0 30px;
+		background-color: $blue;
+		border-radius: 0 4px 4px 0;
+		border: none;
+	}
+}
+
+.help-box{
+	position: relative;
+	padding-top: 55px;
+	width: $w1;
+	margin: -210px auto 100px;
+	background-color: $bw;
+	box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+	border: 1px solid $line;
+	h2{
+		text-align: center;
+		font-size: 30px;
+		color: $lwgy;
+		margin-bottom: 45px;
+	}
+}
+
+.help-tab{
+	z-index: 1;
+	position: absolute;
+	left: -1px;
+	top: -50px;
+	li{
+		float: left;
+		&.active{
+			a{
+				height: 49px;
+				width: 188px;
+				line-height: 49px;
+				border: 1px solid $line;
+				border-bottom:none;
+				background: $bw;
+				color: $dwgy;
+			}
+		}
+	}
+	a{
+		display: block;
+		color: #4fa2dd;
+		font-size: 18px;
+		width: 190px;
+		height: 49px;
+		line-height: 49px;
+		text-align: center;
+		background: url('../img/black-opacity50-bg.png') left top repeat;
+	}
+}
+
+.help-buy-box{
+	display: none;
+	z-index: 5;
+	background-color: $bw;
+	position: relative;
+	&.active{
+		display: block;
+	}
+}
+
+.help-learn{
+	padding: 0 105px 70px;
+}
+
+.help-sell-box{
+	display: none;
+	z-index: 5;
+	background-color: $bw;
+	position: relative;
+	&.active{
+		display: block;
+	}
+}
+
+.hbb-steps{
+	margin-bottom: 80px;
+	li{
+		float: left;
+		padding-right: 45px;
+		position: relative;
+		&.hbb-step-09{
+			padding-right: 0;
+			&:after{
+				display: none;
+			}
+		}
+		&:after{
+			content: "";
+			@include helpSprite(28, 11px, 22px, block);
+			position: absolute;
+			top: 24px;
+			left: 88px;
+
+		}
+		&.active{
+			&:after{
+
+				background-position: nth($helpSpritePos, 29);
+			}
+		}
+	}
+	a{
+		@include helpSprite(1, 70px, 70px, block);
+	}
+
+	.hbb-step-01{
+		a{
+			background-position: nth($helpSpritePos, 1);
+			&:hover{
+				background-position: nth($helpSpritePos, 10);
+			}
+		}
+		&.active{
+			a{
+				background-position: nth($helpSpritePos, 10);
+			}
+		}
+	}
+
+	.hbb-step-02{
+		a{
+			background-position: nth($helpSpritePos, 2);
+			&:hover{
+				background-position: nth($helpSpritePos, 11);
+			}
+		}
+		&.active{
+			a{
+				background-position: nth($helpSpritePos, 11);
+			}
+		}
+	}
+
+	.hbb-step-03{
+		a{
+			background-position: nth($helpSpritePos, 3);
+			&:hover{
+				background-position: nth($helpSpritePos, 12);
+			}
+		}
+		&.active{
+			a{
+				background-position: nth($helpSpritePos, 12);
+			}
+		}
+	}
+
+	.hbb-step-04{
+		a{
+			background-position: nth($helpSpritePos, 4);
+			&:hover{
+				background-position: nth($helpSpritePos, 13);
+			}
+		}
+		&.active{
+			a{
+				background-position: nth($helpSpritePos, 13);
+			}
+		}
+	}
+
+	.hbb-step-05{
+		a{
+			background-position: nth($helpSpritePos, 5);
+			&:hover{
+				background-position: nth($helpSpritePos, 14);
+			}
+		}
+		&.active{
+			a{
+				background-position: nth($helpSpritePos, 14);
+			}
+		}
+	}
+
+	.hbb-step-06{
+		a{
+			background-position: nth($helpSpritePos, 6);
+			&:hover{
+				background-position: nth($helpSpritePos, 15);
+			}
+		}
+		&.active{
+			a{
+				background-position: nth($helpSpritePos, 15);
+			}
+		}
+	}
+
+	.hbb-step-07{
+		a{
+			background-position: nth($helpSpritePos, 7);
+			&:hover{
+				background-position: nth($helpSpritePos, 16);
+			}
+		}
+		&.active{
+			a{
+				background-position: nth($helpSpritePos, 16);
+			}
+		}
+	}
+
+	.hbb-step-08{
+		a{
+			background-position: nth($helpSpritePos, 8);
+			&:hover{
+				background-position: nth($helpSpritePos, 17);
+			}
+		}
+		&.active{
+			a{
+				background-position: nth($helpSpritePos, 17);
+			}
+		}
+	}
+
+	.hbb-step-09{
+		a{
+			background-position: nth($helpSpritePos, 9);
+			&:hover{
+				background-position: nth($helpSpritePos, 18);
+			}
+		}
+		&.active{
+			a{
+				background-position: nth($helpSpritePos, 18);
+			}
+		}
+	}
+}
+
+.hsb-steps{
+	padding-left: 230px;
+	margin-bottom: 80px;
+	li{
+		float: left;
+		padding-right: 45px;
+		position: relative;
+		&.hsb-step-05{
+			padding-right: 0;
+			&:after{
+				display: none;
+			}
+		}
+		&:after{
+			content: "";
+			@include helpSprite(28, 11px, 22px, block);
+			position: absolute;
+			top: 24px;
+			left: 88px;
+
+		}
+		&.active{
+			&:after{
+				background-position: nth($helpSpritePos, 29);
+			}
+		}
+	}
+	a{
+		@include helpSprite(40, 70px, 70px, block);
+	}
+
+	.hsb-step-01{
+		a{
+			background-position: nth($helpSpritePos, 40);
+			&:hover{
+				background-position: nth($helpSpritePos, 45);
+			}
+		}
+		&.active{
+			a{
+				background-position: nth($helpSpritePos, 45);
+			}
+		}
+	}
+
+	.hsb-step-02{
+		a{
+			background-position: nth($helpSpritePos, 41);
+			&:hover{
+				background-position: nth($helpSpritePos, 46);
+			}
+		}
+		&.active{
+			a{
+				background-position: nth($helpSpritePos, 46);
+			}
+		}
+	}
+
+	.hsb-step-03{
+		a{
+			background-position: nth($helpSpritePos, 42);
+			&:hover{
+				background-position: nth($helpSpritePos, 47);
+			}
+		}
+		&.active{
+			a{
+				background-position: nth($helpSpritePos, 47);
+			}
+		}
+	}
+
+	.hsb-step-04{
+		a{
+			background-position: nth($helpSpritePos, 43);
+			&:hover{
+				background-position: nth($helpSpritePos, 48);
+			}
+		}
+		&.active{
+			a{
+				background-position: nth($helpSpritePos, 48);
+			}
+		}
+	}
+
+	.hsb-step-05{
+		a{
+			background-position: nth($helpSpritePos, 44);
+			&:hover{
+				background-position: nth($helpSpritePos, 49);
+			}
+		}
+		&.active{
+			a{
+				background-position: nth($helpSpritePos, 49);
+			}
+		}
+	}
+}
+
+.hbb-content{
+	
+}
+
+.hbb-image-box{
+	float: left;
+	background:transparent url('../img/help-image-00.jpg') left top no-repeat;
+	width: 640px;
+	height: 520px;
+	padding: 25px 0 0 24px;
+	.hbb-image-inner{
+		position: relative;
+		width: 560px;
+		height: 314px;
+		overflow: hidden;
+		img{
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 560px;
+			&.active{
+				left: 0;
+			}
+		}
+	}
+}
+
+.hsb-image-box{
+	float: left;
+	width: 610px;
+	height: 420px;
+	.hsb-image-inner{
+		position: relative;
+		width: 610px;
+		height: 420px;
+		overflow: hidden;
+		img{
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 610px;
+			&.active{
+				left: 0;
+			}
+		}
+	}
+}
+
+.hbb-step-boxs{
+	position: relative;
+	float: right;
+
+	width: 290px;
+	height: 554px;
+	overflow: hidden;
+	div{
+		position: absolute;
+		top: 128px;
+		left: 290px;
+		&.active{
+			left: 0px;
+		}
+	}
+	h3{
+		@include helpSprite(30, 200px, 81px, block);
+		text-indent: -999em;
+		margin-bottom: 12px;
+	}
+	li{
+		color: $lwgy;
+		line-height: 30px;
+		padding-left: 10px;
+		text-indent: -10px;
+		&:before{
+			content: " ";
+			@include helpSprite(39, 4px, 4px);
+			margin-right: 5px;
+		}
+	}
+
+	.hbb-step-box01{
+		h3{
+			background-position: nth($helpSpritePos, 30);
+		}
+	}
+
+	.hbb-step-box02{
+		h3{
+			width: 260px;
+			background-position: nth($helpSpritePos, 31);
+		}
+	}
+
+	.hbb-step-box03{
+		
+		h3{
+			width: 240px;
+			background-position: nth($helpSpritePos, 32);
+		}
+	}
+
+	.hbb-step-box04{
+		h3{
+			width: 240px;
+			background-position: nth($helpSpritePos, 33);
+		}
+	}
+
+	.hbb-step-box05{
+		h3{
+			width: 210px;
+			background-position: nth($helpSpritePos, 34);
+		}
+	}
+
+	.hbb-step-box06{
+		h3{
+			width: 290px;
+			background-position: nth($helpSpritePos, 35);
+		}
+	}
+
+	.hbb-step-box07{
+		h3{
+			width: 160px;
+			background-position: nth($helpSpritePos, 36);
+		}
+	}
+
+	.hbb-step-box08{
+		h3{
+			width: 290px;
+			background-position: nth($helpSpritePos, 37);
+		}
+	}
+
+	.hbb-step-box09{
+		h3{
+			width: 210px;
+			background-position: nth($helpSpritePos, 38);
+		}
+	}
+}
+
+.hsb-step-boxs{
+	position: relative;
+	float: right;
+	width: 290px;
+	height: 420px;
+	overflow: hidden;
+	div{
+		position: absolute;
+		top: 128px;
+		left: 290px;
+		&.active{
+			left: 0px;
+		}
+	}
+	h3{
+		@include helpSprite(50, 200px, 82px, block);
+		text-indent: -999em;
+		margin-bottom: 12px;
+	}
+	li{
+		color: $lwgy;
+		line-height: 30px;
+		padding-left: 10px;
+		text-indent: -10px;
+		&:before{
+			content: " ";
+			@include helpSprite(39, 4px, 4px);
+			margin-right: 5px;
+		}
+	}
+
+	.hsb-step-box01{
+		h3{
+			width: 250px;
+			background-position: nth($helpSpritePos, 50);
+		}
+	}
+
+	.hsb-step-box02{
+		h3{
+			width: 240px;
+			background-position: nth($helpSpritePos, 51);
+		}
+	}
+
+	.hsb-step-box03{
+		h3{
+			width: 240px;
+			background-position: nth($helpSpritePos, 52);
+		}
+	}
+
+	.hsb-step-box04{
+		h3{
+			width: 270px;
+			background-position: nth($helpSpritePos, 53);
+		}
+	}
+
+	.hsb-step-box05{
+		h3{
+			width: 220px;
+			background-position: nth($helpSpritePos, 54);
+		}
+	}
+}
+
+.help-intro{
+	background:transparent url('../img/help-banner-bg-02.jpg') left top no-repeat;
+	width: 100%;
+	height: 100px;
+	p{
+		padding-top: 30px;
+		text-align: center;
+		color: $bw;
+		font-size: 18px;
+	}
+
+	.btn-default{
+		background-color: transparent;
+		border-color: $bw;
+		color: $bw;
+		font-size: 18px;
+		padding: 6px 22px;
+		margin-left: 20px;
+		&:hover{
+			border-color: $pomelo;
+			background-color: $pomelo;
+		}
+	}
+}
+
+.help-links{
+	padding: 40px 0;
+}
+
+.help-hot{
+	float: left;
+	width: 168px;
+	
+	padding-left: 40px;
+	h3{
+		color: $dbgy;
+		font-size: 18px;
+		margin-bottom: 28px;
+	}
+	li{
+		margin-top: 16px;
+	}
+	a{
+		@include links($mwgy);
+	}
+}
+
+.help-big{
+	float: right;
+	border-left: 1px solid $line;
+	padding: 0 40px;
+	width: 920px;
+}
+
+.help-big-tab{
+	border-bottom: 2px solid $line;
+	margin-bottom: 40px;
+	li{
+		float: left;
+		margin-bottom: -2px;
+		border-bottom: 2px solid $line;
+		&.active{
+			border-bottom: 2px solid $blue;
+			a{
+				color: $blue;
+			}
+		}
+	}
+
+	a{
+		display: block;
+		font-size: 18px;
+		text-align: center;
+		padding: 0 40px 10px;
+		@include links($dbgy);
+	}
+}
+
+.help-short{
+	padding: 10px 25px 0;
+	display: none;
+	li{
+		position: relative;
+		width: 145px;
+		float: left;
+		min-height: 95px;
+		padding-left: 95px;
+		margin: 0 60px 45px 0;
+	}
+	a{
+		display: block;
+		font-size: 16px;
+		margin-bottom: 9px;
+		font-weight: bold;
+		@include links;
+		&:first-child{
+			position: absolute;
+			top: -5px;
+			left: 0;	
+		}
+	}
+	span{
+		color: $lwgy;
+		line-height: 21px;
+	}
+	img{
+		@include helpSprite(19, 80px, 80px, block);
+	}
+	&.active{
+		display: block;
+	}
+
+	.hs-item01{
+		img{
+			background-position: nth($helpSpritePos, 19);
+		}
+	}
+
+	.hs-item02{
+		img{
+			background-position: nth($helpSpritePos, 20);
+		}
+	}
+
+	.hs-item03{
+		margin-right: 0;
+		img{
+			background-position: nth($helpSpritePos, 21);
+		}
+	}
+
+	.hs-item04{
+		img{
+			background-position: nth($helpSpritePos, 22);
+		}
+	}
+
+	.hs-item05{
+		img{
+			background-position: nth($helpSpritePos, 23);
+		}
+	}
+
+	.hs-item06{
+		margin-right: 0;
+		img{
+			background-position: nth($helpSpritePos, 24);
+		}
+	}
+
+	.hs-item07{
+		margin-bottom: 0;
+		img{
+			background-position: nth($helpSpritePos, 25);
+		}
+	}
+
+	.hs-item08{
+		margin-bottom: 0;
+		img{
+			background-position: nth($helpSpritePos, 26);
+		}
+	}
+
+	.hs-item09{
+		margin-bottom: 0;
+		margin-right: 0;
+		img{
+			background-position: nth($helpSpritePos, 27);
+		}
+	}
+}
+
+.help-all{
+	display: none;
+	&.active{
+		display: block;
+	}
+	>li{
+		width: 164px;
+		float: left;
+		margin-right: 20px;
+	}
+	h4{
+		color: $dbgy;
+		font-size: 16px;
+		margin-bottom: 20px;
+	}
+
+	a{
+		display: block;
+		max-width: 164px;
+		@include links;
+		@include ellipsis;
+		margin-bottom: 15px;
+	}
+}
+
+
+.help-list{
+	padding: 10px 0 10px 100px;
+	>li{
+		width: 124px;
+		float: left;
+		margin-right: 20px;
+	}
+	h4{
+		color: $dbgy;
+		font-size: 16px;
+		margin-bottom: 20px;
+	}
+	a{
+		display: block;
+		max-width: 124px;
+		@include links;
+		@include ellipsis;
+		margin-bottom: 15px;
+	}
+}

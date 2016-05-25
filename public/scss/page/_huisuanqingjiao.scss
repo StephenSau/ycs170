@@ -1,0 +1,208 @@
+
+
+.crumbs-box{
+  background-color: $bw;
+}
+
+.topBanner{
+
+  width:100%;
+  height:160px;
+  margin-bottom: 30px;
+  background:url("../img/topic/topic009001.jpg") center no-repeat transparent;
+  background-size:cover;
+}
+
+.content{
+  width: 960px;
+  margin: 0 auto 80px;
+  h2{
+    color: #1b97c0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    font-size: 24px;
+    border-bottom: 2px solid #1b97c0;
+  }
+}
+
+.line1, .line2, .line3, .line4, .line6,.contentBanner{
+  margin-bottom: 30px;
+}
+
+.list{
+  margin-top: -10px;
+  li{
+    position: relative;
+    border-bottom: 1px dashed $line;
+    padding: 14px 15px;
+    color: $lwgy;
+    font-size: 12px;
+    i{
+      position: absolute;
+      left: 0;
+      top: 12px;
+      color: $line;
+      font-size: 16px;
+    }
+    span{
+      position: absolute;
+      right: 0;
+      top: 14px;
+      color: $lwgy;
+      font-size: 14px;
+    }
+    a{
+      display: block;
+      *display:inline-block;
+      color: $dwgy;
+      font-size: 14px;
+      &:hover{
+        color: $blue;
+      }
+    }
+  }
+}
+
+.line1{
+	overflow: hidden;
+  
+  img{
+    vertical-align: top;
+    border: 1px solid $line;
+
+  }
+  
+  .col01{
+    border:1px solid #dddddd;
+    padding:9px;
+    width: 365px;
+    float: left;
+    
+    .info{
+      display:block;
+      padding:20px 0 7px;
+      text-align: center;
+      color:#666666;
+    }
+  }
+  .col02{
+    h2{
+      border:none;
+      margin-bottom:15px;
+      padding:0;
+      background-color:#e4f6fb;
+      height:35px;
+      font-size:22px;
+      line-height:35px;
+      text-indent:10px;
+    }
+    width: 545px;
+    padding-left:30px;
+    float: right;
+    .list{
+      margin-top: -15px;
+    }
+    li{
+      &:first-child{
+        line-height: 1.5em;
+        a {
+          margin-bottom: 17px;
+        }
+
+      }
+      a{
+        font-size:16px;
+      }
+      padding: 27px 0 27px 20px;
+      .icon{
+        background: transparent url('../img/topic-arrow.png') 0 0 no-repeat;
+        width: 20px;
+        height: 20px;
+        display: block;
+        left: -3px;
+        top: 27px;
+      }
+      span{
+        top: 27px;
+      }
+    }
+
+  }
+}
+
+
+
+.line3{
+	.box{
+		overflow: hidden;
+	}
+
+	.col01{
+		width: 466px;
+		margin-right: 20px;
+		float: left;
+	}
+	.col02{
+		width: 466px;
+		float: right;
+	}
+
+	a{
+		display: inline-block;
+		width: 360px;
+		@include ellipsis;
+	}
+}
+
+
+
+
+.line5{
+  padding-bottom: 10px;
+  p{
+    padding: 0 0 0 9px;
+    overflow: hidden;
+  }
+  a{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: $blue;
+    float: left;
+    width: 240px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #ededed;
+    &.middle{
+      margin: 0 116px 20px 115px;
+    }
+  }
+}
+
+.line7{
+  border: 1px solid $line;
+  text-align: center;
+  .photoLine{
+    background-color: $bw;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    img{
+      display: block;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid $line;
+    }
+    span{
+      display: inline-block;
+      margin: 0 40px;
+      color: $mwgy;
+    }
+  }
+  .textLine{
+    padding: 20px;
+    color: $blue;
+    border-top: 1px solid $line;
+    background-color: #f7f7f7;
+  }
+}

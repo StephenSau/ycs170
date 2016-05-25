@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>用户中心_壹财税</title>
+    <meta name="keywords" content="..." />
+    <meta name="description" content="..." />
+    <link type="text/css" rel="stylesheet" href="/public/css/personalCenter.css" />
+<!--=include ../tpl/_thirdpartyHeader.html -->
+</head>
+<body>
+	<!--=include ../tpl/_topBar.html -->
+	<!-- head wrap start -->
+	<div class="head-wrap">
+		<div class="head-wrap-inner clearfix">
+			<h2 class="hw-logo">
+				<a href="/">
+					<img src="../public/img/logo-3.png" width="108" height="30" />
+				</a>
+			</h2>
+			<h3 class="hw-title">用户中心</h3>
+			<div class="hw-searchBox">
+				<form id="headWrapSearchForm" action="/article/tag.htm" method="get">
+					<label class="icon hwsb-title" for="hwsb-text">搜索</label>
+					<input name="querycondition" type="text" class="hwsb-text" id="hwsb-text" data-role="search" data-menu-id="hwsb-serviceList" data-words-id="hwsb-hotSearch" /><button class="hwsb-button">搜索</button>
+				</form>
+				<ul class="hwsb-serviceList" id="hwsb-serviceList">
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>工商服务</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>财会服务</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>税务服务</em>
+							<span>约有 5 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>行政许可</em>
+							<span>约有 10 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>商标专利</em>
+							<span>约有 6 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>人事服务</em>
+							<span>约有 5 项服务</span>
+						</a>
+					</li>
+					<li>
+						<a href="/service/qryAllServiceGoods.htm">
+							<em>社保公积金</em>
+							<span>约有 4 项服务</span>
+						</a>
+					</li>
+				</ul>
+				<!-- <p class="hwsb-hotSearch" id="hwsb-hotSearch">
+					<a href="#">0元开公司</a>
+				</p> -->
+			</div>
+		</div>
+	</div>
+	<!-- head wrap end-->
+
+	<div class="crumbs-box">
+		<div class="crumbs-box-inner">
+			<p class="crumbs">
+				<a href="/">首页</a> &gt;
+				<span>用户中心</span>
+			</p>
+		</div>
+	</div>
+	<!--=include ../tpl/_pcBanner.html -->
+	<div class="container">
+		<div class="content clearfix">
+			<!--=include ../tpl/_pcNav.html -->
+			<div class="pcBox">
+				<!-- personal center box summary start-->
+				<div class="pcb-summary clearfix">
+					<ul class="pcbs-user">
+						<li class="pcbsu-img"><img width="60" height="60" src="../public/img/image-placeholder.png" alt="" /></li>
+						<li class="pcbsu-name"><a id="pcbsu-name" href="/app/settings.html"></a></li>
+						<li id="pcbsu-company" class="pcbsu-company"></li>
+						<li id="pcbsu-mobile"></li>
+						<li id="pcbsu-email"></li>
+						<li id="pcbsu-wx"></li>
+						<li id="pcbsu-qq"></li>
+					</ul>
+					<ul class="pcbs-links">
+						<li class="pcbsl-unpay">
+							<a href="/app/orderList.html?tab=unpay"><i class="icon"></i></a>
+							<a href="/app/orderList.html?tab=unpay">待付款 <em id="pcbsl-unpay">0</em></a>
+						</li>
+						<li class="pcbsl-service">
+							<a href="/app/myService.html?tab=service"><i class="icon"></i></a>
+							<a href="/app/myService.html?tab=service">服务中 <em id="pcbsl-service">0</em></a>
+						</li>
+						<li class="pcbsl-comment">
+							<a href="/app/myService.html?tab=comments"><i class="icon"></i></a>
+							<a href="/app/myService.html?tab=comments">待评价 <em id="pcbsl-comment">0</em></a>
+						</li>
+					</ul>
+					<div class="pcbs-coupon">
+						<h3>我的优惠券 <em id="pcbs-coupon-num">0</em></h3>
+						<p class="pcbsc-more"><a href="/app/quan.html">查看更多</a></p>
+						<div id="pcbs-coupon" class="glide-box">
+							<a href="javascript:;" class="glide-prev" data-role="prev"></a>
+							<div class="glide-cabinet" data-role="cabinet">
+								<ul id="pcbs-coupon-list" class="glide-content" data-role="list">
+									
+								</ul>
+							</div>
+							<a href="javascript:;" class="glide-next" data-role="next"></a>
+						</div>
+					</div>
+				</div>
+				<!-- personal center box summary end-->
+				<!-- personal center box order list start-->
+				<div class="pcb-list clearfix">
+					<div class="pcbl-order">
+						<h2>我的订单</h2>
+						<p class="pcblr-more"><a href="/app/orderList.html">查看全部订单</a></p>
+						<div id="pcblr-noneLine" class="pcblr-noneLine">
+							<p><strong>您目前没有订单哟，快去选购吧！</strong><br/><a href="/service/qryAllServiceGoods.htm" target="_blank">购买服务<i>&gt;</i><a></p>
+						</div>
+						<table>
+							<colgroup>
+								<col width="42%"/>
+								<col width="12%"/>
+								<col width="14%"/>
+								<col width="10%"/>
+								<col width="17%"/>
+								<col />
+							</colgroup>
+							<tbody id="pcbl-list">
+								
+							</tbody>
+						</table>
+					</div>
+					<div class="pcblbanner">
+						<a href="/service/qryServiceDetailByCodeJsp.htm?id=229">
+						<img src="../public/img/personalCenter-image-01.jpg" width="280" height="360" />
+						</a>
+					</div>
+				</div>
+				<!-- personal center box order list start-->
+				<!-- personal center box record start-->
+				<div class="pcb-record clearfix">
+					<div class="pcbr-coupon">
+						<h3>更多优惠券</h3>
+						<div class="glide-box" id="pcbr-coupon">
+							<a href="javascript:;" class="glide-prev" data-role="prev"></a>
+							<div class="glide-cabinet" data-role="cabinet">
+								<ul id="pcbr-coupon-list" class="glide-content" data-role="list">
+									
+								</ul>
+							</div>
+							<a href="javascript:;" class="glide-next" data-role="next"></a>
+						</div>
+					</div>
+				</div>
+				<!-- personal center box record  start-->
+			</div>
+		</div>
+	</div>
+
+	<div class="orderList-detailBox" id="orderList-detailBox"></div>
+	<!--=include ../tpl/_advantage.html -->
+	
+	<!--=include ../tpl/_footer.html -->
+	<!--=include ../tpl/_footerFloat.html -->
+	<div id="shopList" class="pc-shoplist"></div>
+	<script type="text/x-handlebars-template" id="coupon_template">
+		{{#each this}}
+    	<li data-role="item">
+			<div class="coupon {{getCouponType couponType}}">
+				<p class="coupon-title">
+					<em>{{couponType}}</em>
+					{{#compare couponType "===" "折扣"}}
+						<strong>{{key}}</strong>%
+					{{/compare}}
+					{{#compare couponType "===" "直减"}}
+						<strong>{{key}}</strong>元
+					{{/compare}}
+					{{#compare couponType "===" "一口价"}}
+						<strong>{{key}}</strong>元
+					{{/compare}}
+				</p>
+				<p class="coupon-intro">{{tips}}</p>
+				<p class="coupon-opt clearfix">
+					<span style="z-index:{{zIndex}}" class="coupon-range">
+					{{couponName}}
+						{{#compare type "===" 20}}
+						<span class="coupon-shopList{{#compare servicerSize "===" 1}} coupon-one{{/compare}}">
+							<span class="csl-title">仅限以下合作商户：</span>
+							{{#each servicerList}}
+							{{#compare @index "<" 6}}
+							<span class="csl-shop"><em>{{nickname}}</em><a href="/servicer/getServicerDetail4V3Jsp.htm?servicerid={{srid}}" target="_blank">进入店铺</a></span>
+							{{/compare}}
+							{{/each}}
+							{{#compare servicerSize ">" 6}}
+							<span class="csl-moreLine clearfix">及其他 <em>{{moreSize}}</em> 家店铺 <a href="javascript:;" data-tips="{{tips}}" data-cptype="{{couponType}}" data-list="{{toJSON servicerList}}" data-role="showAllSp">查看全部</a></span>
+							{{/compare}}
+						</span>
+						{{/compare}}
+					</span>
+					{{#compare ctype "===" "global"}}
+					<a href="javascript:;">可使用</a>
+					{{/compare}}
+					{{#compare ctype "===" "some"}}
+					<a href="javascript:;">可使用</a>
+					{{/compare}}
+					{{#compare ctype "===" "one"}}
+					<a target="_blank" href="/servicer/getServicerDetail4V3Jsp.htm?servicerid={{servicerId}}">立即使用</a>
+					{{/compare}}
+					{{#compare ctype "===" "none"}}
+					<a href="javascript:;" data-role="getCoupon" data-value="{{couponid}}">立即领取</a>
+					{{/compare}}
+				</p>
+			</div>
+		</li>
+		{{/each}}
+    </script>
+    <script type="text/x-handlebars-template" id="order-list-template">
+    	{{#each this}}
+    	<tr>
+			<td class="ol-summary">
+				<a href="/service/qryServiceDetailByCodeJsp.htm?id={{sdid}}" class="ol-photo" target="_blank"><img src="{{serviceImg}}" width="80" height="65" /></a>
+				<span>
+					<a href="/service/qryServiceDetailByCodeJsp.htm?id={{sdid}}" target="_blank">{{sdname}}</a><br/>
+					{{siname}}<br/>
+					{{#if optionsList.length}}
+					{{#each optionsList}}
+					{{this}}<br/>
+					{{/each}}
+					{{/if}}
+
+				</span>
+			</td>
+			<td class="ol-contactor">
+				<em>{{srcontacts}}</em>
+				<span>{{srcontactstel}}</span>
+			</td>
+			<td class="ol-money">
+				<em>￥{{due}}</em>
+				{{#compare paidAmountSum '<' due}}
+					{{#compare paidAmountSum '!==' "0"}}
+					<span>已付￥{{paidAmountSum}}</span>
+					{{/compare}}
+				{{/compare}}
+				{{#compare subOrderPaytype '!==' "-1"}}
+				<span>{{toPaytypeString subOrderPaytype}}</span>
+				{{/compare}}
+			</td>
+			<td class="ol-time">{{created}}</td>
+			<td class="ol-status">
+				<span class="{{getClass status}}">{{toStatusString status}}</span>
+				<a data-role="tracesBtn" data-value="{{orderno}}" href="/app/orderInfo.html?orderno={{orderno}}">订单详情</a>
+				{{#compare status '>=' "20"}}
+				<a href="/app/myServiceInfo.html?orderno={{orderno}}">服务详情</a>
+				{{/compare}}
+			</td>
+			<td>
+				<a data-value="{{orderno}}" href="/app/orderInfo.html?orderno={{orderno}}">查看</a>
+			</td>
+		</tr>
+		{{/each}}
+    </script>
+    <script type="text/x-handlebars-template" id="trace_template">
+    	<h4>订单跟踪</h4>
+		<p><a href="/app/orderInfo.html?orderno={{orderno}}">查看更多</a></p>
+		<ul>
+			{{#each list}}
+			<li class="{{#if thirdChild}}third-child{{/if}}{{#if lastChild}}last-child{{/if}}">
+				<i class="icon"></i>
+				<em>{{content}}</em>
+				{{#if time}}
+				<span>{{time}}</span>
+				{{/if}}
+			</li>
+			{{/each}}
+		</ul>
+    </script>
+    <script type="text/x-handlebars-template" id="coupon_sp_list">
+		<div class="coupon-popover">
+        	<div class="title">优惠信息</div>
+        	<div id="spListWrapper" class="content">
+			    <p class="coupon-info"><em>{{couponType}}</em>{{tips}}</p>
+			    <p class="intro">仅限以下合作商户：</p>
+			    <ul id="currentCouponSp" class="clearfix">
+			        {{#each spList}}
+			        <li><span>{{nickname}}</span><a href="/servicer/getServicerDetail4V3Jsp.htm?servicerid={{srid}}" target="_blank">进入店铺</a></li>
+			        {{/each}}
+			    </ul>
+			    <p class="close">
+			        <button id="coupon-close" class="close-dialog btn btn-warning">我了解了！</button>
+			    </p>
+		    </div>
+	    </div>
+	</script>
+    <!--=include ../tpl/_thirdpartyFooter.html -->
+<!--=include ../tpl/_commonjs.html -->
+    <script type="text/javascript" src="/public/js/personalCenter.js"></script>
+</body>
+</html>

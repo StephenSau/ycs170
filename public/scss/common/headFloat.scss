@@ -1,0 +1,282 @@
+@import "variable";
+@import "maxin";
+
+.head-float{
+	display: none;
+	position: fixed;
+	width: 100%;
+	z-index: 160;
+	top: 0;
+	left: 0;
+	background-color: $bw;
+	border-bottom: 1px solid $line;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, .27);
+	.head-float-inner{
+		width: $w1;
+		padding: 20px 0 19px;
+		margin: 0 auto;
+	}
+	.hf-logo{
+		float:left;
+		margin-right: 53px;
+	}
+
+	.hf-searchBox{
+		font-family: $ffa;
+		position: relative;
+		width: 455px;
+		float:left;
+		.hfsb-title{
+			@include sprite(3, 18px, 18px);
+			text-indent: -999em;
+			position: absolute;
+			top: 8px;
+			left: 10px;
+			cursor: text;
+		}
+		.hfsb-text{
+			border: 1px solid #1471c8;
+			border-radius: 2px 0 0 2px;
+			border-right: none;
+			font-size: 14px;
+			height: 30px;
+			line-height: 30px;
+			color: $dwgy;
+			width: 320px;
+			padding: 0 20px 0 38px;
+		}
+		.hfsb-button{
+			border: 1px solid #1471c8;
+			border-radius: 0 2px 2px 0;
+			background-color: #1471c8;
+			font-size: 14px;
+			height: 32px;
+			padding: 0 20px;
+			color: $bw;
+			vertical-align: top;
+		}
+		.hfsb-hotSearch{
+			position: absolute;
+			right: 85px;
+			top: 7px;
+			a{
+				display: inline-block;
+				color: $lwgy;
+				background-color: $lbgy;
+				padding: 1px 2px;
+			}
+			a:hover{
+				color: $dwgy;
+			}
+		}
+		.hfsb-serviceList{
+			display: none;
+			position: absolute;
+			border: 1px solid #1471c8;
+			width: 378px;
+			background-color: $bw;
+			padding: 5px 0;
+			margin-top: -1px;
+			li{
+				
+				a{	
+					overflow: hidden;
+					display: block;
+					padding: 5px 10px;
+				}
+				a:hover{
+					em{
+						color: $dbl;
+					}
+				}
+				em{
+					transition: color 0.5s;
+    				-webkit-transition: color 0.5s;
+					color: $dwgy;
+					float: left;
+				}
+				span{
+					color: $mwgy;
+					float: right;
+				}
+			}
+		}
+	}
+
+	.hf-btnGroup{
+		float: right;
+		a{
+			width: 110px;
+			margin-left: 5px;
+		}
+		.hf-lr-group{
+			margin-right: 10px;
+			a{
+				margin-left: 0;
+				@include links($mwgy);
+			}
+		}
+		.hf-user{
+			display: none;
+			margin-right: 10px;
+			@include links($mwgy);
+		}
+		.hf-carBtn{
+			position: relative;
+			background-color: $lbgy;
+			color: $pomelo;
+			border: 1px solid $line;
+			text-align: left;
+			text-indent: 45px;
+			.icon{
+				@include sprite(8, 18px, 18px);
+				position: absolute;
+				top: 4px;
+				left:  32px;
+			}
+			
+		}
+		.hf-navBtn{
+			position: relative;
+			background-color: #0064c8;
+			color: $bw;
+			text-indent: -12px;
+			border: 1px solid #0064c8;
+			width: 110px;
+			.icon{
+				@include sprite(5, 14px, 9px);
+				position: absolute;
+				top: 9px;
+				right:  12px;
+				transition:transform 0.5s;
+				-webkit-transition:transform 0.5s;
+			}
+		}
+
+		.hf-navBtn.active{
+			.icon{
+				transform: rotate(180deg);
+				-moz-transform: rotate(180deg);
+				-webkit-transform: rotate(180deg);
+				background-position: -50px -10px\9;
+			}
+		}
+
+
+	}
+}
+
+.float-head-nav-box{
+	display: none;
+	font-family: $ffa;
+	position: fixed;
+	z-index: 120;
+	background-color: $bw;
+	width: 1210px;
+	left: 50%;
+	margin-left: -605px;
+	top: 72px;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, .27);
+	.nav{
+		>li{
+			float: left;
+			>a{
+				background-color: $lbgy;
+				color: $mwgy;
+				font-size: 16px;
+				width: 151px;
+				height: 35px;
+				line-height: 35px;
+				text-align: center;
+				display: block;
+				@include detrans;
+				&.hf-phonebtn{
+					color: $blue;
+					background-color: $line;
+					width: 153px;
+					&:hover{
+						color: $pomelo;
+					}
+				}
+
+			}
+			&.active{
+				>a{
+					background-color: $blue;
+					color: $bw;
+				}
+				.sub-nav-box{
+					display: block;
+				}
+			}
+		}
+	}
+	.sub-nav-box{
+		display: none;
+		padding: 20px 0 20px 0;
+		position: absolute;
+		top: 35px;
+		left: 0;
+		background-color: $bw;
+		border: 1px solid $line;
+		border-top: none;
+		box-shadow: 0 2px 3px rgba(0, 0, 0, .27);
+		width: 1208px;
+		overflow: hidden;
+		
+		.sub-nav{
+			overflow: hidden;
+			float: left;
+		}
+		li{
+			padding: 15px 0 15px 35px;
+			float: left;
+			width: 185px;
+		}
+		.nav-icon{
+			vertical-align: middle;
+			margin-right: $mg;
+		}
+		.nav-link{
+			padding: 10px 0;
+			display: inline-block;
+			color: $mwgy;
+			&:hover{
+				color: $dwgy;
+			}
+		}
+
+		.set-box{
+			float: left;
+			padding-left: 50px;
+			.btn{
+				display: block;
+				width: 180px;
+				padding-top: 3px;
+				padding-bottom: 3px;
+				color: $bw;
+				margin-bottom: 10px;
+			}
+			.fh-orange{
+				background-color: #ff9506;
+			}
+			.fh-blue{
+				background-color: #0973d6;
+			}
+		}
+		
+	}
+
+	.col-1{
+		.sub-nav{
+			width: 100%;
+		}
+
+		&.sub-has-set{
+			.sub-nav{
+				width: 880px;
+				border-right: 1px solid $line;
+			}
+		}
+	}
+}

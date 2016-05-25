@@ -1,0 +1,1 @@
+!function(n){"use strict";n(["jquery"],function(n){function t(t,e){return n.ajax({url:t,data:e?e:"",dataType:"json",type:"POST",xhrFields:{widthCredentials:!0}})}return t})}(window.define);

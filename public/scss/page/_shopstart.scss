@@ -1,0 +1,450 @@
+/*
+*@shopstart
+*/
+
+$shopstartSpriteUrl: url('../img/shopstart/sprite.png');
+@mixin shopstartSprite($width, $height, $positionX){
+  width: $width;
+  height: $height;
+  background-repeat: no-repeat;
+  background-image: $shopstartSpriteUrl;
+  background-position: $positionX 0;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+@mixin trangle($h:7px,$w:7px,$color:#24aa60){
+  height:0;
+  width: 0;
+  border-bottom:$h solid $color;
+  border-left:$w solid transparent;
+  border-right:$w solid transparent;
+}
+
+@mixin box-shadow($s1:(0,3px,3px,rgba(7,0,2,.1)),$s2:0,$s3:0){
+  @if($s2 !=0){
+    -webkit-box-shadow:$s1,$s2,$s3;
+    -moz-box-shadow:$s1,$s2,$s3;
+    -ms-box-shadow:$s1,$s2,$s3;
+    -o-box-shadow:$s1,$s2,$s3;
+    box-shadow:$s1,$s2,$s3;
+  }@else{
+    -webkit-box-shadow:$s1;
+    -moz-box-shadow:$s1;
+    -ms-box-shadow:$s1;
+    -o-box-shadow:$s1;
+    box-shadow:$s1;
+  }
+}
+
+@mixin border-radius($w:3px){
+  -webkit-border-radius: $w;
+  -moz-border-radius: $w;
+  border-radius: $w;
+}
+$w100 : 100%;
+$fs12:12px;
+$fs14:14px;
+$fs16:16px;
+$fs18:18px;
+$fs36 :36px;
+img{
+  vertical-align: top;
+}
+h2{
+  width:100%;
+  font-size:$fs36;
+  line-height:56px;
+  color:$mwgy;
+  text-align: center;
+}
+input,textarea{
+  border:none;
+  padding:0;
+}
+
+/*topnav start here*/
+.top-wrap{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:9;
+  width:$w100;
+  background-color:#fff;
+  font-family: $ffa;
+  @include box-shadow((0 2px 3px rgba(7,0,2,.1)));
+}
+
+
+.top-nav{
+  @include box-center(1210px);
+  padding:24px 0;
+  height:32px;
+
+  .logo{
+    position: relative;
+    float:left;
+
+    .tips{
+      position:absolute;
+      left:0;
+      bottom:-42px;
+      width: 233px;
+      height:34px;
+      text-align: center;
+      line-height: 34px;
+      color:#fff;
+      font-size:16px;
+      background-color:$green;
+      @include border-radius;
+    }
+
+    .trangle{
+      position: absolute;
+      left:84px;
+      bottom:-8px;
+      @include trangle(7px,5px, $green);
+    }
+  }
+
+  .login-bar{
+    float:right;
+
+    span{
+      margin-right:21px;
+      color:$mwgy;
+      font-size:16px;
+      line-height:32px;
+    }
+
+    a{
+      padding:9px 19px;
+    }
+  }
+}
+/*banner start here*/
+.banner{
+  position:relative;
+  margin-top:80px;
+  width:100%;
+  height:580px;
+  background:url("../img/shopstart/shopstart-banner.jpg") center no-repeat transparent;
+  background-size:cover;
+
+  h1{
+    position:absolute;
+    left:50%;
+    top:165px;
+    margin-left:-350px;
+    width: 700px;
+    height:220px;
+    text-align:center;
+    color:#fff;
+    line-height:1;
+
+    background-color: #005a84; // Fallback for old IEs
+    background-color: transparentize(#005a84, 0.2);
+  }
+  strong,em{
+    display:block;
+  }
+  strong{
+    padding:50px 0 22px;
+    font-size:67px;
+    letter-spacing: 3px;
+  }
+  em{font-size:33px;}
+}
+
+/*list start here*/
+.list-wrap{
+  padding:94px 0 91px;
+  width:$w100;
+  font-family: $ffa;
+  line-height:24px;
+
+  ul{
+    padding-top:83px;
+    @include box-center(1210px);
+    //overflow: hidden;
+    height:383px;
+  }
+
+  li{
+    position:relative;
+    float:left;
+    margin-right:30px;
+    width:280px;
+    @include box-shadow((0 3px 3px rgba(7,0,2,0.17)));
+  }
+
+  .figure{
+    height:209px;
+    border:1px solid $line;
+    text-align: center;
+    background-color:#f7f7f7;
+
+    &.figure-1{
+      .image{
+        @include shopstartSprite(120px, 120px, 0);
+      }
+    }
+
+    &.figure-2{
+      .image{
+        @include shopstartSprite(120px, 120px, -130px);
+      }
+    }
+
+    &.figure-3{
+      .image{
+        @include shopstartSprite(120px, 120px, -260px);
+      }
+    }
+
+    &.figure-4{
+      .image{
+        @include shopstartSprite(120px, 120px, -390px);
+      }
+    }
+  }
+
+  img{
+    padding-top:30px;
+  }
+
+  .figcatption{
+    padding-top:15px;
+    color:$mwgy;
+    font-size:$fs18;
+  }
+
+  .introduction{
+    padding:26px 28px;
+    height:118px;
+    color:#fff;
+    font-size:14px;
+    background-color:#bca16c;
+  }
+
+  .trangle{
+    position:absolute;
+    top:200px;
+    left:131px;
+    @include trangle(11px,9px,#bca16c);
+  }
+
+  .last{
+    margin:0;
+  }
+}
+
+/*process start*/
+.process-wrap{
+  width:$w100;
+  background-color:#f7f7f7;
+  font-family: $ffa;
+
+  .process{
+    @include box-center(1210px);
+    padding:66px 0 68px;
+    overflow: hidden;
+  }
+
+  .list{
+    float:left;
+    width:275px;
+    padding:69px 216px 0 119px;
+  }
+
+  h2{
+    font-size:30px;
+    text-align: left;
+  }
+  ol{
+    padding-top:48px;
+  }
+
+  li{
+    padding-bottom:40px;
+    width:100%;
+    overflow: hidden;
+    i{
+      float:left;
+      margin-right:19px;
+      width:50px;
+      height:50px;
+      background:url("../img/shopstart/shopstart-circle.png");
+      color:#2892c3;
+      line-height: 50px;
+      text-align: center;
+      font-size:30px;
+    }
+
+    span{
+      float:left;
+      padding:13px 0 7px;
+      width:206px;
+      border-bottom:1px dashed #d2e0e7;
+      color:#0572ab;
+      font-size:$fs18;
+    }
+  }
+
+  .oppointment{
+    float:left;
+    padding:29px 70px 16px 60px;
+    width:470px;
+    @include border-radius;
+    background-color:#13719d;
+    color:#bdd9f8;
+    font-size:$fs14;
+
+    input,select,textarea{
+      font-family: $ffa;
+    }
+
+    input:-webkit-autofill,
+    textarea:-webkit-autofill,
+    select:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px white inset;
+    }
+
+    legend{
+      padding-left:193px;
+      font-size:24px;
+    }
+
+    form{
+      padding-top:25px;
+
+      .error{
+       margin-left:90px;
+      }
+
+
+    }
+
+    p{
+      padding-bottom:20px;
+      width:100%;
+
+      &.fields{
+        padding-bottom: 0;
+      }
+    }
+
+    .form-label{
+      position: relative;
+      overflow: visible;
+      float:left;
+      width:72px;
+      padding-right:18px;
+      font-size:$fs18;
+      line-height:35px;
+
+      &.business{
+        margin-top:-8px;
+      }
+
+      em{
+        position: absolute;
+        top: 0;
+        left: -10px;
+        z-index: 5;
+      }
+    }
+
+    .inputtext,
+    select{
+      height:35px;
+      line-height:35px;
+      color: $mwgy;
+    }
+
+    .inputtext{
+      width:360px;
+      padding: 0 10px;
+    }
+
+    .contact-title{
+      width:380px;
+    }
+
+    #province,
+    #city{
+      width:176px;
+    }
+
+    .sp-province{
+      float: left;
+    }
+
+    .sp-city{
+      float:right;
+    }
+
+    .sp-province,
+    .sp-city{
+      width:173px;
+      background: $bw;
+      font-family: $ffa;
+    }
+
+
+    .chosen{
+      &.contact-title{
+        width: 380px !important;
+
+        .chosen_facade{
+          width: 343px !important;
+        }
+      }
+    }
+
+    textarea{
+      float: left;
+      padding: 5px 10px;
+      font-size: 14px;
+      border:1px solid $line;
+      width:358px;
+      height:65px;
+      resize: vertical;
+      color: $mwgy;
+    }
+
+    .checkbox-group{
+      float:left;
+      width:380px;
+      color:#ffffff;
+
+      .form-choice-group{
+        float:left;
+        margin:0 30px 20px 0;
+      }
+    }
+
+    #submitForm{
+      margin-left:90px;
+      width:380px;
+      height: 40px;
+      display: inline-block;
+      padding-bottom: 3px;
+      background-color:#36ade5;
+      line-height:18px;
+      text-align:center;
+      font-size:18px;
+      color:#fff;
+      cursor: pointer;
+
+      -webkit-transition: background 0.3s;
+      transition: background 0.3s;
+
+      @include border-radius;
+        &:hover{
+          background-color:#36b2ec;
+        }
+    }
+  }
+
+}

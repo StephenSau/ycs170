@@ -1,0 +1,255 @@
+@import 'variable';
+@import 'maxin';
+
+.appraise-box{
+	width: 700px;
+	border: 1px solid $line;
+	background-color: $bw;
+}
+
+.appraise-title{
+	padding: 18px 0 18px 39px;
+	color: $dwgy;
+	font-size: 18px;
+	font-weight: bold;
+	span{
+		font-size: 16px;
+		font-weight: normal;
+		color: $mwgy;
+		vertical-align: text-bottom;
+		margin-left: 17px;
+	}
+}
+
+.appraise-items{
+	background-color: $lbgy;
+	padding: 30px 70px;
+	.ac-photoline{
+		float: left;
+		margin-right: 20px;
+	}
+	.ac-textLine{
+		width: 148px;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	.glide-cabinet{
+		width: 560px;
+		height: 100px;
+		li{
+			overflow: hidden;
+			cursor: pointer;
+			padding: 16px 0 16px 16px;
+			width: 252px;
+			background-color: $bw;
+			border: 1px solid $line;
+			margin-right: 20px;
+			&.active{
+				border-color: $pomelo;
+			}
+			img{
+				display: block;
+			}
+
+			p{
+				line-height: 1.5em;
+				color: $lwgy;
+			}
+			
+			strong{
+				color: $dwgy;
+			}
+			span{
+				font-size: 12px;
+			}
+		}
+	}
+	.glide-prev, .glide-next{
+		&:before{
+			content: " ";
+			width: 10px;
+			height: 17px;
+			display: block;
+			background:transparent url('../img/glide-sprite.png') left top no-repeat;
+		}
+		padding: 41px 10px;
+	}
+
+	.glide-prev{
+		top: 30px;
+		left: 20px;
+		&:before{
+			background-position: 0 -20px;
+		}
+		&:hover{
+			&:before{
+				background-position: 0 -40px;
+			}
+		}
+	}
+
+	.glide-next{
+		top: 30px;
+		right: 20px;
+		&:before{
+			background-position: 100% -20px;
+		}
+
+		&:hover{
+			&:before{
+				background-position: 100% -40px;
+			}
+		}
+	}
+}
+
+.appraise-content{
+	padding: 30px 70px 30px;
+	font-size: 16px;
+	color: $mwgy;
+	.error{
+		font-size: 14px;
+		margin-top: -5px;
+	}
+	em{
+		color: $pomelo;
+	}
+	textarea{
+		width: 538px;
+		height: 70px;
+		border: 1px solid $line;
+		padding: 10px;
+	}
+	p{
+		margin-bottom: 20px;
+		label{
+			font-size: 14px;
+		}
+	}
+	.ac-point{
+		color: $lwgy;
+	}
+	.ac-title{
+		margin-right: 30px;
+	}
+	.ac-stars{
+		cursor: pointer;
+		margin-right: 40px;
+		i{
+			display: inline-block;
+			margin-left: 14px;
+			&:first-child{
+				margin-left: 0;
+			}
+			&.unactive{
+				background-position: -190px -40px!important;
+			}
+			&.active{
+				background-position: -250px -40px!important;
+			}
+			width: 20px;
+			height: 20px;
+			vertical-align: middle;
+			background:transparent url('../img/pc-sprite.png') -190px -40px no-repeat;
+		}
+	}
+
+	.ac-line{
+		position: relative;
+		&:first-child{
+			padding-bottom: 24px;
+			border-bottom: 1px solid $line;
+		}
+
+		.error{
+
+			position: absolute;
+		}
+
+		&.ac-star-on-1{
+			.ac-point{
+				color: $mwgy;
+			}
+			.ac-star-1{
+				background-position: -250px -40px;
+			}
+		}
+
+		&.ac-star-on-2{
+			.ac-point{
+				color: $mwgy;
+			}
+			.ac-star-1,
+			.ac-star-2{
+				background-position: -250px -40px;
+			}
+		}
+
+		&.ac-star-on-3{
+			.ac-point{
+				color: $mwgy;
+			}
+			.ac-star-1,
+			.ac-star-2,
+			.ac-star-3{
+				background-position: -250px -40px;
+			}
+		}
+
+		&.ac-star-on-4{
+			.ac-point{
+				color: $mwgy;
+			}
+			.ac-star-1,
+			.ac-star-2,
+			.ac-star-3,
+			.ac-star-4{
+				background-position: -250px -40px;
+			}
+		}
+
+		&.ac-star-on-5{
+			.ac-point{
+				color: $mwgy;
+			}
+			.ac-star-1,
+			.ac-star-2,
+			.ac-star-3,
+			.ac-star-4,
+			.ac-star-5{
+				background-position: -250px -40px;
+			}
+		}
+
+		margin-bottom: 24px;
+	}
+	.ac-title-line{
+		overflow: hidden;
+		.ac-title{
+			float: left;
+		}
+		.ac-tips{
+			float: right;
+			color: $dbgy;
+		}
+	}
+
+	.ac-texarea{
+		position: relative;
+		.error{
+			position: absolute;
+			bottom: -50px;
+			left: 0;
+			margin-top: 0;
+			margin-left: 0;
+		}
+	}
+
+	.ac-button-line{
+		text-align: right;
+		.btn-primary{
+			background-color: $blue;
+			color: $bw;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+.position-content{
+	padding: 30px 0 100px;
+	background-color: $lbgy;
+	.pc-inner{
+		width: 810px;
+		background-color: $bw;
+		margin: 0 auto;
+		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+		padding: 85px 200px 95px;
+	}
+
+	h1{
+		font-size: 30px;
+		color: $dwgy;
+		margin-bottom: 50px;
+	}
+
+	h2{
+		font-size: 18px;
+		color: $mwgy;
+		margin-top: 45px;
+		margin-bottom: 15px;
+		font-weight: bold;
+	}
+
+	h3, p, li{
+		color: $lwgy;
+		line-height: 1.7em;
+	}
+
+	li{
+		padding-left: 22px;
+		text-indent: -22px;
+	}
+}

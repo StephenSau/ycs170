@@ -1,0 +1,26 @@
+{
+  "name": "zyb_admin",
+  "version": "0.0.1",
+  "description": "Admin Panel for Zhiyebang App",
+  "repository": {},
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-clean": "^0.2.4",
+    "gulp-concat": "^2.5.2",
+    "gulp-filesize": "^0.0.5",
+    "gulp-include": "^2.1.0",
+    "gulp-jshint": "^1.10.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^0.5.3",
+    "gulp-ng-annotate": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-uglify": "^0.2.1",
+    "gulp-watch": "^1.2.1",
+    "jshint-stylish": "^1.0.2",
+    "require-dir": "~0.1.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}

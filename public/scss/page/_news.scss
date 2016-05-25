@@ -1,0 +1,383 @@
+@import "../common/variable";
+@import "../common/maxin";
+
+$newsSpriteUrl: url('../img/news-sprite.png');
+$newsSpritePos:
+	(0 0) (-20px 0) (-40px 0) (-60px 0) (-80px 0)
+	(-100px 0) (100% -40px) (100% -60px) (100% -80px) (100% -100px)
+	(100% -120px) (100% -140px);
+@mixin newsSprite($position: 1, $width: 20px, $height: 20px, $display: inline-block){
+	display: $display;
+	width: $width;
+    height: $height;
+    background-image: $newsSpriteUrl;
+    background-position: nth($newsSpritePos, $position);
+}
+
+body{
+	background-color: $lbgy;
+}
+
+.news-group{
+	width: $w1;
+	margin: 0 auto 40px;
+	.ng-item{
+		float: left;
+		overflow: hidden;
+		position: relative;
+		>a{
+			display: block;
+			.ng-item-title{
+				position: absolute;
+				display: block;
+				font-size: 20px;
+				color: $bw;
+				text-shadow: 0 1px 0px rgba(0, 0, 0, .5);
+				width: 100%;
+				bottom: 0px;
+				padding-top: 65px;
+				height: 35px;
+				text-align: center;
+				left: 0;
+				background: url('../img/black-opacity-line.png') 0 100% repeat-x;
+			}
+			.ng-item-btn{
+				background: url('../img/black-opacity60-bg.png') 0 0 repeat;
+    			-webkit-transition: top 0.5s ease-out;
+			    -o-transition: top 0.5s ease-out;
+			    transition: top 0.5s ease-out;
+				position: absolute;
+				text-align: center;
+				top: 100%;
+				width: 100%;
+				height: 100%;
+				em{
+					position: relative;
+					background-color: $pomelo;
+					padding: .5em 1em;
+					top: 46%;
+					color: $bw;
+				}
+			}
+			&:hover{
+				.ng-item-btn{
+					top: 0;
+				}
+			}
+		}
+	}
+
+	.ng-move{
+		img{
+			width: 100%;
+			transition: all 0.5s ease 0s;
+		}
+		>a{
+			&:hover{
+				img{
+					transform: translateY(-10px);
+				}
+			}
+		}
+	}
+
+	.ng-item-01{
+		width: 440px;
+		height: 370px;
+		margin-right: 20px;
+	}
+
+	.ng-item-02{
+		width: 450px;
+		height: 210px;
+		margin: 0 20px 20px 0;
+	}
+
+	.ng-item-03{
+		width: 280px;
+		height: 210px;
+		margin-bottom: 20px;
+	}
+
+	.ng-item-04{
+		width: 214px;
+		height: 140px;
+		margin-right: 22px;
+	}
+
+	.ng-item-05{
+		width: 214px;
+		height: 140px;
+		margin-right: 20px;
+	}
+
+	.ng-item-06{
+		width: 280px;
+		height: 140px;
+		background-color: $bw;
+		li{
+			
+			width: 280px;
+			height: 140px;
+			a{
+				display: block;
+				padding: 20px 0 0 20px;
+				height: 120px;
+				background-color: $bw;
+				&:hover{
+					.promo-bulge{
+						background-color: $pomelo;
+						color: $bw;
+					}
+				}
+				h4{
+					color: $dwgy;
+					font-size: 16px;
+					margin-bottom: 10px;
+				}
+				.promo-bulge{
+					width: auto;
+					background-color: $bw;
+					color: $pomelo;
+					border: 1px solid $pomelo;
+					padding: 0 3px;
+				}
+				p{
+					margin-bottom: 8px;
+					font-size: 12px;
+					color: #969696;
+				}
+			}
+		}
+
+		.promo-1{
+			a{
+				background: url('../img/promo-1-bg.png') 130px 100% no-repeat;
+			}
+		}
+
+		.promo-2{
+			a{
+				background: url('../img/promo-2-bg.png') 170px 100% no-repeat;
+			}
+		}
+
+		.promo-3{
+			a{
+				background: url('../img/promo-3-bg.png') 100% 100% no-repeat;
+			}
+		}
+
+		.promo-4{
+			a{
+				background: url('../img/promo-4-bg.png') 130px 100% no-repeat;
+			}
+		}
+	}
+}
+
+
+.news-section{
+	width: $w1;
+	margin: 0 auto 100px;
+}
+
+.news-content{
+	width: 910px;
+	float: left;
+}
+
+.news-tabs{
+	border: 1px solid $line;
+	background-color: $bw;
+	box-shadow: $gbboxShadow;
+	margin-bottom: 20px;
+	&.affix {
+	    position: fixed;
+	    z-index: 100;
+	    top: 0;
+	    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	    border: 0;
+	    width: 909px;
+	    &.second-level {
+	        top: 72px;
+	    }
+	}
+
+	li{
+		float: left;
+		&.active{
+			a{
+				color: $bw;
+				position: relative;
+				background-color: $blue;
+				&:after{
+					content: " ";
+					position: absolute;
+					bottom: -6px;
+					left: 50%;
+					margin-left: -6px;
+					@include newsSprite(1, 12px, 12px, block);
+				}
+			}
+		}
+	}
+	a{
+		display: inline-block;
+		text-align: center;
+		padding: 11px 0;
+		color: $mwgy;
+		width: 130px;
+		&:first-child{
+			width: 128px;
+		}
+		&:hover{
+			color: $blue;
+		}
+	}
+}
+
+.news-box{
+	ul{
+		margin-bottom: 50px;
+	}
+	.badge{
+		color: $bw;
+		display: inline-block;
+		height: 20px;
+		line-height: 20px;
+		padding: 0 15px 0 10px;
+		background: url('../img/news-sprite.png') 100% 0 no-repeat;
+		&.badge-1{
+			background-position: nth($newsSpritePos, 7);
+		}
+		&.badge-2{
+			background-position: nth($newsSpritePos, 8);
+		}
+		&.badge-3{
+			background-position: nth($newsSpritePos, 9);
+		}
+		&.badge-4{
+			background-position: nth($newsSpritePos, 10);
+		}
+		&.badge-5{
+			background-position: nth($newsSpritePos, 11);
+		}
+		&.badge-6{
+			background-position: nth($newsSpritePos, 12);
+		}
+	}
+	li{
+		overflow: hidden;
+		box-shadow: $gbboxShadow;
+		background-color: $bw;
+		border: 1px solid $line;
+		position: relative;
+		height: 138px;
+		padding: 20px;
+		margin-bottom: 15px;
+		&:hover{
+			.nb-shareBtn{
+				display: block;
+			}
+		}
+		
+
+		&.nb-hasPhoto{
+			padding-left: 265px;
+			h4{
+				.badge{
+					display: none;
+				}
+			}
+			
+			.nb-photo{
+				display: block;
+			}
+		}
+	}
+	.nb-photo{
+		position: absolute;
+		display: none;
+		left: 20px;
+		top: 20px;
+		img{
+			display: block;
+		}
+		a{
+			display: block;
+		}
+		.badge{
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		
+	}
+	h4{
+		margin-bottom: 18px;
+		@include ellipsis;
+		a{
+			color: $dwgy;
+			font-weight: bold;
+			font-size: 18px;
+			&:hover{
+				color: $blue;
+			}
+		}
+	}
+	.nb-content{
+		color: $mwgy;
+		line-height: 1.5em;
+		overflow: hidden;
+		height: 65px;
+		margin-bottom: 18px
+	}
+
+	.nb-share{
+		font-size: 12px;
+		color: $lwgy;
+		a{
+			color: $lwgy;
+			&:hover{
+				color: $blue;
+			}
+		}
+	}
+
+	.nb-class{
+		float: left;
+		margin-right: 20px;
+	}
+
+	.nb-links{
+		float: left;
+		a{
+			margin-left: 15px;
+			@include links;
+		}
+	}
+
+	.nb-shareBtn{
+		display: none;
+		float: right;
+	}
+	.nb-moreLine{
+		box-shadow: $gbboxShadow;
+		border: 1px solid $line;
+		text-align: center;
+		background-color: $bw;
+		height: 44px;
+		line-height: 44px;
+		a{
+			font-size: 18px;	
+			@include links;
+		}
+	}
+}
+
+
+
+
+

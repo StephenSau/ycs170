@@ -1,0 +1,153 @@
+@import 'variable';
+@import 'maxin';
+
+.expert_box{
+    padding-bottom: 10px;
+    h3{
+        font-size: 16px;
+        font-family: $ffa;
+        color: #1153a7;
+        padding-bottom: 10px;
+        border-bottom: 4px solid #eef2f6;
+        margin-bottom: 20px;
+    }
+    
+    h4{
+        font-size: 16px;
+        font-family: $ffa;
+        margin-bottom: 9px;
+        a{
+            color: $mgray;
+            &:hover{
+                color: $lblue;
+            }
+        }
+    }
+    
+    p{
+        font-family: $ffa;
+        color: $lgray;
+        line-height: 24px;
+        height: 120px;
+        overflow: hidden;
+    }
+    
+    li{
+        padding:0 0 20px 95px;
+        border-bottom: 1px dashed #dddddd;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    
+    span{
+        position: absolute;
+        width: 88px;
+        top: 0;
+        left: 0;
+    }
+    
+    img{
+        border: 1px solid #dddddd;
+        display: block;
+    }
+    
+    .btn{
+        display: block;
+        font-size: 12px;
+        height: 28px;
+        margin-top: 4px;
+        line-height: 28px;
+    }
+}
+
+*+html .expert_box img{
+    margin-bottom: 2px;
+}
+
+
+.export_detail_box{
+    width: 790px;
+    overflow: hidden;
+    .btn{
+        display: block;
+    }
+    
+    .edb_leftside{
+        float:left;
+        margin-right: 25px;
+        width: 230px;
+        img{
+            border: 1px solid $linegray;
+            margin-bottom: 10px;
+        }
+    }
+    
+    .edb_rightside{
+        float: right;
+        width: 530px;
+        h4{
+            font-family: $ffa;
+            color: #313131;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        p{
+            font-family: $ffa;
+            color: $mgray;
+            line-height: 24px;
+        }
+    }
+}
+
+
+.phone_box{
+    width: 560px;
+    padding: 0 20px;
+    
+    p{
+        color: $mgray;
+        margin-top: 22px;
+        line-height: 18px;
+        em{
+            color: $mred;
+        }
+    }
+    
+    .mb_text{
+        width: 280px;
+        border: 1px solid $linegray;
+        height: 30px;
+        padding: 0 5px;
+        vertical-align: middle;
+    }
+    
+    .mb_btnline{
+        text-align: center;
+        .btn{
+            font-size: 16px;
+            display: inline-block;
+            width: 120px;
+            margin: 0 15px;
+        }
+    }
+    
+    .invalid{
+        border-color: #db281f;
+    }
+    
+    .valid{
+        border-color: #73A80D;
+    }
+}
+
+.onCall_box{
+    font-size: 24px;
+    padding: 35px 70px;
+    color: $mgreen;
+    font-family: $ffa;
+    .icon{
+        display: inline-block;
+        vertical-align: middle;
+        @include bIconSprite(14, 37px, 37px);
+    }
+}

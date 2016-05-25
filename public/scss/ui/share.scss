@@ -1,0 +1,70 @@
+
+$shareSpriteUrl: url('../img/shareIcon.png');
+$shareSpritePos:
+	(0 0) (-30px 0) (-60px 0) (0 -20px) (-30px -20px)
+	(-60px -20px); 
+@mixin shareSprite($position: 1, $width: 20px, $height: 20px, $display: inline-block){
+	display: $display;
+	width: $width;
+    height: $height;
+    background-image: $shareSpriteUrl;
+    background-position: nth($shareSpritePos, $position);
+}
+
+
+.shareGroup{
+	a{
+		@include shareSprite(1, 22px, 20px);
+		margin-left: 15px;
+		vertical-align: middle;
+	}
+
+	.share-wechat{
+		position: relative;
+		transition: none;
+    	-webkit-transition: none;
+		z-index: 50;
+		color: #969696;
+		background-position: nth($shareSpritePos, 1);
+		&:hover{
+			color: #969696;
+			background-position: nth($shareSpritePos, 4);
+			.wechat-code{
+				color: #969696;
+			}
+		}
+		.wechat-code{
+			font-size: 12px;
+			color: #969696;
+			position: absolute;
+			background-color: #ffffff;
+			border: 1px solid #EBEBEB;
+			padding: 15px;
+			cursor: default;
+			width: 188px;
+			left: -200px;
+			top: -122px;
+			line-height: 1.5em;
+			img{
+				width: 80px;
+				float: left;
+				margin-right: 15px;
+			}
+		}
+	}
+
+	.share-sina{
+		background-position: nth($shareSpritePos, 2);
+		&:hover{
+			background-position: nth($shareSpritePos, 5);
+		}
+	}
+
+	.share-qq{
+		background-position: nth($shareSpritePos, 3);
+		&:hover{
+			background-position: nth($shareSpritePos, 6);
+		}
+	}
+}
+
